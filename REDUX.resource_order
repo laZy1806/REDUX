@@ -1,0 +1,28 @@
+{
+  "FolderOrderSettings": [
+    {"name":"KazyANIMCurves","order":2,"path":"folders/Animation Curves/KazyANIMCurves.yy",},
+    {"name":"IDLE","order":2,"path":"folders/Animation Curves/KazyANIMCurves/IDLE.yy",},
+    {"name":"fightBox","order":1,"path":"folders/Sprites/fightBox.yy",},
+  ],
+  "ResourceOrderSettings": [
+    {"name":"shaderFight","order":8,"path":"objects/shaderFight/shaderFight.yy",},
+    {"name":"fightDrawController","order":4,"path":"objects/fightDrawController/fightDrawController.yy",},
+    {"name":"fightBoxObj","order":2,"path":"objects/fightBoxObj/fightBoxObj.yy",},
+    {"name":"fightCreation","order":3,"path":"objects/fightCreation/fightCreation.yy",},
+    {"name":"legCurve","order":2,"path":"animcurves/legCurve/legCurve.yy",},
+    {"name":"kazyObject","order":7,"path":"objects/kazyObject/kazyObject.yy",},
+    {"name":"fightWall","order":6,"path":"objects/fightWall/fightWall.yy",},
+    {"name":"debugObject","order":1,"path":"objects/debugObject/debugObject.yy",},
+    {"name":"headCurve","order":1,"path":"animcurves/headCurve/headCurve.yy",},
+    {"name":"rightWall","order":5,"path":"sprites/rightWall/rightWall.yy",},
+    {"name":"boxcurve","order":1,"path":"animcurves/boxcurve/boxcurve.yy",},
+    {"name":"bottomWall","order":4,"path":"sprites/bottomWall/bottomWall.yy",},
+    {"name":"sp_bonemidLOW","order":1,"path":"sprites/sp_bonemidLOW/sp_bonemidLOW.yy",},
+    {"name":"bodyCurve","order":3,"path":"animcurves/bodyCurve/bodyCurve.yy",},
+    {"name":"leftWall","order":2,"path":"sprites/leftWall/leftWall.yy",},
+    {"name":"battleCamCurve","order":4,"path":"animcurves/battleCamCurve/battleCamCurve.yy",},
+    {"name":"topWall","order":6,"path":"sprites/topWall/topWall.yy",},
+    {"name":"obj_test","order":5,"path":"objects/obj_test/obj_test.yy",},
+    {"name":"obj_battlecam","order":9,"path":"objects/obj_battlecam/obj_battlecam.yy",},
+  ],
+}
