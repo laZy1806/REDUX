@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Object83",
+  "name": "hello",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],

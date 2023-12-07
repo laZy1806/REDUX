@@ -7,7 +7,7 @@
   "ResourceOrderSettings": [
     {"name":"shaderFight","order":8,"path":"objects/shaderFight/shaderFight.yy",},
     {"name":"fightDrawController","order":4,"path":"objects/fightDrawController/fightDrawController.yy",},
-    {"name":"Object83","order":1,"path":"objects/Object83/Object83.yy",},
+    {"name":"hello","order":1,"path":"objects/hello/hello.yy",},
     {"name":"fightBoxObj","order":2,"path":"objects/fightBoxObj/fightBoxObj.yy",},
     {"name":"fightCreation","order":3,"path":"objects/fightCreation/fightCreation.yy",},
     {"name":"legCurve","order":2,"path":"animcurves/legCurve/legCurve.yy",},
