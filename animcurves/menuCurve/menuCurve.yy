@@ -15,7 +15,7 @@
   ],
   "function": 2,
   "parent": {
-    "name": "Animation Curves",
-    "path": "folders/Animation Curves.yy",
+    "name": "menuCurves",
+    "path": "folders/Animation Curves/menuCurves.yy",
   },
 }

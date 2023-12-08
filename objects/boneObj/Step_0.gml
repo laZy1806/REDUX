@@ -1,6 +1,3 @@
-#region DEBUG SECTION
-	
-#endregion
 stepFunction()
 methodController()
 
@@ -52,7 +49,7 @@ bottomBoneData.x = originX + lengthdir_x(bottombone_radius, dir_bottombone_theta
 bottomBoneData.y = originY + lengthdir_y(bottombone_radius, dir_bottombone_theta)
 
 
-//DEBUG STUFF
+/*DEBUG STUFF
 if keyboard_check(vk_space) {
 	if keyboard_check(ord("K")) anglestart = 45
 	//if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")

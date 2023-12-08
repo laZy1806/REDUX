@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function controlMenu() constructor{
+function controlMenu() constructor {
 // declare in an init obj and room	
 allowInput = false
 	captureInput = function() {

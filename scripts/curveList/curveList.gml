@@ -4,6 +4,7 @@
 ///@func curveList(MAXCALCULATIONSALLOWED)
 function curveList(maxSize = 100) {
 	evaluate = array_create(maxSize, 0) //set MAX curves allowed 
+	
 	curveCalculation = function(curve, percent, calcNumber) {
 		///@func curveCalculation(curve, percent, calcNumber)
 		evaluate[calcNumber] += percent
@@ -16,5 +17,9 @@ function curveList(maxSize = 100) {
 	resetCalcNumber = function(num) {
 		///@func resetCalcNumber(num)
 		evaluate[num] = 0
+	}
+	difCalculation = function(_start, _end){
+		///@func difCalculation(num)
+		return (_end - _start) * curveCalculation()
 	}
 }

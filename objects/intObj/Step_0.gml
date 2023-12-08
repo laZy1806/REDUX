@@ -8,5 +8,5 @@ if room = initRoom {
 }
 */
 if room = initRoom {
-	room_goto(battleRoom)
+	room_goto(menu)
 }
