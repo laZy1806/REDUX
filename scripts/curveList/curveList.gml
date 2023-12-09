@@ -7,8 +7,13 @@ function curveList(maxSize = 100) {
 	
 	curveCalculation = function(curve, percent, calcNumber) {
 		///@func curveCalculation(curve, percent, calcNumber)
-		evaluate[calcNumber] += percent
+		if percent >= 1 evaluate[calcNumber] += 1/percent
+		else evaluate[calcNumber] += percent	//allows for input to either be 1/x or x alone.
 		return animcurve_channel_evaluate(curve, evaluate[calcNumber])
+		/* 
+		this is a barebones curve calculator, and is better for one time use to 
+		reduce redundancy of calculating your own difference to apply
+		*/
 	}
 	isCurveFinished = function(calcNumber) {
 		///@func isCurveFinished(num)
@@ -18,8 +23,13 @@ function curveList(maxSize = 100) {
 		///@func resetCalcNumber(num)
 		evaluate[num] = 0
 	}
-	difCalculation = function(_start, _end){
-		///@func difCalculation(num)
-		return (_end - _start) * curveCalculation()
+	difCalculation = function(_end, _start, curve, percent, calcNumber){
+		///@func difCalculation(end, start, curve, percent, calcNumber) 
+		return (_end - _start) * curveCalculation(curve, percent, calcNumber) 
+		/* 
+		extension of curveCalc, but reduces redundancy of having to make var for calcualting difference in OBJ.
+		should be used when you want to apply a curve to something that will have changing values
+		like moving bones or 
+		*/
 	}
 }

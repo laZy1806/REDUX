@@ -39,7 +39,7 @@ gml_pragma("global", "init()");
 	global.playerWeapon = "Real Knife";
 
 	global.CanFlee = true;
-	global.slamcount = 0;
+	global.menuState = 0
 
 	global.Timer = 0;
 
@@ -70,30 +70,6 @@ gml_pragma("global", "init()");
 	global.Floor = 0
 	global.Right = 0
 	global.Left = 0
-	
-	
-	enum ButtonNames{
-		start = 0,
-		options = 1,
-		gallery = 2,
-		controls = 3,
-		fullscreen = 4,
-		back_opt = 5,
-		up = 6,
-		down = 7,
-		left = 8,
-		right = 9,
-		back_control = 10,
-		next = 11,
-		previous = 12,
-		back_gal = 13,
-	}
-	#macro x_ 0  
-	#macro x_orig 1
-	#macro y_ 2
-	#macro y_orig 3
-	#macro valueL 4
-	
 	
 #endregion
 application_surface_draw_enable(true)
