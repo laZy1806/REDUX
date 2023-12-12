@@ -92,7 +92,7 @@
           ],"trackColour":4294068400,"tracks":[],"traits":0,},
       ],"traits":0,},
     {"resourceType":"GMAudioTrack","resourceVersion":"1.1","name":"battlesong","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<AudioKeyframe>","resourceVersion":"1.0","Keyframes":[
-          {"resourceType":"Keyframe<AudioKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"AudioKeyframe","resourceVersion":"1.0","Id":{"name":"battlesong","path":"sounds/battlesong/battlesong.yy",},"Mode":0,},},"Disabled":false,"id":"bb83c763-d782-4b33-ab50-6e337db3e765","IsCreationKey":false,"Key":0.0,"Length":971.0,"Stretch":false,},
+          {"resourceType":"Keyframe<AudioKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"AudioKeyframe","resourceVersion":"1.0","Id":{"name":"kazyFightSong","path":"sounds/kazyFightSong/kazyFightSong.yy",},"Mode":0,},},"Disabled":false,"id":"bb83c763-d782-4b33-ab50-6e337db3e765","IsCreationKey":false,"Key":0.0,"Length":971.0,"Stretch":false,},
         ],},"modifiers":[
         {"resourceType":"InvisibleModifier","resourceVersion":"1.0",},
       ],"trackColour":4294096712,"tracks":[

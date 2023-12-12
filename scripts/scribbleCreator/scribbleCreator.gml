@@ -1,21 +1,30 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function scribbleCreator(toWrite, _font, _scale, _color, listofFX = undefined, _halign = fa_center, _valign = fa_middle) constructor
+function scribbleCreator(toWrite, _font, _scale, _color, _halign = fa_center, _valign = fa_middle, optFunc = noone) constructor
 {
-	text = Scribble(argument[0]);
+	scrib = scribble(argument[0]);
 	font = argument[1]
 	scale = argument[2]
 	color = argument[3]
-	fxs = typeof(argument[4]) = "array" ? argument[4] : array_create(1, function(){ return 0 })
-	horiAlign = argument[5]
-	veriAlign = argument[6]
+	horiAlign = argument[4]
+	veriAlign = argument[5]
+	x = 0
+	y = 0
+	scribDrawFunc = optFunc
+	flashData = array_create(2, noone)
 	
-	Draw = function(_x, _y) {
-		text.starting_format(font, color)
-		text.align(horiAlign, veriAlign)
-		for(var i = 0; i < array_length(fxs); i++) {
-			fxs[i]() // running every fxs
-		}
-		text.draw(_x, _y)
+	Draw = function(_x, _y) { 
+		var i = scrib
+		x = _x
+		y = _y
+		i.starting_format(font, color)
+		i.align(horiAlign, veriAlign)
+		i.scale(scale)
+		#region optional FX
+			i.flash()
+		#endregion
+		if typeof(scribDrawFunc) == "method" scribDrawFunc()
+		
+		i.draw(x, y)
 	}
 }

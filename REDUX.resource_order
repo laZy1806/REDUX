@@ -10,6 +10,7 @@
   "ResourceOrderSettings": [
     {"name":"shaderFight","order":8,"path":"objects/shaderFight/shaderFight.yy",},
     {"name":"fightDrawController","order":4,"path":"objects/fightDrawController/fightDrawController.yy",},
+    {"name":"Shits","order":1,"path":"sounds/Shits/Shits.yy",},
     {"name":"Button","order":1,"path":"scripts/Button/Button.yy",},
     {"name":"fightBoxObj","order":2,"path":"objects/fightBoxObj/fightBoxObj.yy",},
     {"name":"fightCreation","order":3,"path":"objects/fightCreation/fightCreation.yy",},
