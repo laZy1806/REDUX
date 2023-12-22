@@ -1,7 +1,7 @@
 {
   "resourceType": "GMShader",
   "resourceVersion": "1.0",
-  "name": "shBloom",
+  "name": "shBloomBlend",
   "parent": {
     "name": "Shaders",
     "path": "folders/Shaders.yy",

@@ -72,6 +72,7 @@ gml_pragma("global", "init()");
 	global.Left = 0
 	
 #endregion
+scribble_font_bake_outline_8dir("menuFont", "outlinemenuFont", c_black, false)
 application_surface_draw_enable(true)
 
 

@@ -12,7 +12,7 @@ function scribbleCreator(toWrite, _font, _scale, _color, _halign = fa_center, _v
 	y = 0
 	scribDrawFunc = optFunc
 	flashData = array_create(2, noone)
-	
+	fxFunc = 0
 	Draw = function(_x, _y) { 
 		var i = scrib
 		x = _x
@@ -21,10 +21,9 @@ function scribbleCreator(toWrite, _font, _scale, _color, _halign = fa_center, _v
 		i.align(horiAlign, veriAlign)
 		i.scale(scale)
 		#region optional FX
-			i.flash()
+			if typeof(fxFunc) = "method" fxFunc()
 		#endregion
 		if typeof(scribDrawFunc) == "method" scribDrawFunc()
-		
 		i.draw(x, y)
 	}
 }

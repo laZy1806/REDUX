@@ -8,7 +8,11 @@ startLocs =
 	[300, 300]
 ]
 
-startTxt = new scribbleCreator("i love turtles", "menuFont", 1, c_white)
+startTxt = new scribbleCreator("i love turtles", "outlinemenuFont", 1, c_white)
+startTxt.fxFunc = function() {
+	var f = startTxt.scrib 
+	f.blend(c_white, 1)
+}
 TEST = 0
 
 Start = new Button(startLocs, function() {
