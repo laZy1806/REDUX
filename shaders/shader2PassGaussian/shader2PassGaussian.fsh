@@ -13,8 +13,6 @@ float weight(float pos) { //Gaussian 1D
 	return exp(-(pos * pos) / (2.0 * sigma * sigma));
 }
 
-
-
 void main()
 {
 	highp vec4 blurred_col = texture2D(gm_BaseTexture, v_vTexcoord);

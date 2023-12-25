@@ -25,8 +25,5 @@ void main()
 	//add or linear dodge
 	base_col.rgb		= base_col.rgb * bloom_darken + bloom_col * bloom_intensity;
 	
-	
-	
-	
     gl_FragColor = v_vColour * base_col;
 }  

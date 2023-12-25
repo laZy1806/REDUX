@@ -20,3 +20,4 @@ Start = new Button(startLocs, function() {
 	}, startTxt.Draw
 )
 Start.isActive = true
+application_surface_draw_enable(true)

@@ -23,7 +23,7 @@ gml_pragma("global", "init()");
 	global.pause = false
 	global.UISelectionMenu = 0;
 	global.BattleMenu = -1;
-	global.minimized = -1
+	global.isFullscreen = -1
 	global.fightFinished = false
 	global.fileDeleted = false
 	global.debugMode = false
@@ -52,16 +52,9 @@ gml_pragma("global", "init()");
 
 	global.hp_coordinates = 0
 	
-	global.currentWidth = 640
-	global.currentHeight = 480
-	global.Xoffset = 0;
-	global.Yoffset = 0;
-	global.centerx = 320;
-	global.centery = 240;
-	global.transLayer = 0
-	global.currentTransSequence = 0
-	global.battleSong = 0;
-	global.audioPosition = 0;
+	global.windWidth = 640
+	global.windHeight = 480
+	global.windOffset = 0
 	
 	global.midTransition = false
 	global.roomTarget = -1
