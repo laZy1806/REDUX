@@ -14,7 +14,6 @@ function Button(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  
 	stepFunction = argument[4];//own peprsonal addition to be ran every frame besides location calc
 	spd = argument[5];
 	curveType = argument[6]
-	
 	x = locs[0][0]
 	y = locs[0][1]
 	image_index = 0

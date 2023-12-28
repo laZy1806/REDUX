@@ -8,9 +8,6 @@ app_h = global.windHeight - global.windOffset //negates offset to solve stretch 
 texel_w	= 1/ app_w
 texel_h	= 1/ app_h
 
-
-
-
 if keyboard_check_pressed(vk_space) abc *= -1
 
 

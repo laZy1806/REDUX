@@ -1,11 +1,11 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "heartCenter_Events43",
+  "name": "dialogueSystem",
   "isCompatibility": false,
   "isDnD": false,
   "parent": {
-    "name": "Sequences",
-    "path": "folders/Sequences.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

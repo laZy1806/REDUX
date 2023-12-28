@@ -13,8 +13,8 @@ gui_h = display_get_gui_height()
 texel_w = 1/ gui_w
 texel_h = 1/ gui_h
 
-sfr_ping = -1
-sfr_pong = -1
+srf_ping = -1
+srf_pong = -1
 
 sfr_scale = 1
 sfr_scale_prev = 1

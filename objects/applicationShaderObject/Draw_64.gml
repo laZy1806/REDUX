@@ -14,17 +14,17 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 	var blur_steps = 20 * (mouse_x/640)
 	var sigma = 2 * (mouse_y / 480)
 	var txScale = 1
-	if (!surface_exists(sfr_ping)) {
-		sfr_ping = surface_create(app_w/txScale, app_h/txScale);
-		bloom_texture = surface_get_texture(sfr_ping);
+	if (!surface_exists(srf_ping)) {
+		srf_ping = surface_create(app_w/txScale, app_h/txScale);
+		bloom_texture = surface_get_texture(srf_ping);
 	}
-	if (!surface_exists(sfr_pong)) sfr_pong = surface_create(app_w/txScale, app_h/txScale)
+	if (!surface_exists(srf_pong)) srf_pong = surface_create(app_w/txScale, app_h/txScale)
 	//1st pass: Seperates Brights
 	shader_set(shader_bloom_lum)
 		shader_set_uniform_f(u_bloom_threshold,		bloom_threshold)
 		shader_set_uniform_f(u_bloom_range,		bloom_range)
 
-		surface_set_target(sfr_ping)
+		surface_set_target(srf_ping)
 			draw_surface_stretched(application_surface, 0, 0, app_w/txScale, app_h/txScale)
 		surface_reset_target()
 	
@@ -37,15 +37,15 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 			
 	//2nd pass: blur horizontally			
 				shader_set_uniform_f(u_blur_vector,			1, 0);
-				surface_set_target(sfr_pong)
-					draw_surface(sfr_ping, 0, 0)
+				surface_set_target(srf_pong)
+					draw_surface(srf_ping, 0, 0)
 				surface_reset_target()
 			
 	//3rd pass: blur vertically	
 
 				shader_set_uniform_f(u_blur_vector,			0, 1);
-				surface_set_target(sfr_ping)
-					draw_surface(sfr_pong, 0, 0)
+				surface_set_target(srf_ping)
+					draw_surface(srf_pong, 0, 0)
 				surface_reset_target()
 			
 			shader_reset()
@@ -68,10 +68,10 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 		
 	surface_reset_target()
 
-	if (surface_exists(sfr_ping)) {
-		surface_resize(sfr_ping, app_w/txScale, app_h/txScale)
+	if (surface_exists(srf_ping)) {
+		surface_resize(srf_ping, app_w/txScale, app_h/txScale)
 	}
-	if (surface_exists(sfr_pong)) surface_resize(sfr_pong, app_w/txScale, app_h/txScale)
+	if (surface_exists(srf_pong)) surface_resize(srf_pong, app_w/txScale, app_h/txScale)
 
 #endregion 
 

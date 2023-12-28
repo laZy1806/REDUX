@@ -1,7 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 depth = 0
-event_inherited()
+
+app_w					= global.windWidth
+app_h					= global.windHeight - global.windOffset; 
+
+gui_w					= display_get_gui_width()
+gui_h					= display_get_gui_height()
+
 #region bloom variables
 	shader_bloom_lum		= shPassthrough
 	u_bloom_threshold		= shader_get_uniform(shader_bloom_lum, "bloom_threshold");
@@ -21,27 +27,15 @@ event_inherited()
 
 	bloom_texture			= -1
 
-	app_w					= global.windWidth
-	app_h					= global.windHeight - global.windOffset; 
-
-	gui_w					= display_get_gui_width()
-	gui_h					= display_get_gui_height()
-
-	sfr_ping				= -1;
-	sfr_pong				= -1;
+	srf_ping				= -1;
+	srf_pong				= -1;
 	finalSurf				= -1
 
 	texel_w					= 1/ app_w
 	texel_h					= 1/ app_h
 #endregion
 
-
-
-
-
 testSin = 0
-
-
 
 fullscreenOffset = 0
 
