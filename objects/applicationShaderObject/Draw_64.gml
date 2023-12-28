@@ -4,6 +4,7 @@
 // You can write your code in this editor
 if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 
+
 #region bloom code
 	var bloom_threshold = 0.3
 	var bloom_range = 0.2 
@@ -11,8 +12,8 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 	var bloom_intensity = 0.3
 	var bloom_saturation = 1
 	var bloom_darken = 1 
-	var blur_steps = 20 * (mouse_x/640)
-	var sigma = 2 * (mouse_y / 480)
+	var blur_steps = 20 //* (mouse_x/640)
+	var sigma = 0 //* (mouse_y / 480)
 	var txScale = 1
 	if (!surface_exists(srf_ping)) {
 		srf_ping = surface_create(app_w/txScale, app_h/txScale);
@@ -75,10 +76,10 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 
 #endregion 
 
-if !abc draw_surface_stretched(finalSurf, 0 + fullscreenOffset, 0, app_w, app_h)
+if !abc draw_surface_stretched(finalSurf, 0 + fullscreenOffset,  0 + global.windOffset, app_w, app_h)
 if abc {
 	bktglitch_activate()
 	BktGlitch_config(0.009835, 0.456556, 2.500387, 0.629678, 0.443030, 0.434858, 1.611564, 0.545954, 0.053589, 0.351816, 0.021359, 0.188515, 3.979923, 1.000000, 0.070059);
-		draw_surface_stretched(finalSurf, 0 + fullscreenOffset, 0, app_w, app_h)
+		draw_surface_stretched(finalSurf, 0 + fullscreenOffset, 0 + global.windOffset, app_w, app_h)
 	bktglitch_deactivate()
 }

@@ -39,5 +39,5 @@ testSin = 0
 
 fullscreenOffset = 0
 
-abc = 1
+abc = 0
 application_surface_draw_enable(false)

@@ -11,8 +11,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "shaderObjects",
-    "path": "folders/Objects/shaderObjects.yy",
+    "name": "generalAssets",
+    "path": "folders/Objects/generalAssets.yy",
   },
   "parentObjectId": null,
   "persistent": false,

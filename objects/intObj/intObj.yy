@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Misc",
-    "path": "folders/Objects/Misc.yy",
+    "name": "generalAssets",
+    "path": "folders/Objects/generalAssets.yy",
   },
   "parentObjectId": null,
   "persistent": false,

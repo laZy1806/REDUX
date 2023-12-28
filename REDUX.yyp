@@ -73,6 +73,7 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Soul","folderPath":"folders/Sprites/Soul.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Text","folderPath":"folders/Sprites/Text.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gameframe.html","CopyToMask":0,"filePath":"datafiles",},
@@ -225,6 +226,7 @@
     {"id":{"name":"scribble_font_rename","path":"scripts/scribble_font_rename/scribble_font_rename.yy",},},
     {"id":{"name":"__shd_scribble","path":"shaders/__shd_scribble/__shd_scribble.yy",},},
     {"id":{"name":"shBloomBlend","path":"shaders/shBloomBlend/shBloomBlend.yy",},},
+    {"id":{"name":"dialogueBox","path":"sprites/dialogueBox/dialogueBox.yy",},},
     {"id":{"name":"eggsplosionOBJ","path":"objects/eggsplosionOBJ/eggsplosionOBJ.yy",},},
     {"id":{"name":"applicationShaderObject","path":"objects/applicationShaderObject/applicationShaderObject.yy",},},
     {"id":{"name":"restoredSFX","path":"sounds/restoredSFX/restoredSFX.yy",},},
