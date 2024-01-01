@@ -29,7 +29,7 @@ function curveList(maxSize = 100) {
 		/* 
 		extension of curveCalc, but reduces redundancy of having to make var for calcualting difference in OBJ.
 		should be used when you want to apply a curve to something that will have changing values
-		like moving bones or 
+		like moving bones 
 		*/
 	}
 }

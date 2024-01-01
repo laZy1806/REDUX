@@ -10,7 +10,6 @@ findBone = function(boneNumber) {
 }
 // ATTACKS WILL BE BASED ON BOX SIZINGS
 //A NEW SIZE WILL BE BASED ON NEW BOX SIZE OR SEQUENCE OF ATTACKS
-
 atk1Data = {
 	CYCLETIMINGS : [1, 1, 1, 1, 1], //IN SECONDS
 	CYCLECREATION : function() {
@@ -77,3 +76,5 @@ timeReconfig = function() {
 		}
 	}
 }
+Gaster(100, 400, 400, 100, 60, 60, 0, 0, 1.5, 1.5, 20)	
+	

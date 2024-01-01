@@ -6,7 +6,7 @@ if !instance_exists(debugObject) instance_create_depth(0, 0, 0, debugObject)
 if !instance_exists(fightBoxObj) instance_create_depth(0, 0, 0, fightBoxObj)
 if !instance_exists(kazyObject) instance_create_depth(0, 0, 0, kazyObject)
 if !instance_exists(obj_test) instance_create_depth(320, 240, 0, obj_test)
-if !instance_exists(obj_battlecam) instance_create_depth(320, 240, 0, obj_battlecam)
+if !instance_exists(battleCamObj) instance_create_depth(320, 240, 0, battleCamObj)
 
 game_set_speed(60, gamespeed_fps)
 //instance_create_depth(0, 0, 0, pauseObj)

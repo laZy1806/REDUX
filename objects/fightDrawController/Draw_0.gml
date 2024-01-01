@@ -11,6 +11,9 @@ with fBox innerBoxDraw()
 for(var i = 0; i < ds_list_size(global.boneList); i++) {
 	ds_list_find_value(global.boneList, i).drawEvent()	
 }
+for(var i = 0; i < ds_list_size(global.gasterList); i++) {
+	ds_list_find_value(global.gasterList, i).drawEvent()	
+}
 
 // 0 is a temporary thing, will have variable to track img indx for flashing sp
 with soulRef draw_sprite(sprite_index, 0, x, y)

@@ -1,9 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
-xscale = 1
-yscale = 1
-battleSurf = 0
-image_speed = 0
+ds_list_delete(global.boneList, ds_list_find_index(global.boneList, id))
+
+
+
+
+
+
+
 
 
 

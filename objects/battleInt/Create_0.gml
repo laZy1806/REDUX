@@ -28,7 +28,7 @@ deltamulti = actualdelta/targetdelta
 targetfps = 60;
 
 global.soulspeed = 2
-if !instance_exists(obj_battlecam) instance_create_depth(320, 232, 0, obj_battlecam);
+if !instance_exists(battleCamObj) instance_create_depth(320, 232, 0, battleCamObj);
 if !instance_exists(pauseObj) instance_create_depth(0, 0, 0, pauseObj)
 application_surface_draw_enable(true)
 

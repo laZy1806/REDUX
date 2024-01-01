@@ -11,7 +11,7 @@ if instance_exists(obj_gaster) instance_find(obj_gaster, all).destroy = true
 depth = -10000
 curveList()
 #region camera coordinates
-instance_find(obj_battlecam, 0).RESET = true
+instance_find(battleCamObj, 0).RESET = true
 instance_destroy(obj_attacks)
 instance_destroy(obj_kazy)
 instance_destroy(obj_bulletboard)
@@ -28,8 +28,8 @@ for(i = 0; i < instance_number(boneObj); i++) {
 for(j = 0; j < instance_number(boneObj_rotation); j++) {
 	instance_find(boneObj_rotation, j).destroy = true	
 }
-for(t = 0; t < instance_number(obj_gaster); t++) {
-	instance_find(obj_gaster, t).destroy = true	
+for(t = 0; t < instance_number(gasterObj); t++) {
+	instance_find(gasterObj, t).destroy = true	
 }
 timeTillText = 140
 #region soulData

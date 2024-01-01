@@ -15,7 +15,7 @@ if instance_exists(gameOverObj) {
 if attack = 1 {
 	// if attack code is repeated, used to prevent slam happening multiple times
 	if cycle = 0 {	
-		if obj_battlecam.camY != 0 camControls(0, 50, 1, , 0.04)
+		if battleCamObj.camY != 0 camControls(0, 50, 1, , 0.04)
 		obj_kazy.changeBodyAnim("Idle")
 		obj_soul.Mode = SoulModes.Blue
 		slam_data(0, "bottom")
@@ -39,7 +39,7 @@ if attack = 1 {
 		bone[4].bone_timer = true
 	
 	if cycle = 2 {
-		CreateGaster(1, 550, 680, 370, 370, 180, 180, 5, 1.5, 1.5, false, 50, 60, 10)
+		Gaster(1, 550, 680, 370, 370, 180, 180, 5, 1.5, 1.5, false, 50, 60, 10)
 	}
 	if cycle = 3 {
 		bone[1].destroy = true
@@ -84,7 +84,7 @@ else if attack = 5 {
 			bone[2].bone_timer = true
 		}
 	else if cycle = 8 {
-		CreateGaster(3, 550, 800, 150, -200, 220, 200, 2, 1.5, 1.5, false, 40, 40, 10);
+		Gaster(3, 550, 800, 150, -200, 220, 200, 2, 1.5, 1.5, false, 40, 40, 10);
 	}
 		cycle++;
 }
@@ -121,9 +121,9 @@ else if attack = 6 {
 		bone[6].bone_timer = true
 				
 		// timed to beat at 34 sec
-		CreateGaster(1, 500, 700, 295, 295, 180, 180, 0, 1.3, 1.3, false, 50, 55, 20);
+		Gaster(1, 500, 700, 295, 295, 180, 180, 0, 1.3, 1.3, false, 50, 55, 20);
 				
-		CreateGaster(2, 135, 135 - 200, 365, 365, 0, 0, 0, 1.3, 1.3, false, 50, 55, 20);
+		Gaster(2, 135, 135 - 200, 365, 365, 0, 0, 0, 1.3, 1.3, false, 50, 55, 20);
 				
 	}		
 	if cycle = 3 {
@@ -157,11 +157,11 @@ else if attack = 7 {
 			bone[cycle + 1].bone_timer = true
 	}
 	if cycle = 7 {	
-		CreateGaster(1, 500, 500 + 200, 295, 295, 180, 180, 0, 1.2, 1.2, false, 35, 40, 60);
-		CreateGaster(2, 135, 135 - 200, 340, 340, 0, 0, 0, 1.2, 1.2, false, 35, 40, 60);		
+		Gaster(1, 500, 500 + 200, 295, 295, 180, 180, 0, 1.2, 1.2, false, 35, 40, 60);
+		Gaster(2, 135, 135 - 200, 340, 340, 0, 0, 0, 1.2, 1.2, false, 35, 40, 60);		
 	}	
 	if cycle = 19 {
-		CreateGaster(3, 135, 135 - 200, 365, 365, 0, 0, 0, 1.2, 1.2, false, 35, 40, 60);		
+		Gaster(3, 135, 135 - 200, 365, 365, 0, 0, 0, 1.2, 1.2, false, 35, 40, 60);		
 	}
 	if cycle = 25 {
 		camControls(0, -100, 0.55, "null", 0.04)
@@ -182,7 +182,7 @@ else if attack = 7 {
 else if attack = 8 {	
 	if cycle = 0 {	
 		obj_kazy.headChange(3)
-		if obj_battlecam.camY != 0 camControls(0, 100, 1, "null", 0.05)
+		if battleCamObj.camY != 0 camControls(0, 100, 1, "null", 0.05)
 		obj_soul.Mode = SoulModes.Blue	
 			for (var i = 0; i < 140; i++) {
 				if i mod 10 != 0 {
@@ -270,10 +270,10 @@ else if attack = 8 {
 				}
 				obj_soul.Mode = SoulModes.Blue
 				slam_data(2, "right")
-				if i = 0 CreateGaster(0, 390, 390, 220, -80, 270, 270, 0, 1.4, 1.4, false, 30, 40, 15);
+				if i = 0 Gaster(0, 390, 390, 220, -80, 270, 270, 0, 1.4, 1.4, false, 30, 40, 15);
 			}
 			if cycle = 8 {
-				if i = 0 CreateGaster(1, 278, 278, 220, -80, 270, 270, 0, 1.4, 1.4, false, 30, 40, 15);
+				if i = 0 Gaster(1, 278, 278, 220, -80, 270, 270, 0, 1.4, 1.4, false, 30, 40, 15);
 				slam_data(2, "left")	
 				if(alarm[0] == -1) 
 					alarm[0] = 60;			
@@ -309,18 +309,18 @@ else if attack = 9 {
 			bone[cycle + 1].hit_color = "aqua"
 			bone[cycle + 1].bone_timer = true
 			
-		CreateGaster(1, 220, 220, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
+		Gaster(1, 220, 220, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
 	}
 	else if cycle = 6 {
-		CreateGaster(2, 290, 290, 220, -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
+		Gaster(2, 290, 290, 220, -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
 		
 	}
 	else if cycle = 7 {
-		CreateGaster(3, 360, 360, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
+		Gaster(3, 360, 360, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 30, 65, 10);	
 		
 	}
 	else if cycle = 8 {
-		CreateGaster(4, 420, 420, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 25, 65, 10);		
+		Gaster(4, 420, 420, 220 , -10, 270, 270, 0, 1.2, 1.2, false, 25, 65, 10);		
 	}
 	else if cycle = 9 {
 		if boxchange = false {
@@ -329,11 +329,11 @@ else if attack = 9 {
 		}
 	}
 	else if cycle = 10 {
-		CreateGaster(1, 373 + 90, 780, 340, 340, 180, 180, 0, 1.5, 1.5, false, 40, 800, 800);	
+		Gaster(1, 373 + 90, 780, 340, 340, 180, 180, 0, 1.5, 1.5, false, 40, 800, 800);	
 		//CreateGaster(2, 180, -260, 375, 375, 0, 0, 0, 1.5, 1.5, false, 40, 800, 800);	
 	}
 	else if cycle = 11 {
-		CreateGaster(2, 264 - 90, -260, 340, 340, 0, 0, 0, 1.5, 1.5, false, 40, 800, 800);	
+		Gaster(2, 264 - 90, -260, 340, 340, 0, 0, 0, 1.5, 1.5, false, 40, 800, 800);	
 	}
 	else if cycle = 12 {
 		obj_kazy.shakeSprite()	
@@ -397,9 +397,9 @@ else if attack = 12 {
 	}
 	if cycle = 0 {
 		camControlsBeat(0.8, 5)
-		CreateGaster(1, 520, 500 + 200, 295, 295, 180, 180, 0, 1.2, 1.2, false, 40, 50, 40);
-		CreateGaster(2, 520, 500 + 200, 365, 365, 180, 180, 0, 1.2, 1.2, false, 40, 50, 40);
-		CreateGaster(3, 500, 500 + 200, 150, -50, 225, 225, 0, 1.2, 1.2, false, 40, 50, 40);
+		Gaster(1, 520, 500 + 200, 295, 295, 180, 180, 0, 1.2, 1.2, false, 40, 50, 40);
+		Gaster(2, 520, 500 + 200, 365, 365, 180, 180, 0, 1.2, 1.2, false, 40, 50, 40);
+		Gaster(3, 500, 500 + 200, 150, -50, 225, 225, 0, 1.2, 1.2, false, 40, 50, 40);
 	}
 	if cycle = 1 {
 		obj_soul.Mode = SoulModes.Blue
@@ -455,7 +455,7 @@ else if attack = 14 {
 	if cycle = 0 {
 		obj_soul.movementcontrol = false
 		obj_soul.x = 140
-		if obj_battlecam.camX != 0 camControls(120, -75, 1, "null", 0.04)
+		if battleCamObj.camX != 0 camControls(120, -75, 1, "null", 0.04)
 		
 		if boxchange = false {
 			global.borderwidth = 680;
@@ -464,11 +464,11 @@ else if attack = 14 {
 		}
 	}
 	if cycle = 1 {	
-		CreateGaster(1, 580, 680, 340, 340, 180, 180, 10, 1.2, 1.2, false, 30, 30, 10)	
+		Gaster(1, 580, 680, 340, 340, 180, 180, 10, 1.2, 1.2, false, 30, 30, 10)	
 	}
 	else if cycle = 2{
-		CreateGaster(1, 580, 680, 300, 300, 180, 180, 10, 1.2, 1.0, false, 30, 40, 10)	
-		CreateGaster(1, 580, 680, 370, 370, 180, 180, 10, 1.2, 1.0, false, 30, 40, 10)	
+		Gaster(1, 580, 680, 300, 300, 180, 180, 10, 1.2, 1.0, false, 30, 40, 10)	
+		Gaster(1, 580, 680, 370, 370, 180, 180, 10, 1.2, 1.0, false, 30, 40, 10)	
 	}
 	else if cycle = 3 {
 		CreateBone(cycle, global.Left, global.Right, global.Top + 3 + 25, global.Top + 3 + 25, 180, 180, false, 50, 50, 1)
@@ -506,7 +506,7 @@ else if attack = 14 {
 		}	
 	}
 	else if cycle = 7 {
-		CreateGaster(1, 50, -80, 340, 340, 0, 0, 10, 1.5, 1.3, false, 30, 40, 10)	
+		Gaster(1, 50, -80, 340, 340, 0, 0, 10, 1.5, 1.3, false, 30, 40, 10)	
 		
 	}
 	else if cycle = 8 {
@@ -585,7 +585,7 @@ else if attack = 15 {
 		bone[cycle + 1].bone_timer = true
 	}
 	else if cycle = 8 {
-		CreateGaster(1, 450, 600, 360, 360, 180, 180, 10, 1.2, 1.0, false, 30, 40, 5)	
+		Gaster(1, 450, 600, 360, 360, 180, 180, 10, 1.2, 1.0, false, 30, 40, 5)	
 	}
 	else if cycle = 9 {
 		CreateBone(100, global.Left + 100, global.Right - 100, global.Top + 3 + 50, global.Top + 3 + 50, 180, 180, false, 100, 100, 1)
@@ -596,7 +596,7 @@ else if attack = 15 {
 		obj_kazy.headChange(10)
 	}
 	else if cycle = 10 {
-		CreateGaster(1, 215, 0, 358, 358, 0, 0, 10, 1.2, 1.0, false, 30, 40, 10)	
+		Gaster(1, 215, 0, 358, 358, 0, 0, 10, 1.2, 1.0, false, 30, 40, 10)	
 	}	
 	else if cycle = 11 {
 		obj_soul.Mode = obj_soul.SoulModes.Red	
@@ -623,7 +623,7 @@ else if attack = 16 {
 	if cycle < 12 and cycle > 0{
 		// bone[1] is start not bone[0], important for destroy code.
 		if cycle mod 7 != 0 {
-			if !instance_exists(obj_blaster) {
+			if !instance_exists(blasterObj) {
 				if cycle < 7 {
 					CreateBone(cycle, global.Left - 10, global.Right + 15, global.Top + 20 + 3, global.Top + 20 + 3, 0, 0, false, 40, 40, 1)
 					bone[cycle].perchanger = 1/60
@@ -658,7 +658,7 @@ else if attack = 16 {
 			bone[cycle + 10].bone_timer = true
 		}		
 		if cycle = 11 {
-			CreateGaster(1, 140, -40, 303, 303, 0, 0, 20, 1.5, 1.4, false, 30, 40, 10)
+			Gaster(1, 140, -40, 303, 303, 0, 0, 20, 1.5, 1.4, false, 30, 40, 10)
 			
 		}
 	}
@@ -672,22 +672,22 @@ else if attack = 16 {
 		}		
 	}
 		if cycle = 15 {		
-			CreateGaster(1, 150, -50, 200, 50, gasteranglefunc(140), gasteranglefunc(140), 0, 1.2, 1.1, false, 30, 40, 30)		
+			Gaster(1, 150, -50, 200, 50, gasteranglefunc(140), gasteranglefunc(140), 0, 1.2, 1.1, false, 30, 40, 30)		
 		}
 		if cycle = 16 {
-			CreateGaster(2, 490, 690, 200, 50, gasteranglefunc(40), gasteranglefunc(40), 0, 1.2, 1.1, false, 30, 40, 30)	
+			Gaster(2, 490, 690, 200, 50, gasteranglefunc(40), gasteranglefunc(40), 0, 1.2, 1.1, false, 30, 40, 30)	
 		}
 		if cycle = 17 {		
-			CreateGaster(3, 110, -40, 350, 350, 0, 0, 0, 1.2, 1.1, false, 30, 40, 30)		
+			Gaster(3, 110, -40, 350, 350, 0, 0, 0, 1.2, 1.1, false, 30, 40, 30)		
 		}
 		if cycle = 18 {		
-			CreateGaster(4, 270, 270, 180, -20, gasteranglefunc(90), gasteranglefunc(90), 0, 1.2, 1.1, false, 30, 40, 30)				
+			Gaster(4, 270, 270, 180, -20, gasteranglefunc(90), gasteranglefunc(90), 0, 1.2, 1.1, false, 30, 40, 30)				
 		}
 		if cycle = 19 {		
-			CreateGaster(5, 390, 390, 180, -20, gasteranglefunc(90), gasteranglefunc(90), 0, 1.2, 1.1, false, 30, 40, 30)		
+			Gaster(5, 390, 390, 180, -20, gasteranglefunc(90), gasteranglefunc(90), 0, 1.2, 1.1, false, 30, 40, 30)		
 		}
 		if cycle = 20 {	
-			CreateGaster(5, 480, 680, 300, 300, 180, 180, 0, 1.2, 1.1, false, 30, 40, 30)
+			Gaster(5, 480, 680, 300, 300, 180, 180, 0, 1.2, 1.1, false, 30, 40, 30)
 		}
 	cycle++;
 }
@@ -834,7 +834,7 @@ else if attack = 18 {
 	else if cycle = 2{
 		layer_set_visible(lightswitch, false)
 		slam_data(1, "right")
-		CreateGaster(1, global.Right - 50, global.Right - 50, global.Top - 80, global.Top - 80, 270, 270, 5, 1.4, 1.3, false, 30, 30, 50)	
+		Gaster(1, global.Right - 50, global.Right - 50, global.Top - 80, global.Top - 80, 270, 270, 5, 1.4, 1.3, false, 30, 30, 50)	
 		alarm[1] = 40
 	}
 	else if cycle = 3{
@@ -862,11 +862,11 @@ else if attack = 18 {
 	else if cycle = 5{		
 		layer_set_visible(lightswitch, false)
 		slam_data(1, "left")
-		CreateGaster(2, global.Left + 15, global.Left + 15, global.Top - 80, global.Top - 80, 270, 270, 0, 1.4, 1.3, false, 30, 40, 10)	
+		Gaster(2, global.Left + 15, global.Left + 15, global.Top - 80, global.Top - 80, 270, 270, 0, 1.4, 1.3, false, 30, 40, 10)	
 		alarm[1] = 30
 	}
 	else if cycle = 6{	
-		CreateGaster(3, 440, 700, 327, 327, 180, 180, 0, 1.3, 1.2, false, 40, 40, 10)	
+		Gaster(3, 440, 700, 327, 327, 180, 180, 0, 1.3, 1.2, false, 40, 40, 10)	
 		obj_soul.Mode = SoulModes.Red
 		obj_soul.image_angle = 0
 		alarm[1] = 70
@@ -886,7 +886,7 @@ else if attack = 18 {
 	}
 	else if cycle = 8{	
 		layer_set_visible(lightswitch, false)
-		CreateGaster(4, 100, 100, 100, 100, 315, 315, 5, 1.5, 1.4, false, 20, 30, 50)	
+		Gaster(4, 100, 100, 100, 100, 315, 315, 5, 1.5, 1.4, false, 20, 30, 50)	
 		alarm[1] = 100
 	}
 	else if cycle = 9{	
@@ -906,8 +906,8 @@ else if attack = 18 {
 	else if cycle = 10{
 
 		boxchange = true
-		CreateGaster(1, global.Left, global.Left, global.Top - 70, global.Top - 70, 312, 312, 0, 1.4, 1.3, false, 30, 60, 10)	
-		CreateGaster(2, global.Right, global.Right, global.Top - 70, global.Top - 70, 228, 228, 0, 1.4, 1.3, false, 30, 60, 10)	
+		Gaster(1, global.Left, global.Left, global.Top - 70, global.Top - 70, 312, 312, 0, 1.4, 1.3, false, 30, 60, 10)	
+		Gaster(2, global.Right, global.Right, global.Top - 70, global.Top - 70, 228, 228, 0, 1.4, 1.3, false, 30, 60, 10)	
 		layer_set_visible(lightswitch, false)
 			
 		alarm[1] = 95
@@ -971,36 +971,36 @@ else if attack = 20 {
 		alarm[1] = 40
 	}
 	else if cycle = 2 {
-		CreateGaster(cycle, 550, 495 + 150, 139, 139 - 150, _angle(40), _angle(40), 0, 1.5, 1.4, false, 30, 30, 20)
+		Gaster(cycle, 550, 495 + 150, 139, 139 - 150, _angle(40), _angle(40), 0, 1.5, 1.4, false, 30, 30, 20)
 		alarm[1] = 45
 	}
 	else if cycle = 3 {
-		CreateGaster(cycle, 250, 250, 100, -30, _angle(90), _angle(90), 0, 1.5, 1.4, false, 30, 30, 20)
+		Gaster(cycle, 250, 250, 100, -30, _angle(90), _angle(90), 0, 1.5, 1.4, false, 30, 30, 20)
 		alarm[1] = 30
 		
 	}
 	else if cycle = 4 {
-		CreateGaster(cycle, 540, 480 + 200, 275, 275, _angle(0), _angle(0), 0, 1.5, 1.4, false, 30, 30, 20)
+		Gaster(cycle, 540, 480 + 200, 275, 275, _angle(0), _angle(0), 0, 1.5, 1.4, false, 30, 30, 20)
 		alarm[1] = 30
 		
 	}
 	else if cycle = 5 {
-		CreateGaster(cycle, 90, -50, 346, 346, _angle(180), _angle(180), 0, 1.5, 1.4, false, 30, 30, 20)
+		Gaster(cycle, 90, -50, 346, 346, _angle(180), _angle(180), 0, 1.5, 1.4, false, 30, 30, 20)
 		alarm[1] = 45
 		
 	}
 	else if cycle = 6 {
-		CreateGaster(cycle, 480, 480 + 200, 433, 433 + 180, _angle(330), _angle(330), 0, 1.4, 1.3, false, 30, 30, 20)
+		Gaster(cycle, 480, 480 + 200, 433, 433 + 180, _angle(330), _angle(330), 0, 1.4, 1.3, false, 30, 30, 20)
 		alarm[1] = 45
 		
 	}
 	else if cycle = 7 {
-		CreateGaster(cycle, 524, 680, 295, 295, _angle(0), _angle(0), 0, 1.5, 1.4, false, 30, 60, 20)
+		Gaster(cycle, 524, 680, 295, 295, _angle(0), _angle(0), 0, 1.5, 1.4, false, 30, 60, 20)
 		alarm[1] = 20
 		
 	}
 	else if cycle = 8 {
-		CreateGaster(cycle, 120, -50, 380, 380, _angle(180), _angle(180), 0, 1.5, 1.4, false, 30, 30, 10)
+		Gaster(cycle, 120, -50, 380, 380, _angle(180), _angle(180), 0, 1.5, 1.4, false, 30, 30, 10)
 		alarm[1] = 50
 		
 	}
@@ -1021,20 +1021,20 @@ else if attack = 20 {
 	else if cycle = 11 {
 		// random arbitrary number
 		var _x = 345
-		CreateGaster(50, _x, _x, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 30, 60, 50)
-		CreateGaster(51, _x + 50, _x + 50, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 50, 65, 45, false)
-		CreateGaster(52, _x + 100, _x + 100, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 70, 70, 40, false)
+		Gaster(50, _x, _x, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 30, 60, 50)
+		Gaster(51, _x + 50, _x + 50, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 50, 65, 45, false)
+		Gaster(52, _x + 100, _x + 100, 110, -60, _angle(90), _angle(90), 0, 1.5, 1.4, false, 70, 70, 40, false)
 		bone[0].changeHeight(160, 1/80, true)
 		bone[1].changeHeight(160, 1/80, true)
 		alarm[1] = 30
 	}
 	else if cycle = 12 {
-		CreateGaster(cycle, 130, -50, 255, 255, _angle(180), _angle(180), 0, 1.5, 1.4, false, 40, 50, 60)
-		CreateGaster(cycle, 515, 700, 416, 416, _angle(0), _angle(0), 0, 1.5, 1.4, false, 40, 50, 60)
+		Gaster(cycle, 130, -50, 255, 255, _angle(180), _angle(180), 0, 1.5, 1.4, false, 40, 50, 60)
+		Gaster(cycle, 515, 700, 416, 416, _angle(0), _angle(0), 0, 1.5, 1.4, false, 40, 50, 60)
 		alarm[1] = 50
 	}
 	else if cycle = 13{
-		CreateGaster(cycle, 100, -50, 346, 346, _angle(180), _angle(180), 0, 1.4, 1.3, false, 40, 50, 60)
+		Gaster(cycle, 100, -50, 346, 346, _angle(180), _angle(180), 0, 1.4, 1.3, false, 40, 50, 60)
 		alarm[1] = 160
 	}
 	else if cycle = 14 {
@@ -1077,7 +1077,7 @@ else if attack = 21 {
 		obj_kazy.shakeSprite(30, 8)
 		flashAlpha = 1
 		obj_kazy.layerSpeed = 0.5
-		if obj_battlecam.camDesY = -85 camControls(0, 85, 1, 5, 0.05)	
+		if battleCamObj.camDesY = -85 camControls(0, 85, 1, 5, 0.05)	
 		else camControls(0, 85, 1, 5, 0.05)	
 		alarm[1] = 150
 		obj_bulletboard.grad_state = false
