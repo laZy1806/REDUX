@@ -17,22 +17,22 @@ function Button(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  
 	x = locs[0][0]
 	y = locs[0][1]
 	image_index = 0
-	isActive = false
+	isActive = true
 	isPressed = false;
 	currentX = x;
 	currentY = y;
 	//Mutators
-		changeCurveType = function(input) {
-			if typeof(input) = "string" curveType = input
-		}
-		changeSpeed = function(input) {
-			if typeof(input) = "number" spd = input
-		}
-		changeDisplayType = function(input){
-			if (instanceof(input) != "scribbleCreator") or (asset_get_type(input) != asset_sprite) show_debug_message("Bad Input for Display Type") 
-			else toDisplay = input	
+		changeCurveData = function(_curve = noone, _spd = noone, _display = noone) {
+			if typeof(_curve) = "string" curveType = _curve
+			if typeof(_spd) = "number" spd = _spd
+			if (is_instanceof(_display, __scribble_class_element) = false) or (asset_get_type(_display) != asset_sprite) show_error("Please use either a sprite or an instance of scribble", true) 
+			else toDisplay = _display	
 		}		
-		STEP = function(_location) {			
+		addLocation = function(_x, _y) {
+			array_push(locs, [_x, _y])
+			show_debug_message(locs)
+		}
+		STEP = function(_location = 0) {			
 			if (typeof(stepFunction) = "method") stepFunction()
 			STATE = _location;
 			CURVE = animcurve_get_channel(buttonCurve, curveType)
@@ -46,9 +46,10 @@ function Button(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  
 				}	
 			}	
 		}
-		DISPLAY = function() {
+		DISPLAY = function(_scale = 1, _rot = 0, _alp = 1) {
 			if isActive {
-				if typeof(toDisplay) = "method" toDisplay(x, y) // x and y argument works in tandem with scribbleCreator
+				if is_instanceof(toDisplay, __scribble_class_element) toDisplay.draw(x, y)
+				else if (asset_get_type(toDisplay) = asset_sprite) draw_sprite_ext(toDisplay, image_index, x, y, _scale, _scale, _rot, c_white, _alp)
 				if (typeof(drawFunction) = "method") drawFunction() // a second draw func thats optional
 			}
 		}

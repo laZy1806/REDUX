@@ -25,7 +25,7 @@
   "nineSlice": {
     "resourceType": "GMNineSliceData",
     "resourceVersion": "1.0",
-    "bottom": 0,
+    "bottom": 3,
     "enabled": true,
     "guideColour": [
       4294902015,
@@ -44,9 +44,9 @@
       0,
       1,
     ],
-    "top": 0,
+    "top": 3,
   },
-  "origin": 4,
+  "origin": 3,
   "parent": {
     "name": "fightBox",
     "path": "folders/Sprites/fightBox.yy",
@@ -82,7 +82,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 2,
+    "xorigin": 0,
     "yorigin": 20,
   },
   "swatchColours": null,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": true,
-  "width": 4,
+  "width": 7,
 }

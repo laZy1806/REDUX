@@ -53,8 +53,8 @@ atk2Data = {
 		return noone;
 	},
 }
-AttackArray[0] = atk1Data
-AttackArray[1] = atk2Data
+//AttackArray[0] = atk1Data
+//AttackArray[1] = atk2Data
 ATTACKALARM = time_source_create(time_source_game, 1, time_source_units_seconds, function() {
 	AttackArray[global.AttackNumber].CYCLECREATION()	
 })

@@ -1,19 +1,3 @@
-#region DEBUGSTUFF
-/*
-ANGLE += keyboard_check(vk_space)
-RELATIVEX += keyboard_check(vk_right) - keyboard_check(vk_left)
-RELATIVEY += keyboard_check(vk_down) - keyboard_check(vk_up)
-WIDTHTO += keyboard_check(vk_shift) - keyboard_check(vk_enter)
-HEIGHT += keyboard_check(vk_shift) - keyboard_check(vk_enter)
-*/
-/*
-if keyboard_check_pressed(vk_space) {
-	var ONE = 50
-	//show_debug_message(ONE)
-	changeSize(ONE, ONE, 1/irandom_range(40, 120), "ease")
-}
-*/
-#endregion
 methodController()
 var MOVECALC = curveCalculation(movementCurve, perMovement, 0)
 var ANGLECALC = curveCalculation(angleCurve, perAngle, 1)
@@ -32,8 +16,25 @@ global.Top = top.y
 global.Floor = bottom.y
 
 
+for (var f = 0; f < array_length(buttonList); f++) {
+	buttonList[f].STEP()
+}
 
-/*debug stuff
+
+
+
+
+
+
+
+
+
+
+
+
+//show_debug_message("width: " + string(WIDTHSTATIC))
+//show_debug_message("calc: " + string(abs(global.Right - global.Left)))
+//debug stuff
 if keyboard_check(vk_space) {
 	var ranx = irandom_range(0, 640)
 	//show_debug_message(ranx)
@@ -47,7 +48,7 @@ if keyboard_check(vk_space) {
 	
 	var ang = irandom_range(0, 720)
 	//show_debug_message(ang)
-	
+	show_debug_message(top.SETWIDTH)
 	if keyboard_check_pressed(ord("K")) changeDestination(ranx, rany, 1/120, "ease")
 	if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")
 	if keyboard_check_pressed(ord("J")) changeAngle(ang, 1/80, "ease")

@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 4,
+  "height": 5,
   "HTile": true,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"e3629fb9-b7d4-4943-9666-66ed07a89680","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -83,7 +83,7 @@
     "visibleRange": null,
     "volume": 1.0,
     "xorigin": 20,
-    "yorigin": 4,
+    "yorigin": 5,
   },
   "swatchColours": null,
   "swfPrecision": 2.525,

@@ -14,5 +14,4 @@ y = _rely + lengthdir_y(DIST, DIRECTION)
 
 image_angle = -OBJ.image_angle
 
-
-
+//if image_xscale != 1 show_debug_message(image_xscale)
