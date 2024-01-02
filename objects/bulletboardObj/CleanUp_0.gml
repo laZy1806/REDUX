@@ -1,5 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
-curveList(3)
-SETWIDTH = 0
-SETHEIGHT = 0
+gpu_set_alphatestenable(false)
+gpu_set_blendmode(bm_normal)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

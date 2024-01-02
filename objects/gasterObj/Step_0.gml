@@ -18,6 +18,8 @@ if (Timer > 0) {
 	_y = y
 }
 else {
+	if (Timer == 0) camObj.shakeCamera(1/30, 4, "shakeStatic")
+	
 	var posReverse = curveCalculation(animcurve_get_channel(gasterCurve, "reverseEase")	, 1/50, 3)
 	Beam.Hide = false	
 	x =	_x + lengthdir_x(350, direction) * posReverse

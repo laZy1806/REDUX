@@ -26,4 +26,4 @@ for(var i = 0; i < instance_number(fightWall); i++) {
 for(var f = 0; f < array_length(fBox.buttonList); f++) {
 	fBox.buttonList[f].DISPLAY()
 }
-//if instance_exists(kazyObject) instance_find(kazyObject, 0).drawEvent()
+if instance_exists(kazyObject) instance_find(kazyObject, 0).drawEvent()

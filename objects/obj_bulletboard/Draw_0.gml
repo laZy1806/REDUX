@@ -133,7 +133,7 @@ if !instance_exists(obj_attacks) {
 	
 			with (bone_num) {
 				
-				draw_sprite_ext(sp_bonemid, 0, (bottombone.x - ((bottombone.x - topbone.x) / 2)), (bottombone.y - ((bottombone.y - topbone.y) / 2)), 1, midbone_scale, midbone.image_angle, midbone.image_blend, 1)
+				draw_sprite_ext(sp_bonemid, 0, (bottombone.x - ((bottombone.x - topbone.x) / 2)), (bottombone.y - ((bottombone.y - topbone.y) / 2)), 1, midBoneScale, midbone.image_angle, midbone.image_blend, 1)
 
 				draw_sprite_ext(sp_bonebottom_rot, 0, bottombone.x, bottombone.y, 1, 1, bottombone.image_angle, bottombone.image_blend, 1)
 	

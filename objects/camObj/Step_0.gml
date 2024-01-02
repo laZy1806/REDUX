@@ -6,6 +6,9 @@ var moveCalc = curveCalculation(moveCurve, movePercent, 0)
 var zoomCurve = animcurve_get_channel(battleCamCurve, zoomMethod)
 var zoomCalc = curveCalculation(zoomCurve, zoomPercent, 1)
 
+var shakeCurve = animcurve_get_channel(battleCamCurve, shakeMethod)
+var shakeCalc = curveCalculation(shakeCurve, shakePercent, 2)
+
 if !RESET {
 	Width = supposedWidth + DesWidth * zoomCalc
 	Height = supposedHeight + DesHeight * zoomCalc
@@ -16,9 +19,9 @@ if !RESET {
 	camX = supposedX + (camDesX * moveCalc) + camXOffset/2
 	camY = supposedY + (camDesY * moveCalc) + camYOffset/2
 	
-	//num_shake = curveCalculation()
-	//ranX = random_range(-shake * num_shake, shake * num_shake)
-	//ranY = random_range(-shake * num_shake, shake * num_shake)	
+	ranX = random_range(-shake * shakeCalc, shake * shakeCalc)
+	ranY = random_range(-shake * shakeCalc, shake * shakeCalc)
+	//show_debug_message(string(ranX) + " " + string(ranY))
 }
 else {
 	RESETFUNC()

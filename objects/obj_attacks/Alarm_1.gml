@@ -15,7 +15,7 @@ if instance_exists(gameOverObj) {
 if attack = 1 {
 	// if attack code is repeated, used to prevent slam happening multiple times
 	if cycle = 0 {	
-		if battleCamObj.camY != 0 camControls(0, 50, 1, , 0.04)
+		if camObj.camY != 0 camControls(0, 50, 1, , 0.04)
 		obj_kazy.changeBodyAnim("Idle")
 		obj_soul.Mode = SoulModes.Blue
 		slam_data(0, "bottom")
@@ -182,7 +182,7 @@ else if attack = 7 {
 else if attack = 8 {	
 	if cycle = 0 {	
 		obj_kazy.headChange(3)
-		if battleCamObj.camY != 0 camControls(0, 100, 1, "null", 0.05)
+		if camObj.camY != 0 camControls(0, 100, 1, "null", 0.05)
 		obj_soul.Mode = SoulModes.Blue	
 			for (var i = 0; i < 140; i++) {
 				if i mod 10 != 0 {
@@ -455,7 +455,7 @@ else if attack = 14 {
 	if cycle = 0 {
 		obj_soul.movementcontrol = false
 		obj_soul.x = 140
-		if battleCamObj.camX != 0 camControls(120, -75, 1, "null", 0.04)
+		if camObj.camX != 0 camControls(120, -75, 1, "null", 0.04)
 		
 		if boxchange = false {
 			global.borderwidth = 680;
@@ -1077,7 +1077,7 @@ else if attack = 21 {
 		obj_kazy.shakeSprite(30, 8)
 		flashAlpha = 1
 		obj_kazy.layerSpeed = 0.5
-		if battleCamObj.camDesY = -85 camControls(0, 85, 1, 5, 0.05)	
+		if camObj.camDesY = -85 camControls(0, 85, 1, 5, 0.05)	
 		else camControls(0, 85, 1, 5, 0.05)	
 		alarm[1] = 150
 		obj_bulletboard.grad_state = false

@@ -33,9 +33,6 @@ if (global.InvFrames <= 0){
 		global.playerHP = 1;
 		global.Karma -= 1
 	}
-	
-	
-	
 		if(global.playerHP <= 0) {
 			instance_create_depth(x, y, 0, gameOverObj)
 			//audio_sound_set_track_position(global.ba_song, 16)

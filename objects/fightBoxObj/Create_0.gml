@@ -1,16 +1,16 @@
 curveList(10)
 
 x = 320
-y = 240
+y = 340
 #region box vars
 	RELATIVEX = 320
-	RELATIVEY = 240
+	RELATIVEY = 320
 
 	WIDTHSTATIC = 40
 	HEIGHTSTATIC = 40
 
-	WIDTH = 100
-	HEIGHT = 100
+	WIDTH = 120
+	HEIGHT = 120
 
 	WIDTHTO = 0
 	HEIGHTTO = 0
@@ -77,28 +77,28 @@ left = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : leftWall,	
 	step_function : function() {
 		SETWIDTH = (-fightBoxObj.WIDTHSTATIC/2) 
-		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/40
+		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
 	}
 })
 top = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : topWall,	
 	step_function : function() {
 		SETHEIGHT = -fightBoxObj.HEIGHTSTATIC/2
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/40
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
 	}
 })
 bottom = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : bottomWall,	
 	step_function : function() {
 		SETHEIGHT = fightBoxObj.HEIGHTSTATIC/2	
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/40 
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
 	}
 })
 right = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : rightWall,	
 	step_function : function() {
 		SETWIDTH = (fightBoxObj.WIDTHSTATIC/2)
-		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/40
+		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
 	}
 })	
 

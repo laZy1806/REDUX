@@ -19,21 +19,6 @@ global.Floor = bottom.y
 for (var f = 0; f < array_length(buttonList); f++) {
 	buttonList[f].STEP()
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//show_debug_message("width: " + string(WIDTHSTATIC))
-//show_debug_message("calc: " + string(abs(global.Right - global.Left)))
 //debug stuff
 if keyboard_check(vk_space) {
 	var ranx = irandom_range(0, 640)
@@ -52,7 +37,7 @@ if keyboard_check(vk_space) {
 	if keyboard_check_pressed(ord("K")) changeDestination(ranx, rany, 1/120, "ease")
 	if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")
 	if keyboard_check_pressed(ord("J")) changeAngle(ang, 1/80, "ease")
-		
 }
-
-
+	
+	
+	

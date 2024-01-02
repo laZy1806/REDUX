@@ -11,7 +11,7 @@ if instance_exists(obj_gaster) instance_find(obj_gaster, all).destroy = true
 depth = -10000
 curveList()
 #region camera coordinates
-instance_find(battleCamObj, 0).RESET = true
+instance_find(camObj, 0).RESET = true
 instance_destroy(obj_attacks)
 instance_destroy(obj_kazy)
 instance_destroy(obj_bulletboard)

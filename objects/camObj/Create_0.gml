@@ -4,8 +4,6 @@ curveList(5)
 view_enabled = true;
 view_visible[0] = true;
 
-TEST = 1
-
 default_camWidth = 640
 default_camHeight = 480
 battlecam = camera_create_view(0, 0, default_camWidth, default_camHeight);
@@ -37,24 +35,28 @@ RESETFUNC = function() {
 	
 	movementMethod = "static"
 	zoomMethod = "static"
+	shakeMethod = "shakeStatic"
+	
 	movePercent = 1/60
 	zoomPercent = 1/60
+	shakePercent = 1/20
 	
 	RESET = false
 	camera_set_view_pos(battlecam, camX, camY);
 	camera_set_view_size(battlecam, Width, Height);
 }
 RESETFUNC()
-moveCamera = function(_x = supposedX, _y = supposedY, meth = movementMethod) {
+moveCamera = function(_x = supposedX, _y = supposedY, _meth = movementMethod, _spd = movePercent) {
 ///@func moveCamera(_x, _y, method)
+resetCalcNumber(0)
 	supposedX = camX
 	supposedY = camY
 	camDesX = _x - camX	
 	camDesY = _y - camY	
-	movementMethod = meth
-	resetCalcNumber(0)
+	movementMethod = _meth
+	movePercent = _spd
 }
-zoomCamera = function(_zoom = 0, _width = supposedWidth, _height = supposedHeight, meth = zoomMethod) {
+zoomCamera = function(_zoom = 0, _width = supposedWidth, _height = supposedHeight, meth = zoomMethod, _spd = zoomPercent) {
 ///@func zoomCamera(zoom, _width, _height, method)
 resetCalcNumber(1)
 	if _zoom != 0 {
@@ -70,10 +72,12 @@ resetCalcNumber(1)
 	DesWidth = _width - Width
 	DesHeight = _height - Height
 	zoomMethod = meth
+	zoomPercent = _spd
 }
-shakeCamera = function(_spd, _amount){
-///@func shakeCamera(_spd, _amount)
-resetCalcNumber(1)
+shakeCamera = function(_spd = shakePercent, _amount = shake, _meth = shakeMethod){
+///@func shakeCamera(_spd, _amount, _meth)
+resetCalcNumber(2)
+	shakePercent = _spd
 	shake = _amount
-	shake = _amount
+	shakeMethod = _meth
 }

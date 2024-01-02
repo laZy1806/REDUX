@@ -35,8 +35,8 @@
     ],
     "highlightColour": 1728023040,
     "highlightStyle": 1,
-    "left": 4,
-    "right": 4,
+    "left": 3,
+    "right": 3,
     "tileMode": [
       0,
       0,
@@ -82,7 +82,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 20,
+    "xorigin": 5,
     "yorigin": 5,
   },
   "swatchColours": null,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": true,
-  "width": 40,
+  "width": 10,
 }

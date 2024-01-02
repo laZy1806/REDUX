@@ -15,7 +15,7 @@ kazy.currentY = 130
 spCycle = -1
 depth = -1000
 ALPHA = 0
-camera = instance_create_depth(0, 0, 0, battleCamObj)
+camera = instance_create_depth(0, 0, 0, camObj)
 // 0 starts on TextToDraw, not TextQueue[0]
 spriteFunc = function() {
 	switch spCycle {

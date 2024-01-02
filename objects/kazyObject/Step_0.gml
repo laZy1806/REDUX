@@ -3,13 +3,6 @@
 if SPDCALC <= 1 SPDCALC += SPEED
 else SPDCALC -= 1
 currentAnim()
-
-
-
-
-
-
-
 /* DEBUG SECTION
 
 image_xscale += (keyboard_check(vk_right) - keyboard_check(vk_left)) *0.05

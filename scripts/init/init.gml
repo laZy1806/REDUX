@@ -64,6 +64,7 @@ gml_pragma("global", "init()");
 	global.Right = 0
 	global.Left = 0
 	
+	global.CURRENTENEMY = array_create(1, "Kazy")
 	#macro RELY 17		//the relative y due to the change from gameframe
 	
 #endregion

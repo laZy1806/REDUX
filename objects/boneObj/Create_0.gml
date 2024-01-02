@@ -13,7 +13,7 @@ dir_bottombone_theta = (anglestart + 180)
 movementCurve = function() { return 0 }
 angleCurve = function() { return 0 }
 heightCurve = function() { return 0 }
-midbone_scale = startheight/2 
+midBoneScale = startheight/2 
 midSprite = noone
 
 //defined when called through script
@@ -70,9 +70,10 @@ methodController = function() {
 	angleCurve = animcurve_get_channel(bonecurve, angleMethod)
 }	
 drawEvent = function(){
-	draw_sprite_ext(midSprite, 0, originX, originY, 1, midbone_scale, image_angle, hit_color, image_alpha)
+	draw_sprite_ext(midSprite, 0, originX, originY, 1, midBoneScale, image_angle, hit_color, image_alpha)
 	draw_sprite_ext(sp_bonepart, 0, topBoneData.x, topBoneData.y, 1, 1, topBoneData.image_angle, hit_color, image_alpha)
 	draw_sprite_ext(sp_bonepart, 0, bottomBoneData.x, bottomBoneData.y, 1, 1, bottomBoneData.image_angle, hit_color, image_alpha)
+	draw_sprite_ext(sprite_index, image_index, bottomBoneData.x, bottomBoneData.y, 2, midBoneScale * 2, image_angle, c_white, 0)
 }	
 stepFunction = function() {
 	return 0	
