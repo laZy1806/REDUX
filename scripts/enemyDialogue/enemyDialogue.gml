@@ -5,7 +5,7 @@ function enemyDialogue(_enemyName){
 		case "Kazy":
 			Dialogue = {
 				stateOneTxt : [
-					"big chungy", 
+					"* Froggit hopped close!", 
 					"frungy dungy"
 				]
 			}

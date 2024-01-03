@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_font(font_battle_dialogue)
+draw_set_font(fontBattleDiag)
 draw_set_halign(fa_center)
 draw_set_alpha(1)
 var text_func = function(_x, _y, _toString, _angle, _scale, _color) {

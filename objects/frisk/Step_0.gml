@@ -8,13 +8,13 @@ if Frozen {
 	image_index = 0
 }	
 if !Frozen {
-	key_left = keyboard_check(ord(global.left)); 
-	key_right = keyboard_check(ord(global.right));
-	key_up = keyboard_check(ord(global.up));
-	key_down = keyboard_check(ord(global.down));
+	key_left = keyboard_check(ord(global.leftKey)); 
+	key_right = keyboard_check(ord(global.rightKey));
+	key_up = keyboard_check(ord(global.upKey));
+	key_down = keyboard_check(ord(global.downKey));
 	
-	hsp = (keyboard_check(ord(global.right)) - keyboard_check(ord(global.left)))
-	vsp = (keyboard_check(ord(global.down)) - keyboard_check(ord(global.up)))
+	hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey)))
+	vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey)))
 
 	hsp = (key_right - key_left) * speed_multipler;
 	vsp = (key_down - key_up) * speed_multipler;

@@ -23,8 +23,8 @@ if show {
 		sprite_index = soul;
 		BLUE_Gravity = 0
 		
-		vsp = (keyboard_check(ord(global.down)) - keyboard_check(ord(global.up))) * spdmulti * slow_multi
-		hsp = (keyboard_check(ord(global.right)) - keyboard_check(ord(global.left))) * spdmulti * slow_multi
+		vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * spdmulti * slow_multi
+		hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * spdmulti * slow_multi
 	
 		if slam = false and movementcontrol {
 			global.move.xSpdYSpd(hsp, vsp);
@@ -37,8 +37,8 @@ if show {
 	countdown += 1	
 	sprite_index = soul_blue;
 	
-	vsp = (keyboard_check(ord(global.down)) - keyboard_check(ord(global.up))) * spdmulti * slow_multi
-	hsp = (keyboard_check(ord(global.right)) - keyboard_check(ord(global.left))) * spdmulti * slow_multi
+	vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * spdmulti * slow_multi
+	hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * spdmulti * slow_multi
 	
 	if slam {
 		percent += perchanger

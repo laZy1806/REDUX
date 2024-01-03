@@ -97,7 +97,7 @@
     {"name":"bulletboardObj","order":10,"path":"objects/bulletboardObj/bulletboardObj.yy",},
     {"name":"curveList","order":2,"path":"scripts/curveList/curveList.yy",},
     {"name":"TileSet1","order":15,"path":"tilesets/TileSet1/TileSet1.yy",},
-    {"name":"mouseDebug","order":27,"path":"scripts/mouseDebug/mouseDebug.yy",},
+    {"name":"Debug","order":27,"path":"scripts/Debug/Debug.yy",},
     {"name":"obj_ParticleEffect","order":16,"path":"objects/obj_ParticleEffect/obj_ParticleEffect.yy",},
     {"name":"spr_gameframe_pixel","order":3,"path":"sprites/spr_gameframe_pixel/spr_gameframe_pixel.yy",},
     {"name":"gameframe_native","order":2,"path":"extensions/gameframe_native/gameframe_native.yy",},

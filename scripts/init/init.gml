@@ -5,10 +5,10 @@ gml_pragma("global", "init()");
 #region global variables 
 	delta_init()
 	bktglitch_init()
-	global.up = "W";
-	global.down = "S";
-	global.left = "A";
-	global.right = "D";
+	global.upKey = "W";
+	global.downKey = "S";
+	global.leftKey = "A";
+	global.rightKey = "D";
 	global.borderheight = 100;
 	global.borderwidth = 100;
 	global.playerHP = 92;
@@ -16,7 +16,7 @@ gml_pragma("global", "init()");
 	global.playerEXP = 0;
 	global.playerGOL = 0;
 	global.playerLV = 19;
-	global.name = ""
+	global.name = "Jamie"
 	global.nameFunctions = nameActions(); 
 	global.spriteBlacktoWhite = 0
 	global.test = 0;
@@ -64,7 +64,8 @@ gml_pragma("global", "init()");
 	global.Right = 0
 	global.Left = 0
 	
-	global.CURRENTENEMY = array_create(1, "Kazy")
+	global.ENEMYNAMES = array_create(1, "Kazy")
+	global.ENEMYARRAY = array_create(0)
 	#macro RELY 17		//the relative y due to the change from gameframe
 	
 #endregion

@@ -19,12 +19,12 @@ allowInput = false
 		if allowInput {
 			var input = captureInput();
 			if input != "" {
-				global.left = string_upper(input)
+				global.leftKey = string_upper(input)
 				keyboard_string = "";
 				allowInput = false;
 			}
 			else {
-				global.left = ""
+				global.leftKey = ""
 			}
 		}
 	}
@@ -34,12 +34,12 @@ allowInput = false
 		if allowInput {
 			var input = captureInput();
 			if input != "" {
-				global.right = string_upper(input)
+				global.rightKey = string_upper(input)
 				keyboard_string = "";
 				allowInput = false;
 			}
 			else {
-				global.right = ""
+				global.rightKey = ""
 			}
 		}
 		
@@ -50,12 +50,12 @@ allowInput = false
 		if allowInput {
 			var input = captureInput();
 			if input != "" {
-				global.up = string_upper(input)
+				global.upKey = string_upper(input)
 				keyboard_string = "";
 				allowInput = false;
 			}
 			else {
-				global.up = ""
+				global.upKey = ""
 			}
 		}
 		
@@ -66,12 +66,12 @@ allowInput = false
 		if allowInput {
 			var input = captureInput();
 			if input != "" {
-				global.down = string_upper(input)
+				global.downKey = string_upper(input)
 				keyboard_string = "";
 				allowInput = false;
 			}
 			else {
-				global.down = ""
+				global.downKey = ""
 			}
 		}
 

@@ -18,7 +18,7 @@ if (Damage != 0 && Damage != "MISS")
 else
 	draw_set_color(c_grey);
 // aligns text horizontally in the center and by offset made	
-draw_set_font(font_battle_dialogue);
+draw_set_font(fontBattleDiag);
 ha = draw_get_halign();
 draw_set_halign(fa_center);
 draw_text(x, y - (40 + DamageOffsetY), string(Damage));

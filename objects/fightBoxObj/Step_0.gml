@@ -15,10 +15,6 @@ global.Left = left.x
 global.Top = top.y
 global.Floor = bottom.y
 
-
-for (var f = 0; f < array_length(buttonList); f++) {
-	buttonList[f].STEP()
-}
 //debug stuff
 if keyboard_check(vk_space) {
 	var ranx = irandom_range(0, 640)

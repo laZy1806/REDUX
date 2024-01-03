@@ -34,11 +34,11 @@ function Button(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  
 		}
 		STEP = function(_location = 0) {			
 			if (typeof(stepFunction) = "method") stepFunction()
-			STATE = _location;
+			location = _location;
 			CURVE = animcurve_get_channel(buttonCurve, curveType)
 			if isActive { //isActive dictates whether the button should be taking in input or not
-				x = currentX + difCalculation(locs[STATE][0], currentX, CURVE, spd, 0)
-				y = currentY + difCalculation(locs[STATE][1], currentY, CURVE, spd, 0)
+				x = currentX + difCalculation(locs[location][0], currentX, CURVE, spd, 0)
+				y = currentY + difCalculation(locs[location][1], currentY, CURVE, spd, 0)
 				
 				if isPressed { //RUNS code that you want when the button is pressed
 					if (typeof(pressedCode) = "method") pressedCode()

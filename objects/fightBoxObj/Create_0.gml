@@ -1,15 +1,15 @@
 curveList(10)
 
 x = 320
-y = 340
+y = 320
 #region box vars
 	RELATIVEX = 320
 	RELATIVEY = 320
 
-	WIDTHSTATIC = 40
-	HEIGHTSTATIC = 40
-
-	WIDTH = 120
+	WIDTHSTATIC = 570
+	HEIGHTSTATIC = 120
+	
+	WIDTH = 570
 	HEIGHT = 120
 
 	WIDTHTO = 0
@@ -101,7 +101,3 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
 	}
 })	
-
-actButton = new Button([[100, 100]], function(){ show_debug_message("dog")}, sp_ACT)	
-actButton.addLocation(100, 500)
-buttonList[0] = actButton

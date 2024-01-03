@@ -50,3 +50,49 @@ drawEvent = function() {
 		
 	//add other parts
 }
+atk1Data = {
+	CYCLETIMINGS : [1, 1, 1, 1, 1], //IN SECONDS
+	CYCLECREATION : function() {
+		var BoneMiddleJump = function() {
+			Bone(global.Left, global.Right, global.Top, global.Top, 20, 20, false, 180, 180)
+			Bone(global.Right, global.Left, global.Top, global.Top, 20, 20, false, 180, 180)
+			
+			Bone(global.Left, global.Right, global.Floor,  global.Floor, 20, 20, false)
+			Bone(global.Right, global.Left, global.Floor,  global.Floor, 20, 20, false)
+		}
+		switch global.AttackCycle {
+			case 0:	
+				BoneMiddleJump()
+			break;
+		}
+	},
+	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
+		return noone;
+	},
+	CYCLEDRAW : function() {	//THINGS DRAWN SPECIFICALLY FOR ATK
+		switch global.AttackCycle {
+			case 0:
+				
+			break;
+		}
+	},
+}
+atk2Data = {
+	CYCLETIMINGS : [1, 2, 3, 4, 5], //IN SECONDS
+	CYCLECREATION : function() {
+		show_debug_message(current_second)
+	},
+	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
+		return noone;
+	},
+	CYCLEDRAW : function() {	//THINGS DRAWN SPECIFICALLY FOR ATK
+		if global.AttackCycle = 1 {
+			draw_text(300, 300, "hello")	
+		}
+		return noone;
+	},
+}
+AttackArray = [
+	atk1Data,
+	atk2Data
+]

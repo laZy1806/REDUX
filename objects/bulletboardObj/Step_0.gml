@@ -1,3 +1,3 @@
-var txt = KazyText[$ "stateOneTxt"];
-
-show_debug_message(txt)
+for(var i = 0; i < array_length(buttonList); i++) {
+	if buttonList[i] != noone buttonList[i].STEP()
+}

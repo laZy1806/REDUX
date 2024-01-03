@@ -3,10 +3,10 @@
 function takeDamage(_dmg, _isBlueOrange = false, _invFrames = 0, _isKarma = false){
 	
 	if (global.InvFrames <= 0){
-		if (image_blend == c_aqua && !keyboard_check(ord(global.left)) && !keyboard_check(ord(global.right)) && !keyboard_check(ord(global.up)) && !keyboard_check(ord(global.down))) {
+		if (image_blend == c_aqua && !keyboard_check(ord(global.leftKey)) && !keyboard_check(ord(global.rightKey)) && !keyboard_check(ord(global.upKey)) && !keyboard_check(ord(global.downKey))) {
 			exit;
 		}
-		if (image_blend == c_orange && (keyboard_check(ord(global.left)) || keyboard_check(ord(global.right)) || keyboard_check(ord(global.up)) || keyboard_check(ord(global.down)))) {
+		if (image_blend == c_orange && (keyboard_check(ord(global.leftKey)) || keyboard_check(ord(global.rightKey)) || keyboard_check(ord(global.upKey)) || keyboard_check(ord(global.downKey)))) {
 			exit;
 		} 
 		global.InvFrames = _invFrames

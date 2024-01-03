@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "font_battleui_hp",
+  "name": "fontUiHp",
   "AntiAlias": 0,
   "applyKerning": 0,
   "ascender": 0,
