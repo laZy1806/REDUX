@@ -4,6 +4,8 @@
   "name": "REDUX",
   "AudioGroups": [
     {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"audiogroup_default","targets":-1,},
+    {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"fightAudio","targets":-1,},
+    {"resourceType":"GMAudioGroup","resourceVersion":"1.3","name":"cinematicAudio","targets":-1,},
   ],
   "configs": {
     "children": [],
@@ -116,7 +118,6 @@
     {"id":{"name":"__scribble_tick","path":"scripts/__scribble_tick/__scribble_tick.yy",},},
     {"id":{"name":"nameActions","path":"scripts/nameActions/nameActions.yy",},},
     {"id":{"name":"shaderGaussianObj","path":"objects/shaderGaussianObj/shaderGaussianObj.yy",},},
-    {"id":{"name":"Shits","path":"sounds/Shits/Shits.yy",},},
     {"id":{"name":"textcurve","path":"animcurves/textcurve/textcurve.yy",},},
     {"id":{"name":"shGradient","path":"shaders/shGradient/shGradient.yy",},},
     {"id":{"name":"talkingFont","path":"fonts/talkingFont/talkingFont.yy",},},
@@ -389,7 +390,7 @@
     {"id":{"name":"gasterSPFiring","path":"sprites/gasterSPFiring/gasterSPFiring.yy",},},
     {"id":{"name":"brownDresser","path":"sprites/brownDresser/brownDresser.yy",},},
     {"id":{"name":"mistakeBattle","path":"rooms/mistakeBattle/mistakeBattle.yy",},},
-    {"id":{"name":"obj_test","path":"objects/obj_test/obj_test.yy",},},
+    {"id":{"name":"soulObj","path":"objects/soulObj/soulObj.yy",},},
     {"id":{"name":"punisherKazyObj","path":"objects/punisherKazyObj/punisherKazyObj.yy",},},
     {"id":{"name":"featheredPixel","path":"sprites/featheredPixel/featheredPixel.yy",},},
     {"id":{"name":"__scribble_gen_3_devanagari","path":"scripts/__scribble_gen_3_devanagari/__scribble_gen_3_devanagari.yy",},},

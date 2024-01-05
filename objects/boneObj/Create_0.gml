@@ -2,8 +2,6 @@
 // You can write your code in this editor
 curveList(5)
 
-dmg = 1
-hit_color = c_white
 angledistance = abs(DesAngle - anglestart);
 disX = DesX - startx
 disY = DesY - starty
@@ -64,16 +62,20 @@ changeDestination = function(_x = originX, _y = originY, smoothMov = false, per 
 	movementMethod = movementCurve
 	evaluate[0] = 0
 }		
+changeColor = function(_col = c_white){
+	///@func changeColor(_col)
+	image_blend = _col
+}
 methodController = function() {
 	movementCurve = animcurve_get_channel(bonecurve, movementMethod)
 	heightCurve = animcurve_get_channel(bonecurve, heightMethod)
 	angleCurve = animcurve_get_channel(bonecurve, angleMethod)
 }	
 drawEvent = function(){
-	draw_sprite_ext(midSprite, 0, originX, originY, 1, midBoneScale, image_angle, hit_color, image_alpha)
-	draw_sprite_ext(sp_bonepart, 0, topBoneData.x, topBoneData.y, 1, 1, topBoneData.image_angle, hit_color, image_alpha)
-	draw_sprite_ext(sp_bonepart, 0, bottomBoneData.x, bottomBoneData.y, 1, 1, bottomBoneData.image_angle, hit_color, image_alpha)
-	draw_sprite_ext(sprite_index, image_index, bottomBoneData.x, bottomBoneData.y, 2, midBoneScale * 2, image_angle, c_white, 0)
+	draw_sprite_ext(midSprite, 0, originX, originY, 1, midBoneScale, image_angle, image_blend, image_alpha)
+	draw_sprite_ext(sp_bonepart, 0, topBoneData.x, topBoneData.y, 1, 1, topBoneData.image_angle, image_blend, image_alpha)
+	draw_sprite_ext(sp_bonepart, 0, bottomBoneData.x, bottomBoneData.y, 1, 1, bottomBoneData.image_angle, image_blend, image_alpha)
+	//draw_sprite_ext(sprite_index, image_index, bottomBoneData.x, bottomBoneData.y, 2, midBoneScale * 2, image_angle, c_red, 1)
 }	
 stepFunction = function() {
 	return 0	

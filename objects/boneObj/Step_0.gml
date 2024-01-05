@@ -1,6 +1,6 @@
 stepFunction()
 methodController()
-
+//show_debug_message(string(bottomBoneData.x) + "      " + string(bottomBoneData.y))
 
 var MOVE = curveCalculation(movementCurve, perMovement, 0)
 var ANGLE = curveCalculation(angleCurve, perAngle, 1)
@@ -38,8 +38,14 @@ else {
 	bottomBoneData.xLength = originX 
 	bottomBoneData.yLength = originY 
 }	
-	
-	
+
+x = bottomBoneData.x
+y = bottomBoneData.y
+image_yscale = midBoneScale * 2
+image_xscale = 2
+
+if place_meeting(x, y, soulObj) takeDamage(1, true, 0, true)
+
 var topbone_radius = point_distance(originX, originY, topBoneData.xLength, topBoneData.yLength)
 var bottombone_radius = point_distance(originX, originY, bottomBoneData.xLength, bottomBoneData.yLength)	
 topBoneData.x = originX + lengthdir_x(topbone_radius, dir_topbone_theta)
@@ -52,7 +58,3 @@ if keyboard_check(vk_space) {
 	//if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")
 	//if keyboard_check_pressed(ord("J")) changeAngle(ang, 1/80, "ease")
 }
-
-
-
-

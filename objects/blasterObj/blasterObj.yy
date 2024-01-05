@@ -4,14 +4,13 @@
   "name": "blasterObj",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"obj_soul","path":"objects/obj_soul/obj_soul.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "OLDfightassets",
-    "path": "folders/Objects/OLDfightassets.yy",
+    "name": "fightAssets",
+    "path": "folders/Objects/fightAssets.yy",
   },
   "parentObjectId": null,
   "persistent": false,

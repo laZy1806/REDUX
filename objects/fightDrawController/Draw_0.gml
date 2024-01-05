@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 var fBox = instance_find(fightBoxObj, 0)
-var soulRef = instance_find(obj_test, 0)
+var soulRef = instance_find(soulObj, 0)
 var bulletRef = instance_find(bulletboardObj, 0)
 
 draw_sprite_ext(battlepixel, 0, 320, 240, 320, 320, 0, c_black, 1)

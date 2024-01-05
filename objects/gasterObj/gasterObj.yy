@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "OLDfightassets",
-    "path": "folders/Objects/OLDfightassets.yy",
+    "name": "fightAssets",
+    "path": "folders/Objects/fightAssets.yy",
   },
   "parentObjectId": null,
   "persistent": false,

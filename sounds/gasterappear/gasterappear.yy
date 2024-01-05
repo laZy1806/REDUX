@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "gasterappear",
   "audioGroupId": {
-    "name": "audiogroup_default",
-    "path": "audiogroups/audiogroup_default",
+    "name": "fightAudio",
+    "path": "audiogroups/fightAudio",
   },
   "bitDepth": 1,
   "bitRate": 128,

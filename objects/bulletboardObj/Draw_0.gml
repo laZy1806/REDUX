@@ -14,8 +14,8 @@ drawEvent = function(){
 					}
 					stDefaultTxt[0].draw(global.Left + (20), global.Top + (15))
 					selector += (keyboard_check_pressed(ord(global.rightKey)) - keyboard_check_pressed(ord(global.leftKey)))
-					show_debug_message(string(selector) + " State " + string(state))
-					buttonList[selector][$ "isPressed"] = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z")))
+					//show_debug_message(string(selector) + " State " + string(state))
+					if (selector < 3 && selector > -1) buttonList[selector][$ "isPressed"] = (keyboard_check_pressed(vk_enter) || keyboard_check_pressed(ord("Z")))
 				break;
 				case 0: //fight menu
 				
@@ -42,8 +42,6 @@ drawEvent = function(){
 			
 				break;
 			}
-			state = clamp(state, -1, 4)
-			selector = clamp(selector, -1, 4)
 		}
 		draw_set_alpha(image_alpha)
 		var _y = 390
