@@ -2,7 +2,7 @@
 // You can write your code in this editor
 global.fightFinished = true
 saveObj.save()
-curveList()
+scrCurveList()
 if !instance_exists(obj_kazy) kazy = instance_create_depth(320, 270, 2, obj_kazy);
 kazy.setSpriteAlpha(1, 1)
 kazy.Start = true

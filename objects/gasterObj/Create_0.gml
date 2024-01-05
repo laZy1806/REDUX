@@ -1,6 +1,6 @@
 /// @description vars 
 // You can write your code in this editor
-curveList(4)
+scrCurveList(4)
 Beam = instance_create_depth(x, y, depth, blasterObj, { toFollow : id, Hide : true });
 drawEvent = function(){
 	with id draw_self()

@@ -12,7 +12,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "DebugRoom",
-    "path": "folders/Objects/overworldstuff/DebugRoom.yy",
+    "path": "folders/Objects/oldoverworldstuff/DebugRoom.yy",
   },
   "parentObjectId": null,
   "persistent": false,

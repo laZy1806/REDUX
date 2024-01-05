@@ -9,7 +9,7 @@ Act[0] = "Check";
 Act[1] = "Taunt";
 ShowHealthBar = true;
 CanSpare = false;
-curveList()
+scrCurveList()
 depth = 2
 ogDepth = depth
 shakeCount = -1;

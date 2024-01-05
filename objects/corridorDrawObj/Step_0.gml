@@ -9,7 +9,7 @@ if fadeBoolean {
 	brtObjValue = lerp(brtObjValue, -0.40, 0.025)
 }
 	
-if instance_find(frisk, 0).y > 520 {
+if instance_find(playerObj, 0).y > 520 {
 	if instance_exists(TransitionObj) {
 		global.TRANSOBJ.startTransition(debugRoom)
 		var func = function() {

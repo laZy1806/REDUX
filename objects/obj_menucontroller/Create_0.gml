@@ -7,7 +7,7 @@ menu_state = -1
 swap_timer = 0;
 swap = false
 cycle = 0;
-curveList()
+scrCurveList()
 controlMenu()
 global.startGame = false;
 //make gallery system that holds corrdinates, and has a function that swaps sprites

@@ -1,15 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-curveList()
+scrCurveList()
 camChangeNum = 0;
-cutCam = camera_create_view(obj_cam.x, obj_cam.y, 640, 480)
+cutCam = camera_create_view(oWorldCam.x, oWorldCam.y, 640, 480)
 
 view_set_camera(view_camera[0], cutCam)
 zoom_multi = 1
-camX = obj_cam.x;
-camY = obj_cam.y;
-cam_storedX = obj_cam.x;
-cam_storedY = obj_cam.y;
+camX = oWorldCam.x;
+camY = oWorldCam.y;
+cam_storedX = oWorldCam.x;
+cam_storedY = oWorldCam.y;
 camDesX = camX
 camDesY = camY
 newX = camX;

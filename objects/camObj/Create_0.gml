@@ -1,6 +1,6 @@
 /// @description setup camera
 // You can write your code in this editor
-curveList(5)
+scrCurveList(5)
 view_enabled = true;
 view_visible[0] = true;
 

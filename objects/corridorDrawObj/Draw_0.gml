@@ -38,22 +38,22 @@
 	shader_set_uniform_f(SatValue, satObjValue)
 	shader_set_uniform_f(BrtValue, 0)
 	
-		with instance_find(frisk, 0) draw_sprite(sprite_index, image_index, x, y)
+		with instance_find(playerObj, 0) draw_sprite(sprite_index, image_index, x, y)
 	
 		draw_sprite_ext(kazyCorridor, 0, 1786, 378 - 84 * 0.5, 0.5, 0.5, 0, c_white, 1)
 	
-		draw_sprite_ext(sp_pillar, 0, 355 - 160 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 835 - 160 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 1325 - 160 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 1825 - 160 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 355 - 160 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 835 - 160 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 1325 - 160 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 1825 - 160 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
 	
 		//draw_sprite_ext(sp_pillar, 0, 1080, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 1320 + 659 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 1550 + 659 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
-		draw_sprite_ext(sp_pillar, 0, 1955 + 659 - obj_cam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 1320 + 659 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 1550 + 659 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(sp_pillar, 0, 1955 + 659 - oWorldCam.x/2, 456, 2, 2, 0, c_white, 1)
 
 	shader_reset()
 	
 	draw_sprite_ext(battlepixel, 0, room_width/2, room_height/2, 2000, 2000, 0, c_black, 1 - global.beginFade)
-	//if instance_exists(persistentSoul) draw_sprite(soul, 0, persistentSoul.x + (global.centerx - 320), persistentSoul.y + (global.centery - 240))
+	//if instance_exists(persistentSoul) draw_sprite(soul, 0, persistentSoul.x + (global.centerx - 320), persistentSoul.y + (global.camCenterY - 240))
 //}

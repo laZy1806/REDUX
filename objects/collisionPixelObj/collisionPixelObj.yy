@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "DebugRoom",
-    "path": "folders/Objects/overworldstuff/DebugRoom.yy",
+    "name": "generalAssets",
+    "path": "folders/Objects/generalAssets.yy",
   },
   "parentObjectId": null,
   "persistent": false,

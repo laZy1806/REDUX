@@ -40,12 +40,12 @@ if boxAlpha < 1  and text{
 */
 #endregion
 if room = mistake and lightSwitch {
-	draw_sprite_ext(battlepixel, 0, obj_cam.x + 320, obj_cam.y + 240, 320, 240, 0, c_black, 1)
+	draw_sprite_ext(battlepixel, 0, oWorldCam.x + 320, oWorldCam.y + 240, 320, 240, 0, c_black, 1)
 
 	//draw_sprite_ext(soul, 0, soulX, soulY, 1, 1, 0, c_white, 1)
 }
 else {
-	with instance_find(frisk, 0) draw_sprite(sprite_index, image_index, x, y)	
+	with instance_find(playerObj, 0) draw_sprite(sprite_index, image_index, x, y)	
 }
 if room = mistakeBattle {
 	if textCycle != 50 draw_sprite_ext(punisherKazy, 0, 320, 280, 2, 2, 0, c_white, kazyAlpha[0])

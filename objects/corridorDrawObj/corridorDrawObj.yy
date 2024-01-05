@@ -16,7 +16,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Corridor",
-    "path": "folders/Objects/overworldstuff/Corridor.yy",
+    "path": "folders/Objects/oldoverworldstuff/Corridor.yy",
   },
   "parentObjectId": {
     "name": "collisionPixelObj",

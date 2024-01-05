@@ -13,7 +13,7 @@ layer_sprite_create(lightswitch, 320, 240, blackscreen)
 
 layer_set_visible(lightswitch, false)
 sound = true
-curveList()
+scrCurveList()
 
 alp = 1
 alp_end = 1

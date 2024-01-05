@@ -63,7 +63,7 @@ changeAngle = function(newAngle = anglestart, per = 1/60) {
 	percent_angle = per;
 }
 
-curveList()
+scrCurveList()
 fightParticlesSystem = new advanced_part_system()
 fightParticles = new advanced_part_type()
 fightParticlesEmitter = new advanced_part_emitter(fightParticlesSystem, 0, 640, 490, 490, aps_shape.rectangle, aps_distr.linear)

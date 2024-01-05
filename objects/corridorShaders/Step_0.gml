@@ -31,10 +31,10 @@ vignetteAdd = lerp(vignetteAdd, 0.9, 0.01)
 
 // change to positive 0.7 when not debuged
 if global.beginFade < -0.7 {
-	instance_find(frisk, 0).Frozen = true
+	instance_find(playerObj, 0).Frozen = true
 }
 else {
-	instance_find(frisk, 0).Frozen = false
+	instance_find(playerObj, 0).Frozen = false
 }
 
 

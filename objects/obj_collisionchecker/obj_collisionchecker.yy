@@ -4,13 +4,13 @@
   "name": "obj_collisionchecker",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"frisk","path":"objects/frisk/frisk.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"playerObj","path":"objects/playerObj/playerObj.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
     "name": "Corridor",
-    "path": "folders/Objects/overworldstuff/Corridor.yy",
+    "path": "folders/Objects/oldoverworldstuff/Corridor.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -1,12 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-frisk.Frozen = true;
+playerObj.Frozen = true;
 
 if Event == 1 {
-	with obj_cam xModi += other.cutSpeed;
+	with oWorldCam xModi += other.cutSpeed;
 	
-	global.centerx += cutSpeed
-	if (obj_cam.x >= 1300) {
+	global.camCenterX += cutSpeed
+	if (oWorldCam.x >= 1300) {
 		Event = 2;
 		alarm[0] = 30;	//delay between dialogue and camera movement
 	}

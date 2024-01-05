@@ -9,7 +9,7 @@ startLocs =
 ]
 startTxt = scribble("[outlinemenuFont][scale, 1]Start");
 //startTxt = sp_ACT
-Start = new Button(startLocs, function() {
+Start = new scrButton(startLocs, function() {
 		show_debug_message("dog")
 	}, startTxt
 )

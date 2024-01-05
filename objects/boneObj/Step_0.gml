@@ -44,7 +44,7 @@ y = bottomBoneData.y
 image_yscale = midBoneScale * 2
 image_xscale = 2
 
-if place_meeting(x, y, soulObj) takeDamage(1, true, 0, true)
+if place_meeting(x, y, soulObj) scrTakeDamage(1, true, 0, true)
 
 var topbone_radius = point_distance(originX, originY, topBoneData.xLength, topBoneData.yLength)
 var bottombone_radius = point_distance(originX, originY, bottomBoneData.xLength, bottomBoneData.yLength)	

@@ -9,7 +9,7 @@ if instance_exists(obj_bone) instance_find(obj_bone, all).destroy = true
 if instance_exists(obj_gaster) instance_find(obj_gaster, all).destroy = true
 */
 depth = -10000
-curveList()
+scrCurveList()
 #region camera coordinates
 instance_find(camObj, 0).RESET = true
 instance_destroy(obj_attacks)

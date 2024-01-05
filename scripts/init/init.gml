@@ -17,7 +17,7 @@ gml_pragma("global", "init()");
 	global.playerGOL = 0;
 	global.playerLV = 19;
 	global.name = "Jamie"
-	global.nameFunctions = nameActions(); 
+	global.nameFunctions = scrNameActions(); 
 	global.spriteBlacktoWhite = 0
 	global.test = 0;
 	global.pause = false

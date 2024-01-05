@@ -9,8 +9,8 @@ global.test = 0;
 
 if !instance_exists(obj_kazy) instance_create_depth(320, 270, 2, obj_kazy);
 
-global.centerx = 320
-global.centery = 240
+global.camCenterX = 320
+global.camCenterY = 240
 
 //if !instance_exists(obj_attacks) instance_create_depth(300, 384, 1, obj_attacks);
 if !instance_exists(obj_bulletboard) instance_create_depth(290, 384, 1, obj_bulletboard);

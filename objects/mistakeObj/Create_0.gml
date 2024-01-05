@@ -3,7 +3,7 @@
 if room = mistake {
 	global.fileDeleted = true
 	saveObj.save()
-	global.frisk = instance_create_depth(500, 240, 0, frisk)
+	global.frisk = instance_create_depth(500, 240, 0, playerObj)
 	kazy = instance_create_depth(1000, 1500, 0, punisherKazyObj)
 	Soul = instance_create_depth(0, 0, 0, persistentSoul)
 	_Timer = 120
@@ -94,7 +94,7 @@ if room = mistakeBattle {
 	stopwatchAlarmEnd = new Alarm(20, endFunc, false)
 	var temp = instance_find(persistentSoul, 0)
 	temp.Activate = true
-	temp.x = temp.x - (global.centerx - 320)
-	temp.y = temp.y - (global.centery - 240)
+	temp.x = temp.x - (global.camCenterX - 320)
+	temp.y = temp.y - (global.camCenterY - 240)
 	
 }

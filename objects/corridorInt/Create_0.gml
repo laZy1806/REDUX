@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 global.corridor = instance_create_depth(1216, 256, 0, corridorDrawObj)
-global.frisk = instance_create_depth(150, 350, -1, frisk)
+global.frisk = instance_create_depth(150, 350, -1, playerObj)
 //1448
 depth = -3
 if !instance_exists(pauseObj) instance_create_depth(0, 0, 0, pauseObj) 

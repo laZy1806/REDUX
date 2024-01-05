@@ -3,8 +3,8 @@
 
 box = instance_create_depth(0, 0, 0, obj_OverworldDialogue)
 text = instance_create_depth(0, 0, 0, obj_text)
-Soul.x = frisk.x
-Soul.y = frisk.y
+Soul.x = playerObj.x
+Soul.y = playerObj.y
 Soul.Activate = false
 Soul.noGUI = true
 with text {

@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-enemyCreator(global.ENEMYNAMES)
+scrEnemyCreator(global.ENEMYNAMES)
 
 if !instance_exists(attackObject) instance_create_depth(320, 240, 0, attackObject)
 if !instance_exists(fightDrawController) instance_create_depth(320, 240, 0, fightDrawController)

@@ -1,4 +1,4 @@
-curveList(10)
+scrCurveList(10)
 
 x = 320
 y = 320

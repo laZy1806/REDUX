@@ -113,7 +113,7 @@ button[ButtonNames.back_gal] =
 ]
 #endregion
 
-curveList()
+scrCurveList()
 depth = 0
 additive = 20;
 count = 0;

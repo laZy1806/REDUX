@@ -2,7 +2,7 @@
 // You can write your code in this editor
 // You can write your code in this editor
 if room = mistake {
-	if instance_exists(frisk) {
+	if instance_exists(playerObj) {
 		if point_in_rectangle(global.frisk.x, global.frisk.y, kazy.x - 50, kazy.y - 50, kazy.x + 50, kazy.y + 50) {
 			global.frisk.Frozen = true
 			if _Timer > 0 _Timer--

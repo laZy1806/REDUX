@@ -1,11 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.frisk = instance_create_depth(240, 450, -2, frisk)
+global.frisk = instance_create_depth(240, 450, -2, playerObj)
 global.frisk.image_xscale = 2
 global.frisk.image_yscale = 2
 application_surface_draw_enable(true)
-global.centerx = 320
-global.centery = 240
+global.camCenterX = 320
+global.camCenterY = 240
 
 bedData = {
 	image_xscale : 2,	
