@@ -20,7 +20,7 @@ if show {
 	}
 	if Mode == SoulModes.Red {
 		
-		sprite_index = soul;
+		sprite_index = soulSPRed;
 		BLUE_Gravity = 0
 		
 		vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * spdmulti * slow_multi
@@ -35,7 +35,7 @@ if show {
 		
 	// fix for being able to jump when shifting to blue mode	
 	countdown += 1	
-	sprite_index = soul_blue;
+	sprite_index = soulSPBlue;
 	
 	vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * spdmulti * slow_multi
 	hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * spdmulti * slow_multi
@@ -186,7 +186,6 @@ if show {
 			}
 		}
 		if gravitycontrol {
-			
 			//begin jump
 			if BLUE_Gravity >= -6 * delta && BLUE_Gravity < -0.8 * delta
 				BLUE_Gravity += 0.13 * delta;

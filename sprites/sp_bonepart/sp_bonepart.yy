@@ -25,8 +25,8 @@
   "nineSlice": null,
   "origin": 1,
   "parent": {
-    "name": "bone parts",
-    "path": "folders/Sprites/bone parts.yy",
+    "name": "UNUSED",
+    "path": "folders/Sprites/UNUSED.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

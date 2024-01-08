@@ -5,52 +5,29 @@ scrCurveList(5)
 angledistance = abs(DesAngle - anglestart);
 disX = DesX - startx
 disY = DesY - starty
-heightdiff = endheight - startheight
-dir_topbone_theta =	(anglestart + 0)
-dir_bottombone_theta = (anglestart + 180) 
 movementCurve = function() { return 0 }
 angleCurve = function() { return 0 }
 heightCurve = function() { return 0 }
-midBoneScale = startheight/2 
-midSprite = noone
 
-//defined when called through script
-//relies on sprite origin point for changing rotational behavior
-//could maybe cause issues
-if (ROTATIONAL) midSprite = sp_bonemid
-else midSprite = sp_bonemidLOW
+if (ROTATIONAL) sprite_index = boneMiddle
+else sprite_index = boneBottom
 
-topBoneData = {
-	yLength : originY + lengthdir_y(startheight/2 + ((heightdiff/2) * 0), dir_topbone_theta),
-	xLength : originX + lengthdir_x(startheight/2 + ((heightdiff/2) * 0), dir_topbone_theta),
-	x : startx,
-	y : starty,
-	image_angle : anglestart + 90
-}
-bottomBoneData = {
-	yLength : originY + lengthdir_y(startheight/2 + ((heightdiff/2) * 0), dir_bottombone_theta),
-	xLength : originX + lengthdir_x(startheight/2 + ((heightdiff/2) * 0), dir_bottombone_theta),	
-	x : startx,
-	y : starty,
-	image_angle : anglestart + 270
-}
-changeHeight = function(newheight = endheight, per = perHeight, heightCurve = heightMethod) {
+changeHeight = function(_newheight = Height, _per = perHeight, _heightCurve = heightMethod) {
 	///@func changeHeight(newheight, 1/perchanger, curveType)
-	perHeight = per
-	startheight = endheight
-	endheight = newheight	
-	heightMethod = heightCurve
+	Height = _newheight
+	perHeight = _per
+	heightMethod = _heightCurve
 	evaluate[2] = 0
 }
-changeAngle = function(newAngle = anglestart, per = perAngle, angleCurve = angleMethod) {
+changeAngle = function(_newAngle = anglestart, _per = perAngle, _angleCurve = angleMethod) {
 	///@func changeAngle(newAngle, 1/per, curveType)
 	anglestart = currentangle
-	DesAngle = newAngle
-	perAngle = per
-	angleMethod = angleCurve
+	DesAngle = _newAngle
+	perAngle = _per
+	angleMethod = _angleCurve
 	evaluate[1] = 0
 }
-changeDestination = function(_x = originX, _y = originY, smoothMov = false, per = perMovement, movementCurve = movementMethod) {
+changeDestination = function(_x = originX, _y = originY, _smoothMov = false, _per = perMovement, _movementCurve = movementMethod) {
 	///@func changeDestination(x, y, smoothmov, 1/per, curveType)
 	startx = originX
 	starty = originY
@@ -58,8 +35,8 @@ changeDestination = function(_x = originX, _y = originY, smoothMov = false, per 
 	DesY = _y
 	disX = _x - startx
 	disY = _y - starty
-	perMovement = per
-	movementMethod = movementCurve
+	perMovement = _per
+	movementMethod = _movementCurve
 	evaluate[0] = 0
 }		
 changeColor = function(_col = c_white){
@@ -72,10 +49,7 @@ methodController = function() {
 	angleCurve = animcurve_get_channel(bonecurve, angleMethod)
 }	
 drawEvent = function(){
-	draw_sprite_ext(midSprite, 0, originX, originY, 1, midBoneScale, image_angle, image_blend, image_alpha)
-	draw_sprite_ext(sp_bonepart, 0, topBoneData.x, topBoneData.y, 1, 1, topBoneData.image_angle, image_blend, image_alpha)
-	draw_sprite_ext(sp_bonepart, 0, bottomBoneData.x, bottomBoneData.y, 1, 1, bottomBoneData.image_angle, image_blend, image_alpha)
-	//draw_sprite_ext(sprite_index, image_index, bottomBoneData.x, bottomBoneData.y, 2, midBoneScale * 2, image_angle, c_red, 1)
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_red, 1)
 }	
 stepFunction = function() {
 	return 0	

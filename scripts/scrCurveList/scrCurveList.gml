@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //USE IN CREATE EVENT FOR OBJECT
 ///@func curveList(MAXCALCULATIONSALLOWED)
-function curveList(maxSize = 100) {
+function scrCurveList(maxSize = 100) {
 	evaluate = array_create(maxSize, 0) //set MAX curves allowed 
 	
 	curveCalculation = function(curve, percent, calcNumber) {

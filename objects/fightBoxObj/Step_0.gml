@@ -15,7 +15,7 @@ global.Left = left.x
 global.Top = top.y
 global.Floor = bottom.y
 
-//debug stuff
+/*debug stuff
 if keyboard_check(vk_space) {
 	var ranx = irandom_range(0, 640)
 	//show_debug_message(ranx)
@@ -34,6 +34,3 @@ if keyboard_check(vk_space) {
 	if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")
 	if keyboard_check_pressed(ord("J")) changeAngle(ang, 1/80, "ease")
 }
-	
-	
-	

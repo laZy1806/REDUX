@@ -1,8 +1,22 @@
 /// @description Insert description here
 // You can write your code in this editor
-if destroy {
-instance_destroy()		
-}
+fightBoxObj.changeSize(120, 120, 1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

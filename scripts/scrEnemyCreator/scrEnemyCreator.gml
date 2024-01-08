@@ -1,4 +1,4 @@
-function enemyCreator(_enemyarray){
+function scrEnemyCreator(_enemyarray){
 	var ARRAY = _enemyarray	//array of strings
 	var xSpacing = round(320 / array_length(ARRAY))
 	

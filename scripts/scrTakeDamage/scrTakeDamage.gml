@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function takeDamage(_dmg, _isBlueOrange = false, _invFrames = 0, _isKarma = false){
-	show_debug_message("justtookdamage")
+function scrTakeDamage(_dmg, _isBlueOrange = false, _invFrames = 0, _isKarma = false){
 	if (global.InvFrames <= 0) {
 		if (image_blend == c_aqua && !keyboard_check(ord(global.leftKey)) && !keyboard_check(ord(global.rightKey)) && !keyboard_check(ord(global.upKey)) && !keyboard_check(ord(global.downKey))) {
 			exit;

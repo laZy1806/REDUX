@@ -1,4 +1,4 @@
-function dialogueSystem(_dialogueStruct, _spd = 0.05, _wrapwidth = 300, _wrapheight = 300, _boxWidth = 540, _boxHeight = 140) constructor {
+function scrDialogueSystem(_dialogueStruct, _spd = 0.05, _wrapwidth = 300, _wrapheight = 300, _boxWidth = 540, _boxHeight = 140) constructor {
 	dialogueList = _dialogueStruct[$ "dialogueList"];
 	spriteList = _dialogueStruct[$ "spriteList"] ?? noone;	
 	spd = argument[1]

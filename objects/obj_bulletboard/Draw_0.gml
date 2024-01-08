@@ -124,7 +124,7 @@ if !instance_exists(obj_attacks) {
 	fightParticlesSystem.draw()
 	rainParticlesSystem.draw()
 	// draw these bones outside the box
-	if instance_exists(persistentSoul) draw_sprite(soul, 0, persistentSoul.x, persistentSoul.y)
+	if instance_exists(persistentSoul) draw_sprite(soulSPRed, 0, persistentSoul.x, persistentSoul.y)
 	
 	if instance_exists(boneObj_rotation) {
 		for(var i = 0; i < instance_number(boneObj_rotation); i++) {

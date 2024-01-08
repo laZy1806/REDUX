@@ -8,5 +8,5 @@ if room = initRoom {
 }
 */
 if room = initRoom {
-	room_goto(oWorldParent)
+	room_goto(battleRoom)
 }

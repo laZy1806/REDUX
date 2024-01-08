@@ -31,12 +31,12 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "soul",
-    "path": "sprites/soul/soul.yy",
+    "name": "soulSPRed",
+    "path": "sprites/soulSPRed/soulSPRed.yy",
   },
   "spriteMaskId": {
-    "name": "soul",
-    "path": "sprites/soul/soul.yy",
+    "name": "soulSPRed",
+    "path": "sprites/soulSPRed/soulSPRed.yy",
   },
   "visible": true,
 }

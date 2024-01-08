@@ -4,7 +4,7 @@
 //locations should be a two dimensional array
 //pressedFunc should be a function
 //typeOf should be either a sprite, or an instance of scribbleCreator.
-function Button(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  SPEED = 1/60, curveTypeOf = "mediumEase") constructor
+function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  SPEED = 1/60, curveTypeOf = "mediumEase") constructor
 {
 	scrCurveList(1)
 	locs = argument[0];

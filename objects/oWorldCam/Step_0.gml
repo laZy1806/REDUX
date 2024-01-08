@@ -4,9 +4,7 @@
 if instance_exists(playerObj) {
 	var instID = instance_find(playerObj, 0);
 	var view_w_half = camera_get_view_width(cam) * 0.5, view_h_half = camera_get_view_height(cam) * 0.5; 
-	//x = instID.x - view_w_half;
-	//y = instID.y - view_h_half;
-	
+	var rmClamps = scrRoomClamps()
 	
 	_x = lerp(_x, instID.x, 0.03);
 	_y = lerp(_y, instID.y, 0.03);
@@ -14,8 +12,8 @@ if instance_exists(playerObj) {
 	x = _x - view_w_half
 	y = _y - view_h_half
 	
-	x = clamp(x, 0, 640)
-	y = clamp(y, 0, 480)
+	x = clamp(x, rmClamps[0], rmClamps[1])
+	y = clamp(y, rmClamps[2], rmClamps[3])
 
 	
 	global.camCenterX = instID.x;

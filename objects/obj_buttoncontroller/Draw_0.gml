@@ -60,9 +60,9 @@ if (global.UISelectionMenu > -1 and !instance_exists(obj_attacks)) {
 	//vertical movement on menus, like selecting items and stuff
 	// draws sprite on specific coordinates, maybe animate later?
 	if(global.BattleMenu == 1 or global.BattleMenu == 2 or global.BattleMenu == 4)
-		draw_sprite(soul, 0, 63, 295 + (30 * global.UISelectionMenu));
+		draw_sprite(soulSPRed, 0, 63, 295 + (30 * global.UISelectionMenu));
 	else if (global.BattleMenu > 0)
-		draw_sprite(soul, 0, 63 + (250 * (global.UISelectionMenu % 2)), 295 + (30 * floor(global.UISelectionMenu / 2)));
+		draw_sprite(soulSPRed, 0, 63 + (250 * (global.UISelectionMenu % 2)), 295 + (30 * floor(global.UISelectionMenu / 2)));
 		
 	// backing out of menu
 	if keyboard_check_pressed(ord("X")){

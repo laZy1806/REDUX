@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "soul",
-    "path": "sprites/soul/soul.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

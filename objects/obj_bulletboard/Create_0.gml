@@ -187,7 +187,7 @@ box_mask_func = function() {
 	// this is the drawing of the mask, what we are allowing to be seen, being stored directly into the alpha channel
 	
 	gpu_set_blendmode_ext(bm_dest_alpha, bm_inv_dest_alpha)
-	gpu_set_alphatestenable(true)
+	//gpu_set_alphatestenable(true)
 	
 	if instance_exists(boneObj) {
 		for(var i = 0; i < instance_number(boneObj); i++) {
@@ -208,7 +208,7 @@ box_mask_func = function() {
 		
 	}
 
-	gpu_set_alphatestenable(false)
+	//gpu_set_alphatestenable(false)
 	gpu_set_blendmode(bm_normal)
 	// using the gpu set blend mode, it reads alpha from the screen, which so happens to be the mask we implemented, so it will only show the alpha
 	// where the mask is located, instead of directly from the sprite itself.	

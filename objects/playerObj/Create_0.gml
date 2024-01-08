@@ -21,5 +21,4 @@ friskCam = instance_create_depth(x, y, 1, oWorldCam);
 collisionPixelTDMC = use_tdmc()
 drawEvent = function() {
 	draw_sprite(sprite_index, image_index, x, y)
-	
 }
