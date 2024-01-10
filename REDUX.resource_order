@@ -29,9 +29,9 @@
     {"name":"fightSP","order":4,"path":"folders/Sprites/fightSP.yy",},
     {"name":"gameframe","order":2,"path":"folders/Sprites/gameframe.yy",},
     {"name":"Text","order":3,"path":"folders/Sprites/Text.yy",},
+    {"name":"UNUSED","order":5,"path":"folders/Sprites/UNUSED.yy",},
     {"name":"Tile Sets","order":13,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":14,"path":"folders/Timelines.yy",},
-    {"name":"UNUSED","order":5,"path":"folders/Sprites/UNUSED.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_text","order":1,"path":"objects/obj_text/obj_text.yy",},

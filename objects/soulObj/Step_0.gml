@@ -1,53 +1,52 @@
 vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * 2
 hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * 2
-var collisionCheckHori = move.againstWall.hori
-var collisionCheckVeri = move.againstWall.vert
+var verCol = move.againstWall.vert != 0
+var horiCol = move.againstWall.hori != 0
 
 switch Color {
 	case "Blue":
-		if (!isSlam) { //normal movement
-			if (!isJumped && keyboard_check(ord(jumpKey))) {
-				grav = -4;
-				isJumped = true
-			}
-			else if (grav < 0 && keyboard_check_released(ord(jumpKey))) grav = 0
-			switch image_angle {
-				case 0:
-					move.xSpdYSpd(hsp, grav)
-					jumpKey = global.upKey
-					verticalColChecker()
-				break;
-				case 90:
-					move.xSpdYSpd(grav, vsp)
-					jumpKey = global.leftKey
-					horizontalColChecker()
-				break;
-				case 180:
-					move.xSpdYSpd(hsp, -grav)
-					jumpKey = global.downKey
-					verticalColChecker()
-				break;
-				case 270:
-					move.xSpdYSpd(-grav, vsp)
-					jumpKey = global.rightKey
-					horizontalColChecker()
-				break;
-			}
-			if isGrav {
-				if (grav >= -6  && grav < -0.8 ) grav += 0.13 ;
-				//between -0.8 and 0.8, for when dropping	
-				else if (grav >= -0.8  && grav < 0.8 ) grav += 0.16 ;
-				//also for when dropping longer	
-				else if (grav >= 0.8  && grav < 2.5 ) grav += 0.17 ;
-				else if (grav >= 2.5  && grav < 4 ) grav += 0.19 ;
-			}
-			else grav = 0
+		slamIncr += slamSpd
+		xSlam = (horiCol = true) ? 0 : xSlam
+		ySlam = (verCol = true) ? 0 : ySlam
+		isSlam = (_xSlam = 0 && _ySlam = 0) ? false : true
+		
+		var _xSlam = (xSlam) * arctan(4 * slamIncr), _ySlam = (ySlam) * arctan(4 * slamIncr)
+		var _x = (image_angle = 0 || image_angle = 180) ? hsp : (image_angle != 270 ? grav : -grav), _y = (image_angle = 90 || image_angle = 270) ? vsp : (image_angle != 180 ? grav : -grav)
+		var _jumpCol = (image_angle = 0 || image_angle = 180) ? verticalColChecker : horizontalColChecker
+		
+		_jumpCol()
+		
+		if ((!isJumped) && keyboard_check(ord(jumpKey))) { // starts jump off
+			grav = -4;
+			isJumped = true
 		}
-		else { //code when slammed
-		
-		
-		
-		
+		else if (grav < 0 && keyboard_check_released(ord(jumpKey))) { // allows to prematurely end jump halfway
+			grav = 0
+		}
+		move.xSpdYSpd(_x + _xSlam, _y + _ySlam)			
+		if isGrav && !isSlam {
+			if (grav >= -6  && grav < -0.8) grav += 0.13;
+			//between -0.8 and 0.8, for when dropping	
+			else if (grav >= -0.8  && grav < 0.8 ) grav += 0.16;
+			//also for when dropping longer	
+			else if (grav >= 0.8  && grav < 2.5 ) grav += 0.17;
+			else if (grav >= 2.5  && grav < 4 ) grav += 0.19;
+			isJumped = true
+		}
+		else grav = 0
+		switch image_angle {
+			case 0:
+				jumpKey = global.upKey
+			break;
+			case 90:
+				jumpKey = global.leftKey
+			break;
+			case 180:
+				jumpKey = global.downKey
+			break;
+			case 270:
+				jumpKey = global.rightKey
+			break;
 		}
 		sprite_index = soulSPBlue
 	break;
@@ -55,9 +54,13 @@ switch Color {
 		move.xSpdYSpd(hsp, vsp)
 		sprite_index = soulSPRed
 	break;
-	
 }		
-if mouse_check_button(mb_left) {
+if mouse_check_button(mb_right) {
 	x = mouse_x	
 	y = mouse_y	
+}
+if global.InvFrames <= 0 image_speed = 0
+else {
+	image_speed = 5
+	global.InvFrames--
 }

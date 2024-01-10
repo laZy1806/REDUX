@@ -77,9 +77,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"misc","folderPath":"folders/Sprites/misc.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Soul","folderPath":"folders/Sprites/Soul.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Text","folderPath":"folders/Sprites/Text.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UNUSED","folderPath":"folders/Sprites/UNUSED.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UNUSED","folderPath":"folders/Sprites/UNUSED.yy",},
   ],
   "IncludedFiles": [
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"gameframe.html","CopyToMask":0,"filePath":"datafiles",},

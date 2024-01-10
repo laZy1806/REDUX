@@ -80,7 +80,7 @@ drawEvent = function(){
 			draw_text((_x + 290) + hpbarwidth, _y + 2, string(global.playerHP) + " / " + string(global.maxplayerHP));
 		}	
 		else {
-			global.InvFrames = 0;
+
 			if global.Karma > global.playerHP {
 				KarmaTimer += 1;
 				if global.Karma < 7 && KarmaTimer > 6 {
