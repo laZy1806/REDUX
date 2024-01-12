@@ -10,6 +10,10 @@ image_angle = ANGLE + ANGLETO * ANGLECALC
 WIDTHSTATIC = WIDTH + WIDTHTO * SIZECALC //* forwardOrBack(WIDTHSTATIC, WIDTHTO)
 HEIGHTSTATIC = HEIGHT + HEIGHTTO * SIZECALC //* forwardOrBack(HEIGHTSTATIC, HEIGHTTO)
 
+//show_debug_message(string(HEIGHTSTATIC) + " = " + string(HEIGHT) + " + " + string(HEIGHTTO))
+
+
+
 global.Right = right.x
 global.Left = left.x
 global.Top = top.y

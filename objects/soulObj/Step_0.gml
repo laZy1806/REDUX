@@ -8,9 +8,9 @@ switch Color {
 		slamIncr += slamSpd
 		xSlam = (horiCol = true) ? 0 : xSlam
 		ySlam = (verCol = true) ? 0 : ySlam
-		isSlam = (_xSlam = 0 && _ySlam = 0) ? false : true
-		
 		var _xSlam = (xSlam) * arctan(4 * slamIncr), _ySlam = (ySlam) * arctan(4 * slamIncr)
+		
+		isSlam = (_xSlam = 0 && _ySlam = 0) ? false : true
 		var _x = (image_angle = 0 || image_angle = 180) ? hsp : (image_angle != 270 ? grav : -grav), _y = (image_angle = 90 || image_angle = 270) ? vsp : (image_angle != 180 ? grav : -grav)
 		var _jumpCol = (image_angle = 0 || image_angle = 180) ? verticalColChecker : horizontalColChecker
 		
@@ -53,6 +53,7 @@ switch Color {
 	case "Red":
 		move.xSpdYSpd(hsp, vsp)
 		sprite_index = soulSPRed
+		image_angle = 0
 	break;
 }		
 if mouse_check_button(mb_right) {

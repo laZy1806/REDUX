@@ -8,6 +8,7 @@ disY = DesY - starty
 movementCurve = function() { return 0 }
 angleCurve = function() { return 0 }
 heightCurve = function() { return 0 }
+onTimer = true
 
 if (ROTATIONAL) sprite_index = boneMiddle
 else sprite_index = boneBottom

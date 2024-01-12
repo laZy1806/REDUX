@@ -26,3 +26,7 @@ moveMeth = "static", heightMeth = "static", angleMeth = "static", heightSpd = 60
 	ds_list_add(global.boneList, bone)
 	return bone;
 }
+function clearAllBone(){
+
+	
+}

@@ -1,7 +1,7 @@
 global.gasterList = ds_list_create()
 //make sure timer is larger than speed to avoid gaster triggering while moving.
 function Gaster(_x, _startx, _y, _starty, _spd, _timer, _angle, _anglestart, _xscale = 2, _yscale = 2, _endtime = 30){
-	var blaster = instance_create_depth(x,y, -10000, gasterObj, {
+	var blaster = instance_create_depth(_startx, _starty, -10000, gasterObj, {
 		startx : _startx,
 		starty : _starty,
 		xTo : _x,
@@ -16,4 +16,5 @@ function Gaster(_x, _startx, _y, _starty, _spd, _timer, _angle, _anglestart, _xs
 		image_yscale : _yscale
 	});
 	ds_list_add(global.gasterList, blaster)
+	return blaster
 } 

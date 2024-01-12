@@ -12,8 +12,8 @@ y = 320
 	WIDTH = 570
 	HEIGHT = 120
 
-	WIDTHTO = 0
-	HEIGHTTO = 0
+	WIDTHTO = 570
+	HEIGHTTO = 120
 
 	xTo = 0
 	yTo = 0
@@ -33,12 +33,12 @@ y = 320
 	heightMethod = "static"
 #endregion
 #region methods to call outside
-	changeSize = function(width = WIDTHTO, height = HEIGHTTO, _spd = perSize, heightCurve = heightMethod) {
+	changeSize = function(width = WIDTHSTATIC, height = HEIGHTSTATIC, _spd = perSize, heightCurve = heightMethod) {
 		///@func changeSize(width, height, 1/perchanger, curveType)
 		WIDTH = WIDTHSTATIC
 		HEIGHT = HEIGHTSTATIC
-		WIDTHTO = abs(WIDTHSTATIC - width) * sign(WIDTHSTATIC - width) * -1 //INVERSES SIGN
-		HEIGHTTO = abs(HEIGHTSTATIC - height) * sign(HEIGHTSTATIC - height) * -1 //INVERSES SIGN	
+		WIDTHTO = abs(WIDTHSTATIC - width) * (sign(WIDTHSTATIC - width) * -1) //INVERSES SIGN
+		HEIGHTTO = abs(HEIGHTSTATIC - height) * (sign(HEIGHTSTATIC - height) * -1) //INVERSES SIGN	
 		perSize = _spd
 		heightMethod = heightCurve
 		resetCalcNumber(2)

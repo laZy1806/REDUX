@@ -27,7 +27,7 @@ else {
 	if (Timer < -endTime) {
 		image_yscale *= 0.85;
 		BeamAlp *= 0.85;
-		if (image_yscale < 0.001) {
+		if (image_yscale < 0.01) {
 			instance_destroy()
 		}
 	}

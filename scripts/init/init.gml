@@ -66,6 +66,9 @@ gml_pragma("global", "init()");
 	
 	global.ENEMYNAMES = array_create(1, "Kazy")
 	global.ENEMYARRAY = array_create(0)
+	
+	global.AttackCycle = 0
+	global.AttackNumber = 0
 	#macro RELY 17		//the relative y due to the change from gameframe
 	
 #endregion

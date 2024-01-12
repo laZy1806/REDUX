@@ -3,13 +3,13 @@ isRed = true
 jumpKey = "W"
 isJumped = false
 isSlam = false
-xSlam = 2
+xSlam = 0
 ySlam = 0
 slamSpd = 0.02
 slamIncr = slamSpd
 isGrav = true
 grav = 0
-Color = "Blue"
+Color = "Red"
 verticalColChecker = function(){
 	if move.againstWall.vert != 0 isJumped = false
 }
@@ -28,4 +28,4 @@ changeColor = function(_col){
 	return _col
 }
 image_speed = 0
-image_angle = 270
+image_angle = 0
