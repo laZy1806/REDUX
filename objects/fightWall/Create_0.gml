@@ -3,3 +3,5 @@
 scrCurveList(3)
 SETWIDTH = 0
 SETHEIGHT = 0
+bakedX = 0
+bakedY = 0

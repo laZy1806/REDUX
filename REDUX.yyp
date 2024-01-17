@@ -133,6 +133,7 @@
     {"id":{"name":"fightShaderObj","path":"objects/fightShaderObj/fightShaderObj.yy",},},
     {"id":{"name":"Soul_Halve","path":"sounds/Soul_Halve/Soul_Halve.yy",},},
     {"id":{"name":"menu","path":"rooms/menu/menu.yy",},},
+    {"id":{"name":"shOutline","path":"shaders/shOutline/shOutline.yy",},},
     {"id":{"name":"mistakeObj","path":"objects/mistakeObj/mistakeObj.yy",},},
     {"id":{"name":"spr_gameframe_buttons","path":"sprites/spr_gameframe_buttons/spr_gameframe_buttons.yy",},},
     {"id":{"name":"kazyFightSong","path":"sounds/kazyFightSong/kazyFightSong.yy",},},
@@ -521,6 +522,6 @@
   ],
   "templateType": null,
   "TextureGroups": [
-    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":true,"border":2,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
+    {"resourceType":"GMTextureGroup","resourceVersion":"1.3","name":"Default","autocrop":false,"border":8,"compressFormat":"bz2","directory":"","groupParent":null,"isScaled":true,"loadType":"default","mipsToGenerate":0,"targets":-1,},
   ],
 }

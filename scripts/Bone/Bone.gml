@@ -27,6 +27,7 @@ moveMeth = "static", heightMeth = "static", angleMeth = "static", heightSpd = 60
 	return bone;
 }
 function clearAllBone(){
-
-	
+	for (var i = 0; i < ds_list_size(global.boneList); i++)
+	with ds_list_find_value(global.boneList, i)
+		instance_destroy()
 }

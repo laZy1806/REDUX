@@ -9,5 +9,5 @@ if !Hide {
 	frameCounter++
 	stSize = lerp(stSize, 1, 0.15)
 	image_yscale = toFollow.image_yscale * (abs(sin(toFollow.Timer / 6) / 3) + stSize);
-	if (frameCounter % 2 == 0) && place_meeting(x, y, soulObj) scrTakeDamage(1, false, 0, true)
+	if (frameCounter % 2 == 0) && image_yscale > 0.5 && place_meeting(x, y, soulObj) scrTakeDamage(1, false, 0, true)
 }

@@ -7,7 +7,7 @@
   "bbox_right": 4,
   "bbox_top": 0,
   "bboxMode": 2,
-  "collisionKind": 1,
+  "collisionKind": 4,
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
   "edgeFiltering": false,
@@ -46,7 +46,7 @@
     ],
     "top": 2,
   },
-  "origin": 3,
+  "origin": 5,
   "parent": {
     "name": "fightBox",
     "path": "folders/Sprites/fightBox.yy",
@@ -82,7 +82,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 0,
+    "xorigin": 5,
     "yorigin": 5,
   },
   "swatchColours": null,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": true,
-  "width": 7,
+  "width": 5,
 }

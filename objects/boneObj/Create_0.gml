@@ -9,6 +9,7 @@ movementCurve = function() { return 0 }
 angleCurve = function() { return 0 }
 heightCurve = function() { return 0 }
 onTimer = true
+Height = 0
 
 if (ROTATIONAL) sprite_index = boneMiddle
 else sprite_index = boneBottom
@@ -50,7 +51,7 @@ methodController = function() {
 	angleCurve = animcurve_get_channel(bonecurve, angleMethod)
 }	
 drawEvent = function(){
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_red, 1)
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1)
 }	
 stepFunction = function() {
 	return 0	

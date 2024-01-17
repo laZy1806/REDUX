@@ -22,14 +22,7 @@ else if (keyboard_check_pressed(ord("F"))) {
 }
 window_set_size(global.windWidth, global.windHeight)
 
+game_frame_button_set_click(gameframe_button_array[2], forcePause)
+
+
 gameframe_update();
-
-
-
-
-
-
-
-
-
-

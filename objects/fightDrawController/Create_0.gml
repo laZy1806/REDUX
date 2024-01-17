@@ -7,6 +7,11 @@ image_speed = 0
 DRAW = false
 alarm[0] = 5
 
+shaderOutline = shOutline
+pixH = shader_get_uniform(shaderOutline, "pixelH")
+pixW = shader_get_uniform(shaderOutline, "pixelW")
+outlineColor = shader_get_uniform(shaderOutline, "col")
+
 boxMasking = function(_toMask) {
 	if instance_exists(fightBoxObj) {
 		var box = instance_find(fightBoxObj, 0)
@@ -17,7 +22,7 @@ boxMasking = function(_toMask) {
 		// fills the alpha channel with nothing; helps protect the actual image without influencing the blend modes onto them
 	
 		draw_set_alpha(1)
-		draw_sprite_ext(battlepixel, 0, box.x, box.y, box.WIDTHSTATIC/2, box.HEIGHTSTATIC/2, box.image_angle, c_white, 1)
+		draw_sprite_ext(battlepixel, 0, box.x, box.y, (5 + box.WIDTHSTATIC)/2, (5 + box.HEIGHTSTATIC)/2, -box.image_angle, c_white, 1)
 		gpu_set_blendenable(true)
 		gpu_set_colorwriteenable(true, true, true, true)
 		// this is the drawing of the mask, what we are allowing to be seen, being stored directly into the alpha channel

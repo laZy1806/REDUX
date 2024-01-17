@@ -42,6 +42,7 @@
     {"name":"scrNameActions","order":19,"path":"scripts/scrNameActions/scrNameActions.yy",},
     {"name":"boneMiddle","order":3,"path":"sprites/boneMiddle/boneMiddle.yy",},
     {"name":"shaderGaussianObj","order":1,"path":"objects/shaderGaussianObj/shaderGaussianObj.yy",},
+    {"name":"shOutline","order":4,"path":"shaders/shOutline/shOutline.yy",},
     {"name":"spr_gameframe_buttons","order":1,"path":"sprites/spr_gameframe_buttons/spr_gameframe_buttons.yy",},
     {"name":"shPassthrough","order":2,"path":"shaders/shPassthrough/shPassthrough.yy",},
     {"name":"scrDialogueSystem","order":26,"path":"scripts/scrDialogueSystem/scrDialogueSystem.yy",},

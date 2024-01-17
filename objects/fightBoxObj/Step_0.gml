@@ -14,12 +14,12 @@ HEIGHTSTATIC = HEIGHT + HEIGHTTO * SIZECALC //* forwardOrBack(HEIGHTSTATIC, HEIG
 
 
 
-global.Right = right.x
+global.Right = right.x 
 global.Left = left.x
 global.Top = top.y
 global.Floor = bottom.y
-
-/*debug stuff
+//mouseDebug()
+//debug stuff
 if keyboard_check(vk_space) {
 	var ranx = irandom_range(0, 640)
 	//show_debug_message(ranx)

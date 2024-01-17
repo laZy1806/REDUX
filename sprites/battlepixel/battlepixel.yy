@@ -10,7 +10,7 @@
   "collisionKind": 5,
   "collisionTolerance": 0,
   "DynamicTexturePage": false,
-  "edgeFiltering": true,
+  "edgeFiltering": false,
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"0f72c87d-91e8-46fe-b6ad-c867c60c36ee",},
@@ -18,11 +18,34 @@
   "gridX": 0,
   "gridY": 0,
   "height": 2,
-  "HTile": true,
+  "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"dec9013e-a882-41f7-8fd4-79a4c5bb341f","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
-  "nineSlice": null,
+  "nineSlice": {
+    "resourceType": "GMNineSliceData",
+    "resourceVersion": "1.0",
+    "bottom": 0,
+    "enabled": false,
+    "guideColour": [
+      4294902015,
+      4294902015,
+      4294902015,
+      4294902015,
+    ],
+    "highlightColour": 1728023040,
+    "highlightStyle": 0,
+    "left": 0,
+    "right": 0,
+    "tileMode": [
+      0,
+      0,
+      0,
+      0,
+      0,
+    ],
+    "top": 0,
+  },
   "origin": 4,
   "parent": {
     "name": "misc",
@@ -69,6 +92,6 @@
     "path": "texturegroups/Default",
   },
   "type": 0,
-  "VTile": true,
+  "VTile": false,
   "width": 2,
 }

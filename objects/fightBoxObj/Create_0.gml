@@ -2,6 +2,8 @@ scrCurveList(10)
 
 x = 320
 y = 320
+image_angle = 0
+TEST = 0
 #region box vars
 	RELATIVEX = 320
 	RELATIVEY = 320
@@ -68,9 +70,7 @@ y = 320
 		angleCurve = animcurve_get_channel(boxcurve, angleMethod)
 	}	
 	innerBoxDraw = function(){
-	
-		draw_sprite_ext(battlepixel, 0, x, y, WIDTHSTATIC/2, HEIGHTSTATIC/2, -image_angle, c_black, 1)	
-
+		draw_sprite_ext(battlepixel, 0, x, y, (5 + WIDTHSTATIC)/2, (5 + HEIGHTSTATIC)/2, -image_angle, c_black, 1)	
 	}
 #endregion
 left = instance_create_depth(0, 0, 0, fightWall, {
@@ -78,20 +78,21 @@ left = instance_create_depth(0, 0, 0, fightWall, {
 	step_function : function() {
 		SETWIDTH = (-fightBoxObj.WIDTHSTATIC/2) 
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
+		image_xscale = 1.2
 	}
 })
 top = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : topWall,	
 	step_function : function() {
 		SETHEIGHT = -fightBoxObj.HEIGHTSTATIC/2
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC + 10)/10
 	}
 })
 bottom = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : bottomWall,	
 	step_function : function() {
 		SETHEIGHT = fightBoxObj.HEIGHTSTATIC/2	
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC + 10)/10
 	}
 })
 right = instance_create_depth(0, 0, 0, fightWall, {
@@ -99,5 +100,6 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 	step_function : function() {
 		SETWIDTH = (fightBoxObj.WIDTHSTATIC/2)
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
+		image_xscale = 1.2
 	}
 })	
