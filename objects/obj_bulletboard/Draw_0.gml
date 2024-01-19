@@ -159,7 +159,7 @@ if !instance_exists(obj_attacks) {
 		
 		}
 	}
-	draw_set_font(healthfont);
+	draw_set_font(healthFont);
 	draw_set_color(c_white);
 	draw_set_halign(fa_left)
 	draw_text(10, _y + 5, global.name + " LV " + string(global.playerLV));
@@ -198,7 +198,7 @@ if !instance_exists(obj_attacks) {
 		draw_text(320 + hpbarwidth, _y + 3, string(global.Karma) + " / " + string(global.maxplayerHP));
 	} 
 	draw_set_color(c_white);
-	draw_set_font(widgetsfont);
+	draw_set_font(widgetsFont);
 	draw_text(220, _y + 5, "HP");
 	if global.KARMA_ENABLED {
 		draw_text(273 + hpbarwidth, _y + 5, "KR");

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "healthfont",
+  "name": "healthFont",
   "AntiAlias": 0,
   "applyKerning": 1,
   "ascender": 17,
@@ -116,7 +116,7 @@
   "italic": false,
   "kerningPairs": [],
   "last": 0,
-  "lineHeight": 0,
+  "lineHeight": 24,
   "maintainGms1Font": false,
   "parent": {
     "name": "Fonts",

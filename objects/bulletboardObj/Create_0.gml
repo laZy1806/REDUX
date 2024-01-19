@@ -8,6 +8,8 @@ for(var i = 0; i < array_length(temp); i++) {
 	
 }
 
+x = 100
+y = 100
 
 state = -1
 selector = 0
@@ -20,6 +22,9 @@ actButton[$ "stepFunction"] = function() { if (selector = 1) actButton[$ "image_
 buttonList[0] = noone // fightButton
 buttonList[1] = actButton
 buttonList[2] = noone //itemButton
+
+b1 = Bone(320, 320, 320, 320, 60, 60)
+b1.onTimer = false
 
 drawEvent = function(){
 	var WIDTH = instance_find(fightBoxObj, 0).WIDTHSTATIC, HEIGHT = instance_find(fightBoxObj, 0).HEIGHTSTATIC
@@ -64,6 +69,7 @@ drawEvent = function(){
 				break;
 			}
 		}
+			
 		draw_set_alpha(image_alpha)
 		var _y = 390
 		var _x = 37 
@@ -71,16 +77,16 @@ drawEvent = function(){
 		var hpbarwidth = (global.maxplayerHP * 1.5);
 		var hpbarwidth_fill = (global.playerHP * 1.5)
 		var hp_barwidth_karma = (global.Karma * 1.5)
-	
-		draw_set_font(healthfont);
-		draw_set_color(c_white);
-		draw_set_halign(fa_left)
-		draw_text(_x, _y + 3, global.name + "  LV " + string(global.playerLV));
+		
+		//draw_set_font(healthfont);
+		//draw_set_color(c_white);
+		//draw_set_halign(fa_left)
+		//draw_text(_x, _y + 3, global.name + "  LV " + string(global.playerLV));
+		
 		if !global.KARMA_ENABLED {
 			draw_text((_x + 290) + hpbarwidth, _y + 2, string(global.playerHP) + " / " + string(global.maxplayerHP));
 		}	
 		else {
-
 			if global.Karma > global.playerHP {
 				KarmaTimer += 1;
 				if global.Karma < 7 && KarmaTimer > 6 {
@@ -108,22 +114,34 @@ drawEvent = function(){
 			else {
 				global.Karma = global.playerHP;
 			}
+			var toDraw = string(global.Karma) + " / " + string(global.maxplayerHP)
 			draw_text((_x + 290) + hpbarwidth, _y + 2, string(global.Karma) + " / " + string(global.maxplayerHP));
+			//var healthtxt = scribble(toDraw)
+			//healthtxt.draw((_x + 290) + hpbarwidth, _y + 2) 
 		} 
+		//var toDraw = scribble("[healthFontOutline]" + global.name + "  LV " + string(global.playerLV) + "[widgetsFont] HP")
+		//toDraw.draw(_x, _y + 2) 
+		
+		
 		draw_set_color(c_white);
-		draw_set_font(widgetsfont);
-		draw_text((_x + 190), _y + 2 , "HP");
-		if global.KARMA_ENABLED {
-			draw_text(273 + hpbarwidth, _y + 2, "KR");
-		}
+		draw_set_font(widgetsFont);
+		//draw_text((_x + 190), _y + 2 , "HP");
+		
+		//if (global.KARMA_ENABLED) draw_text(273 + hpbarwidth, _y + 2, "KR");
+		
 		draw_set_color(c_red) 
 		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, false);
+		
+		draw_set_color(c_black) 
+		draw_rectangle((_x + 220), _y, (_x + 230) + hpbarwidth, _y + 25, true);
+		
 		draw_set_color(c_fuchsia)
-		if global.KARMA_ENABLED {
-			draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 25, false);
-		}
+		if (global.KARMA_ENABLED) draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 25, false);
+		
+		//draw_set_font(menuFont)
+		//draw_text(300, 100, "THIS KEON: " + string(fps_real))
+
 		draw_set_color(c_yellow);
 		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth_fill, _y + 25, false);
 	}
-	
 }

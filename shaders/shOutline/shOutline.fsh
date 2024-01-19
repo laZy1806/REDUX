@@ -1,33 +1,31 @@
-//
-// Simple passthrough fragment shader
-//
+precision highp float;
+const float PI = 3.14159265359;
+
 varying vec2 v_vTexcoord;
 varying vec4 v_vColour;
 
-uniform float pixelH;
-uniform float pixelW;
+uniform vec2 pixWH;
+uniform float sampleCount;
+uniform float thickness;
+uniform vec3 color;
+uniform float tol;
 
-//uniform vec3 col;
-
-void main()
-{
-	vec2 offsetx;
-	offsetx.x = pixelW * 2.0;
-	vec2 offsety;
-	offsety.y = pixelH * 2.0;
+void main() {
+	float alpha = 0.0;
+	//bool TEST = false;
+	vec4 base_col = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord );
+	vec4 newPixel = vec4(color, 0.0);
 	
-	// converts texel coords to actual pixel coordinates
-	float alpha = texture2D( gm_BaseTexture, v_vTexcoord ).a;
-	
-	alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + (offsetx)).a);
-	alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - (offsetx)).a);
-	alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + (offsety)).a);
-	alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - (offsety)).a);
-	//omni directional checking
-	//alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + (offsetx) + (offsety)).a);
-	//alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - (offsetx) + (offsety)).a);
-	//alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord + (offsetx) - (offsety)).a);
-	//alpha += ceil(texture2D( gm_BaseTexture, v_vTexcoord - (offsetx) - (offsety)).a);
-    gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord);
-	gl_FragColor.a = alpha;
+	for(float i = 1.0; i <= thickness; i++) {
+		
+		for(float radius = 0.0; radius < 2.0 * PI; radius += (2.0 * PI)/sampleCount) {
+			
+			vec2 pixPos = v_vTexcoord + i * vec2(cos(radius)*pixWH.x, sin(radius)*pixWH.y);
+			
+			float newAlp = (v_vColour * texture2D(gm_BaseTexture, pixPos)).a; //optimized from Mathroos
+			//alpha = step(tol + 0.001, newPix); //if this gets 1, it means we found a pixel with alpha in radius
+			newPixel = mix(newPixel, vec4(color, 1.0), newAlp);	
+		}
+	}
+	gl_FragColor = mix(newPixel, base_col, base_col.a);
 }

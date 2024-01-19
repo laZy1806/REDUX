@@ -6,7 +6,7 @@ function mouseDebug(){
 }
 function keyboardDebug(_keyOne, _keyTwo) {
 	if !variable_instance_exists(id, "_TEST") _TEST = 0
-	else _TEST += ((keyboard_check_pressed(_keyOne) - keyboard_check_pressed(_keyTwo))* 0.05)
+	else _TEST += ((keyboard_check(_keyOne) - keyboard_check(_keyTwo))* 0.05)
 	show_debug_message("Value: " + string(_TEST))
 	return _TEST
 }

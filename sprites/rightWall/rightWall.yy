@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "rightWall",
   "bbox_bottom": 9,
-  "bbox_left": 0,
-  "bbox_right": 4,
+  "bbox_left": 2,
+  "bbox_right": 5,
   "bbox_top": 0,
   "bboxMode": 2,
   "collisionKind": 4,
@@ -93,5 +93,5 @@
   },
   "type": 0,
   "VTile": true,
-  "width": 5,
+  "width": 6,
 }

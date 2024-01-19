@@ -1,7 +1,7 @@
 {
   "resourceType": "GMFont",
   "resourceVersion": "1.0",
-  "name": "widgetsfont",
+  "name": "widgetsFont",
   "AntiAlias": 0,
   "applyKerning": 1,
   "ascender": 16,

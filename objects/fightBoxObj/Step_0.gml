@@ -21,19 +21,18 @@ global.Floor = bottom.y
 //mouseDebug()
 //debug stuff
 if keyboard_check(vk_space) {
-	var ranx = irandom_range(0, 640)
+	var ranx = irandom_range(100, 640)
 	//show_debug_message(ranx)
-	var rany = irandom_range(0, 480)
+	var rany = irandom_range(100, 480)
 	//show_debug_message(rany)
 	
-	var vwidth = irandom_range(100, 400)
+	var vwidth = (floor(irandom_range(100, 400)/10)) * 10 //make it always a multiple of 10
 	//show_debug_message(vwidth)
-	var vheight = irandom_range(100, 400)
+	var vheight = (floor(irandom_range(100, 400)/10)) * 10 //make it always a multiple of 10// no scalling issues with multiples of 10
 	//show_debug_message(vheight)
 	
 	var ang = irandom_range(0, 720)
 	//show_debug_message(ang)
-	show_debug_message(top.SETWIDTH)
 	if keyboard_check_pressed(ord("K")) changeDestination(ranx, rany, 1/120, "ease")
 	if keyboard_check_pressed(ord("L")) changeSize(vwidth, vheight, 1/80, "ease")
 	if keyboard_check_pressed(ord("J")) changeAngle(ang, 1/80, "ease")

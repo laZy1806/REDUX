@@ -22,7 +22,8 @@ void main()
         float fAngle = 2.0*PI*float(iAngle) / float(u_iOutlineSamples);
         for(int radius = 1; radius <= u_iOutlineSize; radius++)
         {
-            newColor = mix(newColor, outlineColor, texture2D(gm_BaseTexture, v_vTexcoord + u_vTexel*(float(radius)*vec2(cos(fAngle), sin(fAngle)))).a);
+            newColor = mix(newColor, outlineColor, texture2D(gm_BaseTexture, v_vTexcoord 
+			+ u_vTexel*(float(radius)*vec2(cos(fAngle), sin(fAngle)))).a);
         }
     }
     

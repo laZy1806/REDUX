@@ -4,15 +4,15 @@ if AttackArray[global.AttackNumber] != noone AttackArray[global.AttackNumber].CY
 
 //debug placing
 if keyboard_check_pressed(vk_space) {
-	debugPressed = true
+	//debugPressed = true
 	sp = gasterSP
 }
 if keyboard_check_pressed(vk_control) {
-	debugPressed = true
+	//debugPressed = true
 	sp = bone
 }
 if keyboard_check_pressed(vk_escape) {
-	debugPressed = false
+	//debugPressed = false
 	sp = empty
 }
 if debugPressed {
@@ -24,8 +24,8 @@ if debugPressed {
 }
 if debugPressed {
 	if !mouseClick {
-		_x = mouseDebug()[0]
-		_y = mouseDebug()[1]
+		//_x = mouseDebug()[0]
+		//_y = mouseDebug()[1]
 	}
 	
 	if mouse_check_button_pressed(mb_left) mouseClick *= -1

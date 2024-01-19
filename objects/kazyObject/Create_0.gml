@@ -185,7 +185,7 @@ atk4Data = {
 	siner : 0,
 	boneArray : array_create(0, 0),
 	boneWave : function() {
-		for (var i = 0; i < 20; i++) {
+		for (var i = 0; i < 14; i++) {
 			var b1 = Bone(global.Left + (12 * i), global.Left + (12 * i), global.Top - 20, global.Top - 20, 20, 40, , 180, 180, , "ease", , 60)
 			var b2 = Bone(global.Left + (12 * i), global.Left + (12 * i), global.Floor + 20, global.Floor + 20, 20, 40, , , , , "ease", , 60)
 			b1.onTimer = false
