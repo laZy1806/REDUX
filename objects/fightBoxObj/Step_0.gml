@@ -14,10 +14,10 @@ HEIGHTSTATIC = HEIGHT + HEIGHTTO * SIZECALC //* forwardOrBack(HEIGHTSTATIC, HEIG
 
 
 
-global.Right = right.x 
-global.Left = left.x
-global.Top = top.y
-global.Floor = bottom.y
+global.Right = right.x + lengthdir_x(5, image_angle)
+global.Left = left.x + lengthdir_x(5, image_angle + 180)
+global.Top = top.y + lengthdir_y(7, image_angle + 180)
+global.Floor = bottom.y + lengthdir_y(7, image_angle)
 //mouseDebug()
 //debug stuff
 if keyboard_check(vk_space) {

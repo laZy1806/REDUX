@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.AttackCycle = 0
-global.AttackNumber = 3
+global.AttackNumber = 5
 //audio_sound_set_track_position(MAINFIGHT, 18.33)
 _audio = -1
 _time = 0
-OFF = true
+OFF = false
+sp = noone
+TEST = 0
 findBone = function(boneNumber) {
 	///@func findBone(boneNumber)
 	return ds_list_find_value(global.boneList, boneNumber)	
@@ -29,7 +31,8 @@ for(var i = 0; i < global.AttackNumber + 1; i++) {
 		_time += AttackArray[i].CYCLEENDINGS[j]
 	}
 }
-MAINFIGHT = audio_play_sound(kazyFightSong, 1, false, 0.0, _time)
+MAINFIGHT = audio_play_sound(kazyFightSong, 1, false, _audio, _time)
+
 // must start at 0.03 or first cycle call will bug out, anything less makes creation happen after alarm trigger
 ATTACKALARM = time_source_create(time_source_game, 0.03, time_source_units_seconds, function() {
 	AttackArray[global.AttackNumber].CYCLECREATION()	

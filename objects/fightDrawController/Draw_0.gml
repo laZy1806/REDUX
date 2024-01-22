@@ -4,10 +4,9 @@ if !surface_exists(drawSurf) drawSurf = surface_create(640, 480)
 
 if DRAW {	// a minor delay to let everything create and set variables
 	surface_set_target(drawSurf)
-	
-	draw_clear_alpha(c_black, 0)
-	//gpu_set_blendenable(false)
 
+	draw_clear_alpha(c_black, 0)
+		
 	var fBox = instance_find(fightBoxObj, 0)
 	var soulRef = instance_find(soulObj, 0)
 	var bulletRef = instance_find(bulletboardObj, 0)
@@ -16,10 +15,10 @@ if DRAW {	// a minor delay to let everything create and set variables
 	var toMask = function(){
 		for(var i = 0; i < ds_list_size(global.boneList); i++) ds_list_find_value(global.boneList, i).drawEvent()	
 	}
+	
+	boxMasking(toMask)
 
 	with bulletRef drawEvent()
-
-	boxMasking(toMask)
 
 	for(var i = 0; i < ds_list_size(global.gasterList); i++) {
 		ds_list_find_value(global.gasterList, i).drawEvent()	
@@ -29,7 +28,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 		with soulRef draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1)
 		
 	for(var i = 0; i < instance_number(fightWall); i++) {
-		with instance_find(fightWall, i) draw_sprite_ext(sprite_index, image_index, x, y, image_xscale + 0.4, image_yscale + 0.4, image_angle, c_black, image_alpha) //baked in outline (NOT OPTIMAL)
+		//with instance_find(fightWall, i) draw_sprite_ext(sprite_index, image_index, x, y, image_xscale + 0.4, image_yscale + 0.4, image_angle, c_black, image_alpha) //baked in outline (NOT OPTIMAL)
 	}	
 	
 	for(var i = 0; i < instance_number(fightWall); i++) {
@@ -42,10 +41,9 @@ if DRAW {	// a minor delay to let everything create and set variables
 		
 	surface_reset_target()
 	
-	//scrOutlineShaderData(drawSurf)
+		scrOutlineShaderData(drawSurf, , 1)
 	
-	draw_surface(drawSurf, 0, 0)
-	
-	//shader_reset()
-	
+			draw_surface(drawSurf, 0, 0)
+			
+		shader_reset()
 }

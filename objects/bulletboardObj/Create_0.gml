@@ -22,10 +22,6 @@ actButton[$ "stepFunction"] = function() { if (selector = 1) actButton[$ "image_
 buttonList[0] = noone // fightButton
 buttonList[1] = actButton
 buttonList[2] = noone //itemButton
-
-b1 = Bone(320, 320, 320, 320, 60, 60)
-b1.onTimer = false
-
 drawEvent = function(){
 	var WIDTH = instance_find(fightBoxObj, 0).WIDTHSTATIC, HEIGHT = instance_find(fightBoxObj, 0).HEIGHTSTATIC
 	var _x = instance_find(fightBoxObj, 0).x, _y = instance_find(fightBoxObj, 0).y
@@ -133,7 +129,7 @@ drawEvent = function(){
 		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, false);
 		
 		draw_set_color(c_black) 
-		draw_rectangle((_x + 220), _y, (_x + 230) + hpbarwidth, _y + 25, true);
+		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, true);
 		
 		draw_set_color(c_fuchsia)
 		if (global.KARMA_ENABLED) draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 25, false);

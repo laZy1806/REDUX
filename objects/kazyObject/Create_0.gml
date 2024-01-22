@@ -108,8 +108,8 @@ atk2Data = {
 	CYCLEENDINGS : [0.05, 0.7, 0.7, 0.8, 0.8, 1], //IN SECOND
 	reverseBoneCycle : function(_desLeft, _desRight, _startLeft = global.Left, _startRight = global.Right) {
 		///@func reverseBoneCycle(_desLeft, _desRight, _startLeft, _startRight)
-		Bone(_desRight, _startRight, global.Floor,  global.Floor, 110, 110, false, , , "reverse", , , , 110)
-		Bone(_desLeft, _startLeft, global.Floor,  global.Floor, 110, 110, false, , , "reverse", , , , 110)
+		Bone(_desRight, _startRight, global.Floor,  global.Floor, 110, 110, false, , , "reverse", , , , 100)
+		Bone(_desLeft, _startLeft, global.Floor,  global.Floor, 110, 110, false, , , "reverse", , , , 100)
 	},
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
@@ -126,10 +126,10 @@ atk2Data = {
 				reverseBoneCycle(global.Left + 95, global.Right - 45)
 			break;
 			case 4:
-				Bone(global.Right, global.Right, global.Floor - 50, global.Top - 5, 190, 190, , 90, 90, "reverse", , , , 100)
+				Bone(global.Right - 4, global.Right - 4, global.Floor - 50, global.Top - 5, 193, 193, , 90, 90, "reverse", , , , 100)
 			break;
 			case 5:
-				Bone(global.Right, global.Right, global.Top + 50, global.Floor + 5, 190, 190, , 90, 90, "reverse", , , , 100)
+				Bone(global.Right - 4, global.Right - 4, global.Top + 50, global.Floor + 5, 193, 193, , 90, 90, "reverse", , , , 100)
 			break;
 		}
 	},
@@ -145,7 +145,7 @@ atk2Data = {
 	},
 }
 atk3Data = {
-	CYCLEENDINGS : [0.15, 0.6, 0.4, 0.8], //IN SECOND
+	CYCLEENDINGS : [0.20, 0.55, 0.35, 0.75], //IN SECOND
 	boneCycle : function(_heighttop, _heightbottom, _spd) {
 		Bone(global.Left, global.Right, global.Floor, global.Floor, _heightbottom, _heightbottom, false, , , , , , ,_spd)
 		Bone(global.Right, global.Left, global.Floor,  global.Floor, _heightbottom, _heightbottom, false , , , , , ,  ,_spd)
@@ -155,13 +155,14 @@ atk3Data = {
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
+				fightBoxObj.changeSize(190, , 1, "ease")
 				soulObj.changeColor("Blue")
 			break;
 			case 1:
 				boneCycle(60, 20, 70)
 			break;
 			case 2:
-				boneCycle(35, 40, 60)
+				boneCycle(35, 40, 65)
 				Gaster(150, -50, 355, 355, 40, 45, 0, 0, 1.85, 1.35)
 			break;
 			case 3:
@@ -181,13 +182,13 @@ atk3Data = {
 	},
 }
 atk4Data = {
-	CYCLEENDINGS : [10, 0.4], //IN SECOND
+	CYCLEENDINGS : [2, 2, 2, 4], //IN SECOND
 	siner : 0,
 	boneArray : array_create(0, 0),
 	boneWave : function() {
-		for (var i = 0; i < 14; i++) {
-			var b1 = Bone(global.Left + (12 * i), global.Left + (12 * i), global.Top - 20, global.Top - 20, 20, 40, , 180, 180, , "ease", , 60)
-			var b2 = Bone(global.Left + (12 * i), global.Left + (12 * i), global.Floor + 20, global.Floor + 20, 20, 40, , , , , "ease", , 60)
+		for (var i = 0; i < 16; i++) {
+			var b1 = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Top - 20, global.Top - 20, 10, 30, , 180, 180, , "slowerEase", , 30)
+			var b2 = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Floor + 20, global.Floor + 20, 10, 30, , , , , "slowerEase", , 30)
 			b1.onTimer = false
 			b2.onTimer = false
 			array_push(boneArray, b1, b2)
@@ -196,7 +197,33 @@ atk4Data = {
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
+				fightBoxObj.changeSize(190, , 1, "ease")
 				boneWave()
+			break;
+			case 1:
+				for(var i = 0; i < array_length(boneArray); i++) {
+					boneArray[i].changeHeight(40)
+				}
+				//Bone(global.Right, global.Left, global.Top + 20, global.Top + 20, 30, 30, , 180, 180)
+				var b1 = Bone(global.Right, global.Left, global.Floor,  global.Floor, 110, 110, false, , , "static", , , , 80)
+				b1.changeColor(c_darkorange)
+				
+				ds_list_insert(global.boneList, 0, b1)	//this makes it to where the orange bone is drawn behind
+				ds_list_delete(global.boneList, ds_list_size(global.boneList) - 1)
+				Bone(global.Left, global.Right, global.Floor,  global.Floor, 60, 60, false, , , "static", , , , 80)
+			break;
+			case 2:
+				for(var i = 0; i < array_length(boneArray); i++) {
+					boneArray[i].changeHeight(50)
+				}
+				var b1 = Bone(global.Left, global.Right, global.Floor,  global.Floor, 110, 110, false, , , "static", , , , 80)
+				b1.changeColor(c_aqua)
+				
+				ds_list_insert(global.boneList, 0, b1)
+				ds_list_delete(global.boneList, ds_list_size(global.boneList) - 1)
+				Bone(global.Right, global.Left, global.Top, global.Top, 40, 40, false, 180, 180, "static", , , , 80)		
+			break;
+			case 3:
 			break;
 		}
 	},
@@ -214,10 +241,37 @@ atk4Data = {
 		}
 	},
 }
+atk5Data = {
+	CYCLEENDINGS : [2, 2, 2, 4], //IN SECONDS
+	cooldown : 5,
+	CYCLECREATION : function() {
+		switch global.AttackCycle {
+			case 0:
+				fightBoxObj.changeSize(190, , 1, "ease")
+			break;
+		}
+	},
+	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
+		cooldown = cooldown - 1
+		if ((cooldown <= 0) and global.AttackCycle = 1) {
+			Bone(global.Left, global.Right, global.Top, global.Top, 45, 45, false, 180, 180, , , , , 60)
+			cooldown = 5
+		}
+	},
+	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
+		switch global.AttackCycle {
+			case 0:
+				
+			break;
+		}
+	},
+}	
+	
 AttackArray = [
 	introData,
 	atk1Data,
 	atk2Data,
 	atk3Data,
-	atk4Data
+	atk4Data,
+	atk5Data,
 ]

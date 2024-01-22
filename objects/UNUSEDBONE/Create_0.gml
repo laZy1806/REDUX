@@ -1,7 +1,7 @@
 /// @description setting damage and other variables
 // You can write your code in this editor
 scrCurveList(5)
-
+/*
 angledistance = abs(DesAngle - anglestart);
 disX = DesX - startx
 disY = DesY - starty

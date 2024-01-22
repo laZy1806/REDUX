@@ -70,6 +70,7 @@ gml_pragma("global", "init()");
 	global.AttackCycle = 0
 	global.AttackNumber = 0
 	#macro RELY 17		//the relative y due to the change from gameframe
+	#macro c_darkorange make_color_hsv(30, 250, 220)
 	
 #endregion
 scribble_font_bake_outline_8dir_2px("menuFont", "outlinemenuFont", c_black, false)

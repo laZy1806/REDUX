@@ -24,8 +24,6 @@ gasteranglefunc = function(angle) {
 	return angle + 180;
 }	
 
-//shakecurve = animcurve_get_channel(visualeffectcurve,"sp_shake");
-//instance_create_depth(x, y, 0, obj_slam)
 boxchange = false;
 if global.battleSong = 0 {
 	instance_create_depth(x, y, 0, songObj)

@@ -16,7 +16,9 @@ else sprite_index = boneBottom
 
 changeHeight = function(_newheight = Height, _per = perHeight, _heightCurve = heightMethod) {
 	///@func changeHeight(newheight, 1/perchanger, curveType)
-	Height = _newheight
+	Height = startheight + heightdiff * HEIGHT
+	startheight = endheight
+	endheight = _newheight
 	perHeight = _per
 	heightMethod = _heightCurve
 	evaluate[2] = 0
@@ -51,7 +53,7 @@ methodController = function() {
 	angleCurve = animcurve_get_channel(bonecurve, angleMethod)
 }	
 drawEvent = function(){
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, 1)
+	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, image_blend, 1)
 }	
 stepFunction = function() {
 	return 0	

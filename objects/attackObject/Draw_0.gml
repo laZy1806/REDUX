@@ -37,3 +37,4 @@ if debugPressed {
 	show_debug_message("YScale " + string(image_yscale))
 	if image_angle > 360 image_angle -= 360
 }
+//draw_sprite_ext(boneBottom, 0, 100 + TEST, 200, 1, 3, 0, c_white, 1)

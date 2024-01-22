@@ -5,7 +5,7 @@ function scrTakeDamage(_dmg, _isBlueOrange = false, _invFrames = 0, _isKarma = f
 		if (image_blend == c_aqua && !keyboard_check(ord(global.leftKey)) && !keyboard_check(ord(global.rightKey)) && !keyboard_check(ord(global.upKey)) && !keyboard_check(ord(global.downKey))) {
 			exit;
 		}
-		if (image_blend == c_orange && (keyboard_check(ord(global.leftKey)) || keyboard_check(ord(global.rightKey)) || keyboard_check(ord(global.upKey)) || keyboard_check(ord(global.downKey)))) {
+		if ((image_blend == c_orange || image_blend == c_darkorange) && (keyboard_check(ord(global.leftKey)) || keyboard_check(ord(global.rightKey)) || keyboard_check(ord(global.upKey)) || keyboard_check(ord(global.downKey)))) {
 			exit;
 		} 
 		global.InvFrames = _invFrames

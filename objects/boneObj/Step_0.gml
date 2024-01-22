@@ -15,9 +15,11 @@ originY = starty + disY * MOVE
 var ANGLECHANGE = anglestart + angledistance * ANGLE
 Height = startheight + heightdiff * HEIGHT
 
+//show_debug_message(238.40 % 1.50)
 
-x = originX
-y = originY
+x = movementMethod = "static" ? floor(originX) : originX
+y = movementMethod = "static" ? floor(originY) : originY
+
 image_angle = ANGLECHANGE
 image_yscale = Height/15
 image_xscale = 1
