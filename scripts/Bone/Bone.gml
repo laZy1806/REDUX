@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 global.boneList = ds_list_create()
 function Bone(_x, start_x, _y, start_y, beginheight, finheight, rotational = false, _angleStart = 0, _angleDes = 0, 
-moveMeth = "static", heightMeth = "static", angleMeth = "static", heightSpd = 60, moveSpd = 60, angSpd = 60)
+moveMeth = "static", heightMeth = "static", angleMeth = "static", heightSpd = 60, moveSpd = 60, angSpd = 60, isTimer = true)
 {
 	var bone = instance_create_depth(start_x, start_y, 0, boneObj, {
 		originX : start_x,
@@ -21,7 +21,8 @@ moveMeth = "static", heightMeth = "static", angleMeth = "static", heightSpd = 60
 		perAngle : 1/angSpd,
 		perHeight : 1/heightSpd,
 		perMovement : 1/moveSpd,
-		ROTATIONAL : rotational
+		ROTATIONAL : rotational,
+		onTimer : isTimer
 	})
 	ds_list_add(global.boneList, bone)
 	return bone;

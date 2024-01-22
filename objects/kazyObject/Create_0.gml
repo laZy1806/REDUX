@@ -97,11 +97,7 @@ atk1Data = {
 		return noone;
 	},
 	CYCLEDRAW : function() {	//THINGS DRAWN SPECIFICALLY FOR ATK
-		switch global.AttackCycle {
-			case 0:
-				
-			break;
-		}
+
 	},
 }
 atk2Data = {
@@ -137,11 +133,7 @@ atk2Data = {
 		return noone;
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
-		switch global.AttackCycle {
-			case 0:
-				
-			break;
-		}
+
 	},
 }
 atk3Data = {
@@ -174,24 +166,17 @@ atk3Data = {
 		return noone;
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
-		switch global.AttackCycle {
-			case 0:
-				
-			break;
-		}
+
 	},
 }
 atk4Data = {
-	CYCLEENDINGS : [2, 2, 2, 4], //IN SECOND
+	CYCLEENDINGS : [1.5, 2, 2, 4], //IN SECOND
 	siner : 0,
 	boneArray : array_create(0, 0),
 	boneWave : function() {
 		for (var i = 0; i < 16; i++) {
-			var b1 = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Top - 20, global.Top - 20, 10, 30, , 180, 180, , "slowerEase", , 30)
-			var b2 = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Floor + 20, global.Floor + 20, 10, 30, , , , , "slowerEase", , 30)
-			b1.onTimer = false
-			b2.onTimer = false
-			array_push(boneArray, b1, b2)
+			array_push(boneArray, Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Top - 20, global.Top - 20, 10, 30, , 180, 180, , "slowerEase", , 30, , , false))
+			array_push(boneArray, Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Floor + 20, global.Floor + 20, 10, 30, , , , , "slowerEase", , 30, , , false))
 		}
 	},
 	CYCLECREATION : function() {
@@ -224,6 +209,12 @@ atk4Data = {
 				Bone(global.Right, global.Left, global.Top, global.Top, 40, 40, false, 180, 180, "static", , , , 80)		
 			break;
 			case 3:
+				for(var i = 0; i < array_length(boneArray); i++) {
+					boneArray[i].changeHeight(10, 1/45)
+					boneArray[i].onTimer = true
+					array_delete(boneArray, i, 1)
+					i--
+				}
 			break;
 		}
 	},
@@ -234,39 +225,52 @@ atk4Data = {
 		}
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
-		switch global.AttackCycle {
-			case 0:
-				
-			break;
-		}
+
 	},
 }
 atk5Data = {
-	CYCLEENDINGS : [2, 2, 2, 4], //IN SECONDS
+	CYCLEENDINGS : [0.5, 2, 2, 0.5], //IN SECONDS
 	cooldown : 5,
+	boneCount: 0,
+	oddBoneArray: array_create(0, 0),
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
-				fightBoxObj.changeSize(190, , 1, "ease")
+				fightBoxObj.changeSize(230, , 1, "ease")
+				soulObj.changeColor("Blue")
 			break;
+			case 2:
+				Gaster(245, 245, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
+			break;
+		}
+		if (global.AttackCycle >= 5) {
+			for(var i = 0; i < array_length(oddBoneArray); i++) {
+				if instance_exists(oddBoneArray[i]) {	//failsafe just incase cycle changes right as bone is deleted
+					if (oddBoneArray[i].Height = 50) oddBoneArray[i].changeHeight(25, 1/20)
+					else if (oddBoneArray[i].Height = 25) oddBoneArray[i].changeHeight(50, 1/20)	
+				}
+			}
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
 		cooldown = cooldown - 1
-		if ((cooldown <= 0) and global.AttackCycle = 1) {
-			Bone(global.Left, global.Right, global.Top, global.Top, 45, 45, false, 180, 180, , , , , 60)
-			cooldown = 5
+		if ((cooldown <= 0) and global.AttackCycle >= 2) {
+			if (boneCount % 10 != 0) {
+				Bone(global.Left, global.Right, global.Top, global.Top, 35, 35, false, 180, 180, , , , , 60)
+			}
+			else {
+				array_push(oddBoneArray, Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , , 60), 
+				Bone(global.Left, global.Right, global.Floor, global.Floor, 25, 25, false, 0, 0, , , , , 60))
+			}
+			cooldown = 5;
+			boneCount++;
 		}
+		for (var i = 0; i < array_length(oddBoneArray); i++) if !instance_exists(oddBoneArray[i]) array_delete(oddBoneArray, i, 1)
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
-		switch global.AttackCycle {
-			case 0:
-				
-			break;
-		}
+
 	},
 }	
-	
 AttackArray = [
 	introData,
 	atk1Data,

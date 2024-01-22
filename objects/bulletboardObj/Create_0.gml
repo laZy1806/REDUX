@@ -128,8 +128,8 @@ drawEvent = function(){
 		draw_set_color(c_red) 
 		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, false);
 		
-		draw_set_color(c_black) 
-		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, true);
+		//draw_set_color(c_black) 
+		//draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, true);
 		
 		draw_set_color(c_fuchsia)
 		if (global.KARMA_ENABLED) draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 25, false);

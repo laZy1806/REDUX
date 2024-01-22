@@ -10,6 +10,7 @@ slamIncr = slamSpd
 isGrav = true
 grav = 0
 Color = "Red"
+swapCooldown = 10
 verticalColChecker = function(){
 	if move.againstWall.vert != 0 isJumped = false
 }
@@ -25,6 +26,7 @@ Slam = function(_xdir = 0, _ydir = 0, _spd = slamSpd){
 }
 changeColor = function(_col){
 	Color = _col
+	swapCooldown = 10
 	return _col
 }
 image_speed = 0

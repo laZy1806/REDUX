@@ -20,7 +20,6 @@ THEREFORE, THE LAST CYCLE IN AN ATTACK TIMES THE NEXT ATTACKS EXECUTION
 BEST TO THINK OF CYCLES AS TIMESPANS
 SO X ATK WILL LAST X SECONDS LONG CORRESPONDING TO ITS VALUE IN THE ARRAY
 */
-
 AttackArray = array_create(0)
 for(var i = 0; i < array_length(global.ENEMYARRAY[0].AttackArray); i++) {
 	array_push(AttackArray, global.ENEMYARRAY[0].AttackArray[i])
@@ -32,7 +31,6 @@ for(var i = 0; i < global.AttackNumber + 1; i++) {
 	}
 }
 MAINFIGHT = audio_play_sound(kazyFightSong, 1, false, _audio, _time)
-
 // must start at 0.03 or first cycle call will bug out, anything less makes creation happen after alarm trigger
 ATTACKALARM = time_source_create(time_source_game, 0.03, time_source_units_seconds, function() {
 	AttackArray[global.AttackNumber].CYCLECREATION()	
