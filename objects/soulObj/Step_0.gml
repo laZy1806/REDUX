@@ -2,6 +2,9 @@ vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) 
 hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * 2
 var verCol = move.againstWall.vert != 0
 var horiCol = move.againstWall.hori != 0
+global.playerHP = clamp(global.playerHP, -1, 99)
+global.Karma = clamp(global.Karma, -1, 99)
+
 
 switch Color {
 	case "Blue":
@@ -52,6 +55,7 @@ switch Color {
 		sprite_index = soulSPBlue
 	break;
 	case "Red":
+		grav = 0
 		move.xSpdYSpd(hsp, vsp)
 		sprite_index = soulSPRed
 		image_angle = 0

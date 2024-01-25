@@ -9,7 +9,7 @@ movementCurve = function() { return 0 }
 angleCurve = function() { return 0 }
 heightCurve = function() { return 0 }
 Height = 0
-
+alarm[0] = 5
 if (ROTATIONAL) sprite_index = boneMiddle
 else sprite_index = boneBottom
 

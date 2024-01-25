@@ -15,14 +15,18 @@ originY = starty + disY * MOVE
 var ANGLECHANGE = anglestart + angledistance * ANGLE
 Height = startheight + heightdiff * HEIGHT
 
-//show_debug_message(238.40 % 1.50)
 
-x = movementMethod = "static" ? floor(originX) : originX
-y = movementMethod = "static" ? floor(originY) : originY
+x = ((movementMethod = "static") && (abs(disX * perMovement) < 1.70)) ? floor(originX) : (originX)
+y = ((movementMethod = "static") && (abs(disY * perMovement) < 1.70)) ? floor(originY) : (originY)
+//1.70 is a near value where the bone starts to have distortion issues from moving too slow.
 
 image_angle = ANGLECHANGE
-image_yscale = Height/15
+image_yscale = Height/16
 image_xscale = 1
+
+
+
+
 
 if place_meeting(x, y, soulObj) scrTakeDamage(1, true, 0, true)
 

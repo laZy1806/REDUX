@@ -70,7 +70,7 @@ TEST = 0
 		angleCurve = animcurve_get_channel(boxcurve, angleMethod)
 	}	
 	innerBoxDraw = function(){
-		draw_sprite_ext(battlepixel, 0, x, y, (5 + WIDTHSTATIC)/2, (5 + HEIGHTSTATIC)/2, -image_angle, c_black, 1.0)	
+		//draw_sprite_ext(battlepixel, 0, x, y, (5 + WIDTHSTATIC)/2, (5 + HEIGHTSTATIC)/2, -image_angle, c_black, 1.0)	
 	}
 #endregion
 left = instance_create_depth(0, 0, 0, fightWall, {
@@ -84,14 +84,14 @@ top = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : topWall,	
 	step_function : function() {
 		SETHEIGHT = -fightBoxObj.HEIGHTSTATIC/2
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC + 10)/10
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
 	}
 })
 bottom = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : bottomWall,	
 	step_function : function() {
 		SETHEIGHT = fightBoxObj.HEIGHTSTATIC/2	
-		image_xscale = abs(fightBoxObj.WIDTHSTATIC + 10)/10
+		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
 	}
 })
 right = instance_create_depth(0, 0, 0, fightWall, {

@@ -29,5 +29,9 @@ changeColor = function(_col){
 	swapCooldown = 10
 	return _col
 }
+changeLoc = function(_x, _y){
+	x = _x
+	y = _y
+}
 image_speed = 0
 image_angle = 0

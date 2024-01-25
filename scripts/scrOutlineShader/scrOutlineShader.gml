@@ -8,8 +8,9 @@ function scrOutlineShaderinit(){
 	color = shader_get_uniform(shaderOutline, "color")
 	tolerance = shader_get_uniform(shaderOutline, "tol")
 }
-function scrOutlineShaderData(_toShade, _accuracy = 16, _thickness = 1.0, _color = c_black, _tolerance = 0.0){
+function scrOutlineShaderData(_toShade, _accuracy = 16.0, _thickness = 1.0, _color = c_black, _tolerance = 0.0){
 	if (asset_get_type(_toShade) = asset_sprite) texture = sprite_get_texture(_toShade, 0);
+	if (asset_get_type(_toShade) = asset_font) texture = font_get_texture(_toShade);
 	if (surface_exists(_toShade)) texture = surface_get_texture(_toShade);
 	
 	var width = texture_get_texel_width(texture), height = texture_get_texel_height(texture)

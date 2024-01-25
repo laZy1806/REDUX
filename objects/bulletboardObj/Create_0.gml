@@ -13,15 +13,17 @@ y = 100
 
 state = -1
 selector = 0
+scrOutlineShaderinit()
 //write for loop to cycle through array and create scribbles for each text element
 typerwriter = scribble_typist()
 
-actButton = new scrButton([[100, 100]], function(){ state = selector }, sp_ACT)	
-actButton[$ "stepFunction"] = function() { if (selector = 1) actButton[$ "image_index"] = 1	else actButton[$ "image_index"] = 0	}
+//actButton = new scrButton([[100, 100]], function(){ state = selector }, sp_ACT)	
+//actButton[$ "stepFunction"] = function() { if (selector = 1) actButton[$ "image_index"] = 1	else actButton[$ "image_index"] = 0	}
 
-buttonList[0] = noone // fightButton
-buttonList[1] = actButton
-buttonList[2] = noone //itemButton
+buttonList = array_create(0)
+//buttonList[0] = noone // fightButton
+//buttonList[1] = actButton
+//buttonList[2] = noone //itemButton
 drawEvent = function(){
 	var WIDTH = instance_find(fightBoxObj, 0).WIDTHSTATIC, HEIGHT = instance_find(fightBoxObj, 0).HEIGHTSTATIC
 	var _x = instance_find(fightBoxObj, 0).x, _y = instance_find(fightBoxObj, 0).y
@@ -67,12 +69,12 @@ drawEvent = function(){
 		}
 			
 		draw_set_alpha(image_alpha)
-		var _y = 390
-		var _x = 37 
+		var _y = 400
+		var _x = 35 
 		
-		var hpbarwidth = (global.maxplayerHP * 1.5);
-		var hpbarwidth_fill = (global.playerHP * 1.5)
-		var hp_barwidth_karma = (global.Karma * 1.5)
+		var hpbarwidth = (global.maxplayerHP * 1.25);
+		var hpbarwidth_fill = (global.playerHP * 1.25)
+		var hp_barwidth_karma = (global.Karma * 1.25)
 		
 		//draw_set_font(healthfont);
 		//draw_set_color(c_white);
@@ -110,34 +112,28 @@ drawEvent = function(){
 			else {
 				global.Karma = global.playerHP;
 			}
-			var toDraw = string(global.Karma) + " / " + string(global.maxplayerHP)
-			draw_text((_x + 290) + hpbarwidth, _y + 2, string(global.Karma) + " / " + string(global.maxplayerHP));
-			//var healthtxt = scribble(toDraw)
-			//healthtxt.draw((_x + 290) + hpbarwidth, _y + 2) 
+			draw_set_font(healthFont)
+			draw_set_color(c_white)
+			draw_text((_x + 275) + hpbarwidth, _y + 2, string(global.Karma) + " /" + string(global.maxplayerHP));
 		} 
-		//var toDraw = scribble("[healthFontOutline]" + global.name + "  LV " + string(global.playerLV) + "[widgetsFont] HP")
-		//toDraw.draw(_x, _y + 2) 
-		
-		
+
 		draw_set_color(c_white);
 		draw_set_font(widgetsFont);
-		//draw_text((_x + 190), _y + 2 , "HP");
 		
-		//if (global.KARMA_ENABLED) draw_text(273 + hpbarwidth, _y + 2, "KR");
+			draw_text((_x + 200), _y + 3 , "HP");
+		
+			if (global.KARMA_ENABLED) draw_text(_x + 240 + hpbarwidth, _y + 3, "KR");
 		
 		draw_set_color(c_red) 
-		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, false);
-		
-		//draw_set_color(c_black) 
-		//draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 25, true);
+		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 20, false);
 		
 		draw_set_color(c_fuchsia)
-		if (global.KARMA_ENABLED) draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 25, false);
+		if (global.KARMA_ENABLED) draw_rectangle((_x + 230), _y, (_x + 230) + hp_barwidth_karma, _y + 20, false);
 		
-		//draw_set_font(menuFont)
-		//draw_text(300, 100, "THIS KEON: " + string(fps_real))
-
 		draw_set_color(c_yellow);
-		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth_fill, _y + 25, false);
+		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth_fill, _y + 20, false);
+		
+		draw_set_color(c_black);
+		draw_rectangle((_x + 230), _y, (_x + 230) + hpbarwidth, _y + 20, true);
 	}
 }

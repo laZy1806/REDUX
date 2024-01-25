@@ -84,8 +84,8 @@ introData = {
 atk1Data = {
 	CYCLEENDINGS : [0.65, 0.65, 1], //IN SECOND
 	boneCycle : function() {
-		Bone(global.Left, global.Right, global.Top, global.Top, 45, 45, false, 180, 180, , , , ,60)
-		Bone(global.Right, global.Left, global.Floor,  global.Floor, 50, 50, false , , , , , ,  ,60)
+		Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , ,60)
+		Bone(global.Right, global.Left, global.Floor, global.Floor, 50, 50, false , , , , , ,  ,60)
 	},
 	CYCLECREATION : function() {
 		if (global.AttackCycle < 3) boneCycle()
@@ -122,10 +122,10 @@ atk2Data = {
 				reverseBoneCycle(global.Left + 95, global.Right - 45)
 			break;
 			case 4:
-				Bone(global.Right - 4, global.Right - 4, global.Floor - 50, global.Top - 5, 193, 193, , 90, 90, "reverse", , , , 100)
+				Bone(fightBoxObj.x, fightBoxObj.x, global.Floor - 50, global.Top - 5, 178, 178, true, 90, 90, "reverse", , , , 100)
 			break;
 			case 5:
-				Bone(global.Right - 4, global.Right - 4, global.Top + 50, global.Floor + 5, 193, 193, , 90, 90, "reverse", , , , 100)
+				Bone(fightBoxObj.x, fightBoxObj.x, global.Top + 50, global.Floor + 5, 178, 178, true , 90, 90, "reverse", , , , 100)
 			break;
 		}
 	},
@@ -170,7 +170,7 @@ atk3Data = {
 	},
 }
 atk4Data = {
-	CYCLEENDINGS : [1.5, 2, 2, 4], //IN SECOND
+	CYCLEENDINGS : [1.5, 2, 2, 2], //IN SECOND
 	siner : 0,
 	boneArray : array_create(0, 0),
 	boneWave : function() {
@@ -229,9 +229,10 @@ atk4Data = {
 	},
 }
 atk5Data = {
-	CYCLEENDINGS : [0.5, 2, 2, 0.5], //IN SECONDS
+	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
 	cooldown : 5,
 	boneCount: 0,
+	topHEIGHT : 35,
 	oddBoneArray: array_create(0, 0),
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
@@ -239,38 +240,90 @@ atk5Data = {
 				fightBoxObj.changeSize(230, , 1, "ease")
 				soulObj.changeColor("Blue")
 			break;
+			case 1:
+				for (var i = 0; i < 130; i++) {
+					var STARTSPD = 85
+					var DIST = 15
+					var MOVEFACTOR = abs(global.Right - (global.Left - 15))/STARTSPD //is 255/85 = 3
+					var SPDFACTOR = STARTSPD + ((DIST * i)/MOVEFACTOR)
+					// its important that SPDFACTOR are just normal INT multiples, and not decimals, as it can causes weird shifting
+					if (i % 10 != 0) {
+						Bone(global.Left - 15, global.Right + (DIST * i), global.Top, global.Top, 35, 35, false, 180, 180, , , , , SPDFACTOR)
+					}
+					else {
+						array_push(oddBoneArray, 
+						Bone(global.Left - 15, global.Right + (DIST * i), global.Top, global.Top, 45, 45, false, 180, 180, , , , , SPDFACTOR), 
+						Bone(global.Left - 15, global.Right + (DIST * i), global.Floor, global.Floor, 25, 25, false, 0, 0, , , , , SPDFACTOR))
+					}
+				}			
+			break;
 			case 2:
 				Gaster(245, 245, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
 			break;
+			case 3:
+				Gaster(265, 265, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
+			break;
+			case 5:
+				for(var i = 0; i < ds_list_size(global.boneList); i++) {
+					var BONE = ds_list_find_value(global.boneList, i)
+					if (BONE.endheight = 35) BONE.changeHeight(25, 1/25, "ease")
+				}
+			break;
 		}
 		if (global.AttackCycle >= 5) {
+			soulObj.changeColor("Red")
 			for(var i = 0; i < array_length(oddBoneArray); i++) {
 				if instance_exists(oddBoneArray[i]) {	//failsafe just incase cycle changes right as bone is deleted
-					if (oddBoneArray[i].Height = 50) oddBoneArray[i].changeHeight(25, 1/20)
-					else if (oddBoneArray[i].Height = 25) oddBoneArray[i].changeHeight(50, 1/20)	
+					if (oddBoneArray[i].Height = 45) oddBoneArray[i].changeHeight(25, 1/15, "ease")
+					else if (oddBoneArray[i].Height = 25) oddBoneArray[i].changeHeight(45, 1/15, "ease")	
 				}
 			}
+			
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
-		cooldown = cooldown - 1
-		if ((cooldown <= 0) and global.AttackCycle >= 2) {
-			if (boneCount % 10 != 0) {
-				Bone(global.Left, global.Right, global.Top, global.Top, 35, 35, false, 180, 180, , , , , 60)
-			}
-			else {
-				array_push(oddBoneArray, Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , , 60), 
-				Bone(global.Left, global.Right, global.Floor, global.Floor, 25, 25, false, 0, 0, , , , , 60))
-			}
-			cooldown = 5;
-			boneCount++;
-		}
 		for (var i = 0; i < array_length(oddBoneArray); i++) if !instance_exists(oddBoneArray[i]) array_delete(oddBoneArray, i, 1)
-	},
+	}, 
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
 
 	},
 }	
+atk6Data = { // for 40 - 49 ish section
+	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
+	cooldown : 5,
+	boneCount: 0,
+	topHEIGHT : 35,
+	oddBoneArray: array_create(0, 0),
+	CYCLECREATION : function() {
+		switch global.AttackCycle {
+			case 0:
+			
+			break;
+		}
+	},
+	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
+		
+	}, 
+	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
+
+	},
+}		
+atk7Data = { 
+	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
+	CYCLECREATION : function() {
+		switch global.AttackCycle {
+			case 0:
+				fightBoxObj.changeSize(250, 140, 1, "ease")
+			break;
+		}
+	},
+	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
+		
+	}, 
+	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
+
+	},
+}		
 AttackArray = [
 	introData,
 	atk1Data,
@@ -278,4 +331,6 @@ AttackArray = [
 	atk3Data,
 	atk4Data,
 	atk5Data,
+	atk6Data,
+	atk7Data
 ]

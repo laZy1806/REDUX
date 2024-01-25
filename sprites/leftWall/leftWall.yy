@@ -4,7 +4,7 @@
   "name": "leftWall",
   "bbox_bottom": 9,
   "bbox_left": 0,
-  "bbox_right": 3,
+  "bbox_right": 5,
   "bbox_top": 0,
   "bboxMode": 2,
   "collisionKind": 4,
@@ -25,7 +25,7 @@
   "nineSlice": {
     "resourceType": "GMNineSliceData",
     "resourceVersion": "1.0",
-    "bottom": 2,
+    "bottom": 1,
     "enabled": true,
     "guideColour": [
       4294902015,
@@ -36,7 +36,7 @@
     "highlightColour": 1728023040,
     "highlightStyle": 1,
     "left": 0,
-    "right": 2,
+    "right": 0,
     "tileMode": [
       0,
       0,
@@ -44,9 +44,9 @@
       0,
       1,
     ],
-    "top": 2,
+    "top": 1,
   },
-  "origin": 5,
+  "origin": 3,
   "parent": {
     "name": "fightBox",
     "path": "folders/Sprites/fightBox.yy",
@@ -82,7 +82,7 @@
     ],
     "visibleRange": null,
     "volume": 1.0,
-    "xorigin": 6,
+    "xorigin": 0,
     "yorigin": 5,
   },
   "swatchColours": null,

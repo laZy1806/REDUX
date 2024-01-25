@@ -17,7 +17,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 	}
 	
 	boxMasking(toMask)
-
+	
 	with bulletRef drawEvent()
 
 	for(var i = 0; i < ds_list_size(global.gasterList); i++) {
@@ -41,7 +41,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 		
 	surface_reset_target()
 	
-		scrOutlineShaderData(drawSurf, , 1)
+		scrOutlineShaderData(drawSurf, 20, 1)
 	
 			draw_surface(drawSurf, 0, 0)
 			

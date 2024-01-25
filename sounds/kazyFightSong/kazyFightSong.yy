@@ -19,5 +19,5 @@
   "sampleRate": 44100,
   "soundFile": "kazyFightSong.mp3",
   "type": 0,
-  "volume": 0.1,
+  "volume": 0.02,
 }
