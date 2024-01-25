@@ -111,7 +111,6 @@
     {"id":{"name":"obj_kazy","path":"objects/obj_kazy/obj_kazy.yy",},},
     {"id":{"name":"scribble_font_set_default","path":"scripts/scribble_font_set_default/scribble_font_set_default.yy",},},
     {"id":{"name":"friskRight","path":"sprites/friskRight/friskRight.yy",},},
-    {"id":{"name":"shaderFight","path":"objects/shaderFight/shaderFight.yy",},},
     {"id":{"name":"__scribble_class_page","path":"scripts/__scribble_class_page/__scribble_class_page.yy",},},
     {"id":{"name":"__scribble_gen_2_parser","path":"scripts/__scribble_gen_2_parser/__scribble_gen_2_parser.yy",},},
     {"id":{"name":"intObj","path":"objects/intObj/intObj.yy",},},

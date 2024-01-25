@@ -10,6 +10,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 	var fBox = instance_find(fightBoxObj, 0)
 	var soulRef = instance_find(soulObj, 0)
 	var bulletRef = instance_find(bulletboardObj, 0)
+	//var Enem = instance_find(bulletboardObj, 0)
 
 	//make into a function that'll draw any characters attack
 	var toMask = function(){
@@ -38,6 +39,8 @@ if DRAW {	// a minor delay to let everything create and set variables
 	for (var f = 0; f < array_length(bulletRef.buttonList); f++) {		
 		if (bulletRef.buttonList[f] != noone) bulletRef.buttonList[f].DISPLAY()
 	}
+		
+	kazyObject.drawEvent()	
 		
 	surface_reset_target()
 	

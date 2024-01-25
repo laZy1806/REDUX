@@ -13,18 +13,18 @@ if !RESET {
 	Width = supposedWidth + DesWidth * zoomCalc
 	Height = supposedHeight + DesHeight * zoomCalc
 		
-	var camXOffset = default_camWidth - (Width) 
-	var camYOffset = default_camHeight - (Height)
-		
-	camX = supposedX + (camDesX * moveCalc) + camXOffset/2
-	camY = supposedY + (camDesY * moveCalc) + camYOffset/2
+	xZoomOffset = 640 - (supposedWidth + DesWidth * zoomCalc) 				
+	yZoomOffset = 480 - (supposedHeight + DesHeight * zoomCalc)
+	
+	camX = supposedX + ((camDesX) * moveCalc) 
+	camY = supposedY + ((camDesY) * moveCalc)
 	
 	ranX = random_range(-shake * shakeCalc, shake * shakeCalc)
 	ranY = random_range(-shake * shakeCalc, shake * shakeCalc)
-	//show_debug_message(string(ranX) + " " + string(ranY))
+	show_debug_message(string(xZoomOffset/2) + " " + string(yZoomOffset/2))
 }
 else {
 	RESETFUNC()
 }
-camera_set_view_pos(battlecam, camX + ranX, camY + ranY);
+camera_set_view_pos(battlecam, camX + ranX + xZoomOffset/2, camY + ranY + yZoomOffset/2);
 camera_set_view_size(battlecam, Width, Height);

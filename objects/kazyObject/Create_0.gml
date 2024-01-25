@@ -42,10 +42,12 @@ idleState = function() {
 }
 currentAnim = idleState
 drawEvent = function() {
-	draw_sprite_ext(legs, 1, x - 1, y + 73 * image_yscale, image_xscale, image_yscale, image_angle, c_white, 1)
-	draw_sprite_ext(legs, 0, x - 1, y + 73 * image_yscale, image_xscale, legSCALE, legROT, c_white, 1)
-	draw_sprite_ext(body, 0, bodyX, bodyY, image_xscale, image_yscale, image_angle, c_white, 1)
-	draw_sprite_ext(head, 0, headX, headY, image_xscale, image_yscale, image_angle, c_white, 1)	
+	//draw_sprite_ext(legs, 1, x - 1, y + 73 * image_yscale, image_xscale, image_yscale, image_angle, c_white, 1)
+	//draw_sprite_ext(legs, 0, x - 1, y + 73 * image_yscale, image_xscale, legSCALE, legROT, c_white, 1)
+	//draw_sprite_ext(body, 0, bodyX, bodyY, image_xscale, image_yscale, image_angle, c_white, 1)
+	//draw_sprite_ext(head, 0, headX, headY, image_xscale, image_yscale, image_angle, c_white, 1)	
+	draw_sprite_ext(human, 0, x, y, 0.5, 0.5, 0, c_white, 1)
+	
 }
 TEST = {
 	CYCLEENDINGS : [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECOND
@@ -196,6 +198,9 @@ atk4Data = {
 				ds_list_insert(global.boneList, 0, b1)	//this makes it to where the orange bone is drawn behind
 				ds_list_delete(global.boneList, ds_list_size(global.boneList) - 1)
 				Bone(global.Left, global.Right, global.Floor,  global.Floor, 60, 60, false, , , "static", , , , 80)
+				
+				camObj.zoomCamera(, , "ease", 1/30, 0.8)
+				camObj.moveCamera(, 20, "ease", 1/30)
 			break;
 			case 2:
 				for(var i = 0; i < array_length(boneArray); i++) {
@@ -207,6 +212,8 @@ atk4Data = {
 				ds_list_insert(global.boneList, 0, b1)
 				ds_list_delete(global.boneList, ds_list_size(global.boneList) - 1)
 				Bone(global.Right, global.Left, global.Top, global.Top, 40, 40, false, 180, 180, "static", , , , 80)		
+				camObj.zoomCamera(, , "ease", 1/30, 0.7)
+				camObj.moveCamera(, 20, "ease", 1/30)
 			break;
 			case 3:
 				for(var i = 0; i < array_length(boneArray); i++) {
@@ -215,6 +222,8 @@ atk4Data = {
 					array_delete(boneArray, i, 1)
 					i--
 				}
+				camObj.zoomCamera(, , "ease", 1/30, 0.4)
+				camObj.moveCamera(, -75, "ease", 1/30)
 			break;
 		}
 	},
@@ -237,6 +246,8 @@ atk5Data = {
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
+				camObj.zoomCamera(, , "ease", 1/30, 1)
+				camObj.moveCamera(, 0, "ease", 1/30)
 				fightBoxObj.changeSize(230, , 1, "ease")
 				soulObj.changeColor("Blue")
 			break;

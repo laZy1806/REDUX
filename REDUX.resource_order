@@ -37,7 +37,6 @@
   ],
   "ResourceOrderSettings": [
     {"name":"obj_text","order":1,"path":"objects/obj_text/obj_text.yy",},
-    {"name":"shaderFight","order":8,"path":"objects/shaderFight/shaderFight.yy",},
     {"name":"intObj","order":1,"path":"objects/intObj/intObj.yy",},
     {"name":"fightDrawController","order":4,"path":"objects/fightDrawController/fightDrawController.yy",},
     {"name":"empty","order":2,"path":"sprites/empty/empty.yy",},
@@ -101,7 +100,7 @@
     {"name":"bodyCurve","order":3,"path":"animcurves/bodyCurve/bodyCurve.yy",},
     {"name":"objectTemplate","order":2,"path":"objects/objectTemplate/objectTemplate.yy",},
     {"name":"leftWall","order":2,"path":"sprites/leftWall/leftWall.yy",},
-    {"name":"battleCamCurve","order":4,"path":"animcurves/battleCamCurve/battleCamCurve.yy",},
+    {"name":"battleCamCurve","order":2,"path":"animcurves/battleCamCurve/battleCamCurve.yy",},
     {"name":"topWall","order":6,"path":"sprites/topWall/topWall.yy",},
     {"name":"scrOutlineShader","order":35,"path":"scripts/scrOutlineShader/scrOutlineShader.yy",},
     {"name":"gasterSPFiring","order":5,"path":"sprites/gasterSPFiring/gasterSPFiring.yy",},

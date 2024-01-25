@@ -24,6 +24,9 @@ RESETFUNC = function() {
 	camDesY = 0
 	zoom = 1
 	
+	xZoomOffset = 640
+	yZoomOffset = 480
+	
 	DesWidth = 0
 	DesHeight = 0
 	
@@ -41,36 +44,39 @@ RESETFUNC = function() {
 	zoomPercent = 1/60
 	shakePercent = 1/20
 	
+	evaluate[0] = 1
+	evaluate[1] = 1
+	evaluate[2] = 1
+	
 	RESET = false
 	camera_set_view_pos(battlecam, camX, camY);
 	camera_set_view_size(battlecam, Width, Height);
 }
 RESETFUNC()
 moveCamera = function(_x = supposedX, _y = supposedY, _meth = movementMethod, _spd = movePercent) {
-///@func moveCamera(_x, _y, method)
+///@func moveCamera(_x, _y, method, spd)
 resetCalcNumber(0)
 	supposedX = camX
 	supposedY = camY
+	
 	camDesX = _x - camX	
 	camDesY = _y - camY	
+	
 	movementMethod = _meth
 	movePercent = _spd
 }
-zoomCamera = function(_zoom = 0, _width = supposedWidth, _height = supposedHeight, meth = zoomMethod, _spd = zoomPercent) {
-///@func zoomCamera(zoom, _width, _height, method)
+zoomCamera = function(_width = supposedWidth, _height = supposedHeight, meth = zoomMethod, _spd = zoomPercent, _zoom = noone) {
+///@func zoomCamera(_width, _height, method, spd, [zoomMulti])
 resetCalcNumber(1)
-	if _zoom != 0 {
-		supposedWidth = Width
-		supposedHeight = Height
-		DesWidth = (640 * _zoom) - Width
-		DesHeight = (480 * _zoom) - Height
-		zoomMethod = meth
-		return 0
-	}
 	supposedWidth = Width
 	supposedHeight = Height
-	DesWidth = _width - Width
-	DesHeight = _height - Height
+	
+	supposedXOffset = xZoomOffset
+	supposedYOffset = yZoomOffset
+	
+	DesWidth = zoom = noone ? _width - Width : (640 * _zoom) - Width
+	DesHeight = zoom = noone ? _height - Height : (480 * _zoom) - Height
+	
 	zoomMethod = meth
 	zoomPercent = _spd
 }

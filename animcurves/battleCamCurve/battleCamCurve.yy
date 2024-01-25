@@ -32,7 +32,7 @@
   ],
   "function": 2,
   "parent": {
-    "name": "Animation Curves",
-    "path": "folders/Animation Curves.yy",
+    "name": "battleCurves",
+    "path": "folders/Animation Curves/battleCurves.yy",
   },
 }
