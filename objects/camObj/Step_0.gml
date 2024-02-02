@@ -21,7 +21,6 @@ if !RESET {
 	
 	ranX = random_range(-shake * shakeCalc, shake * shakeCalc)
 	ranY = random_range(-shake * shakeCalc, shake * shakeCalc)
-	show_debug_message(string(xZoomOffset/2) + " " + string(yZoomOffset/2))
 }
 else {
 	RESETFUNC()

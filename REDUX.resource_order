@@ -97,6 +97,7 @@
     {"name":"menuCurve","order":1,"path":"animcurves/menuCurve/menuCurve.yy",},
     {"name":"TransitionObj","order":11,"path":"objects/TransitionObj/TransitionObj.yy",},
     {"name":"sp_bonemidLOW","order":2,"path":"sprites/sp_bonemidLOW/sp_bonemidLOW.yy",},
+    {"name":"boneRowObj","order":2,"path":"objects/boneRowObj/boneRowObj.yy",},
     {"name":"bodyCurve","order":3,"path":"animcurves/bodyCurve/bodyCurve.yy",},
     {"name":"objectTemplate","order":2,"path":"objects/objectTemplate/objectTemplate.yy",},
     {"name":"leftWall","order":2,"path":"sprites/leftWall/leftWall.yy",},

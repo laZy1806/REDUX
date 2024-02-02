@@ -23,7 +23,7 @@ boxMasking = function(_toMask) {
 			draw_rectangle(0, 0, room_width, room_height, false);
 			
 			draw_set_alpha(1)
-			draw_sprite_ext(battlepixel, 0, 320, 320, (box.WIDTHSTATIC)/2, (box.HEIGHTSTATIC)/2, -box.image_angle, c_black, 1)
+			draw_sprite_ext(battlepixel, 0, box.x, box.y, (box.WIDTHSTATIC)/2, (box.HEIGHTSTATIC)/2, -box.image_angle, c_black, 1)
 			gpu_set_blendenable(true)
 			gpu_set_colorwriteenable(true, true, true, true);
 			

@@ -1,11 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.AttackCycle = 0
-global.AttackNumber = 4
+global.AttackNumber = 7
 //audio_sound_set_track_position(MAINFIGHT, 18.33)
 _audio = -1
 _time = 0
-OFF = true
+OFF = false
 sp = noone
 TEST = 0
 findBone = function(boneNumber) {
@@ -57,6 +57,6 @@ debugPressed = false
 mouseClick = 1
 _x = 0
 _y = 0
-
-
-//Bone(global.Left, global.Right, global.Top, global.Top, 45, 45, false, 180, 180, , , , , 100)
+timeRemaining = function(){
+	return time_source_get_time_remaining(ATTACKALARM)
+}

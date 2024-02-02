@@ -1,7 +1,7 @@
 stepFunction()
 methodController()
-//show_debug_message(string(bottomBoneData.x) + "      " + string(bottomBoneData.y))
 
+//show_debug_message(string(bottomBoneData.x) + "      " + string(bottomBoneData.y))
 var MOVE = curveCalculation(movementCurve, perMovement, 0)
 var ANGLE = curveCalculation(angleCurve, perAngle, 1)
 HEIGHT = curveCalculation(heightCurve, perHeight, 2)
@@ -15,18 +15,13 @@ originY = starty + disY * MOVE
 var ANGLECHANGE = anglestart + angledistance * ANGLE
 Height = startheight + heightdiff * HEIGHT
 
-
-x = ((movementMethod = "static") && (abs(disX * perMovement) < 1.70)) ? floor(originX) : (originX)
-y = ((movementMethod = "static") && (abs(disY * perMovement) < 1.70)) ? floor(originY) : (originY)
+x = ((movementMethod = "static") && (abs(disX * perMovement) < 1.70)) ? floor(originX + rowXOffset) : (originX + rowXOffset)
+y = ((movementMethod = "static") && (abs(disY * perMovement) < 1.70)) ? floor(originY + rowYOffset) : (originY + rowYOffset)
 //1.70 is a near value where the bone starts to have distortion issues from moving too slow.
 
-image_angle = ANGLECHANGE
+image_angle = ANGLECHANGE + rowAngle
 image_yscale = Height/16
 image_xscale = 1
-
-
-
-
 
 if place_meeting(x, y, soulObj) scrTakeDamage(1, true, 0, true)
 

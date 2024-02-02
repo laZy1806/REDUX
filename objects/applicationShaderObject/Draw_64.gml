@@ -10,7 +10,7 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 	var bloom_threshold = 0
 	var bloom_range = 0 
 
-	var bloom_intensity = 0.8
+	var bloom_intensity = 0.0
 	var bloom_saturation = 1
 	var bloom_darken = 1 
 	
@@ -88,9 +88,9 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 	
 #endregion 
 #region glitch code
-	bktglitch_activate()
+	//bktglitch_activate()
 
-		BktGlitch_config(0.000000, 0.010000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.016000, 0.000000, 0.000000, 0.566667, 0.000000);
+		//BktGlitch_config(0.000000, 0.010000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.000000, 0.016000, 0.000000, 0.000000, 0.566667, 0.000000);
 		
 		surface_set_target(finalSurf)
 		
@@ -98,7 +98,7 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 			
 		surface_reset_target()
 
-	bktglitch_deactivate()
+	//bktglitch_deactivate()
 	
 #endregion
 #region blur code

@@ -53,8 +53,7 @@ TEST = 0
 		angleMethod = angleCurve
 		resetCalcNumber(1)
 	}
-	changeDestination = function(_x = RELATIVEX, _y = RELATIVEY, 
-	_spd = perMovement, movementCurve = movementMethod) {
+	changeDestination = function(_x = RELATIVEX, _y = RELATIVEY, _spd = perMovement, movementCurve = movementMethod) {
 		///@func changeDestination(x, y, 1/per, curveType)
 		RELATIVEX = x
 		RELATIVEY = y
@@ -101,3 +100,4 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
 	}
 })	
+changeSize(300, 110, 1, "static")

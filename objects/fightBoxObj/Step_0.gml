@@ -12,8 +12,6 @@ HEIGHTSTATIC = HEIGHT + HEIGHTTO * SIZECALC //* forwardOrBack(HEIGHTSTATIC, HEIG
 
 //show_debug_message(string(HEIGHTSTATIC) + " = " + string(HEIGHT) + " + " + string(HEIGHTTO))
 
-
-
 global.Right = right.x
 global.Left = left.x 
 global.Top = top.y

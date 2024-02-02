@@ -16,7 +16,7 @@
 	SPEED = 1/100
 	SPDCALC = 0
 #endregion
-alarm[0] = 1
+//alarm[0] = 1
 idleState = function() {
 	
 	var headcurveX = animcurve_get_channel(headCurve, "X")
@@ -172,7 +172,8 @@ atk3Data = {
 	},
 }
 atk4Data = {
-	CYCLEENDINGS : [1.5, 2, 2, 2], //IN SECOND
+//	CYCLEENDINGS : [1.5, 2, 2, 2], //IN SECOND
+	CYCLEENDINGS : [1.5, 1, 1, 1, 1, 1, 1], //IN SECOND
 	siner : 0,
 	boneArray : array_create(0, 0),
 	boneWave : function() {
@@ -188,6 +189,11 @@ atk4Data = {
 				boneWave()
 			break;
 			case 1:
+				//Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , ,60)
+				//Bone(global.Right, global.Left, global.Floor, global.Floor, 50, 50, false , , , , , ,  ,60)
+				Gaster(147, -100, 228, 0, 40, 50, 335, 290, 1.2, 1.2)
+			break;
+			case 2:
 				for(var i = 0; i < array_length(boneArray); i++) {
 					boneArray[i].changeHeight(40)
 				}
@@ -202,7 +208,12 @@ atk4Data = {
 				camObj.zoomCamera(, , "ease", 1/30, 0.8)
 				camObj.moveCamera(, 20, "ease", 1/30)
 			break;
-			case 2:
+			case 3:
+				//Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , ,60)
+				//Bone(global.Right, global.Left, global.Floor, global.Floor, 50, 50, false , , , , , ,  ,60)
+			
+			break;
+			case 4:
 				for(var i = 0; i < array_length(boneArray); i++) {
 					boneArray[i].changeHeight(50)
 				}
@@ -212,10 +223,14 @@ atk4Data = {
 				ds_list_insert(global.boneList, 0, b1)
 				ds_list_delete(global.boneList, ds_list_size(global.boneList) - 1)
 				Bone(global.Right, global.Left, global.Top, global.Top, 40, 40, false, 180, 180, "static", , , , 80)		
-				camObj.zoomCamera(, , "ease", 1/30, 0.7)
-				camObj.moveCamera(, 20, "ease", 1/30)
+				camObj.zoomCamera(, , "ease", 1/40, 0.7)
+				camObj.moveCamera(, 20, "ease", 1/40)
 			break;
-			case 3:
+			case 5:
+				//Bone(global.Left, global.Right, global.Top, global.Top, 50, 50, false, 180, 180, , , , ,60)
+				//Bone(global.Right, global.Left, global.Floor, global.Floor, 50, 50, false , , , , , ,  ,60)
+			break;
+			case 6:
 				for(var i = 0; i < array_length(boneArray); i++) {
 					boneArray[i].changeHeight(10, 1/45)
 					boneArray[i].onTimer = true
@@ -232,13 +247,17 @@ atk4Data = {
 		for(var i = 0; i < array_length(boneArray); i++) {
 			boneArray[i].disY = 5 * sin((i/2) + siner)
 		}
+		if global.AttackCycle >= 1 {
+			
+			
+		}
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
 
 	},
 }
 atk5Data = {
-	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
+	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
 	cooldown : 5,
 	boneCount: 0,
 	topHEIGHT : 35,
@@ -246,19 +265,19 @@ atk5Data = {
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
-				camObj.zoomCamera(, , "ease", 1/30, 1)
-				camObj.moveCamera(, 0, "ease", 1/30)
+				camObj.zoomCamera(, , "ease", 1/50, 1)
+				camObj.moveCamera(, 0, "ease", 1/50)
 				fightBoxObj.changeSize(230, , 1, "ease")
 				soulObj.changeColor("Blue")
 			break;
 			case 1:
-				for (var i = 0; i < 130; i++) {
+				for (var i = 0; i < 72; i++) {
 					var STARTSPD = 85
 					var DIST = 15
 					var MOVEFACTOR = abs(global.Right - (global.Left - 15))/STARTSPD //is 255/85 = 3
 					var SPDFACTOR = STARTSPD + ((DIST * i)/MOVEFACTOR)
 					// its important that SPDFACTOR are just normal INT multiples, and not decimals, as it can causes weird shifting
-					if (i % 10 != 0) {
+					if (i % 7 != 0) {
 						Bone(global.Left - 15, global.Right + (DIST * i), global.Top, global.Top, 35, 35, false, 180, 180, , , , , SPDFACTOR)
 					}
 					else {
@@ -272,17 +291,17 @@ atk5Data = {
 				Gaster(245, 245, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
 			break;
 			case 3:
-				Gaster(265, 265, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
+				Gaster(315, 315, 186, -50, 40, 50, 270, 270, 1.2, 1.2)
 			break;
 			case 5:
+				soulObj.changeColor("Red")
 				for(var i = 0; i < ds_list_size(global.boneList); i++) {
 					var BONE = ds_list_find_value(global.boneList, i)
 					if (BONE.endheight = 35) BONE.changeHeight(25, 1/25, "ease")
 				}
 			break;
 		}
-		if (global.AttackCycle >= 5) {
-			soulObj.changeColor("Red")
+		if (global.AttackCycle >= 5 && global.AttackCycle <= 8) {
 			for(var i = 0; i < array_length(oddBoneArray); i++) {
 				if instance_exists(oddBoneArray[i]) {	//failsafe just incase cycle changes right as bone is deleted
 					if (oddBoneArray[i].Height = 45) oddBoneArray[i].changeHeight(25, 1/15, "ease")
@@ -300,39 +319,88 @@ atk5Data = {
 	},
 }	
 atk6Data = { // for 40 - 49 ish section
-	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
-	cooldown : 5,
-	boneCount: 0,
-	topHEIGHT : 35,
-	oddBoneArray: array_create(0, 0),
+	CYCLEENDINGS : [0.5, 2, 1], //IN SECONDS
+	countdown : 20,
+	ARRAY : array_create(0),
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
-			
+				soulObj.changeColor("Blue")
+				fightBoxObj.changeSize(300, , 30, "ease")
+			break;
+			case 1:
+				Bone(global.Left + 200, global.Right, global.Floor, global.Floor, 110, 110, , , , "staticToReverse", , , , 300)
+			break;
+			case 2:
+				var HEIGHT = 160
+				BoneRow(global.Left - 50, global.Left - 200, global.Top + 5, global.Top + 5, HEIGHT, HEIGHT, 8, 270, , "ease", , 180, , false)
+				BoneRow(global.Right + 50, global.Right + 200, global.Floor, global.Floor, HEIGHT, HEIGHT, 8, 90, , "ease", , 180, , false)
 			break;
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
-		
+		if global.AttackCycle = 2 {
+			if (countdown != 0) countdown--
+			else {
+				if (array_length(ARRAY) % 2 = 0) array_push(ARRAY, Bone(global.Right, global.Left, global.Floor, global.Floor, 20, 20, , , , "static", , , , 80))	
+				else {
+					var B = Bone(global.Right, global.Left, global.Top, global.Top, 100, 100, , 180, 180, "static", , , , 80)
+					B.changeColor(c_aqua)
+					array_push(ARRAY, B)
+				}
+				countdown = 20
+			}
+		}
 	}, 
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
 
 	},
 }		
 atk7Data = { 
-	CYCLEENDINGS : [0.5, 2, 2, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECONDS
+	CYCLEENDINGS : [4, 1], //IN SECONDS
+	countdown : 25,
+	isTop : -1,
+	amount : 0,
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
-				fightBoxObj.changeSize(250, 140, 1, "ease")
+				fightBoxObj.changeSize(150, , 240, "static")
+			break;
+			case 1:
+				
+				fightBoxObj.changeDestination(200, , 1/30, "ease")
+				fightBoxObj.changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectly
+				countdown = 60;
+				amount = 0;
 			break;
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
-		
+		var X = instance_find(fightBoxObj, 0).x
+		var LEFT = X - 150
+		var RIGHT = X + 150
+		if ((global.AttackCycle = 1) && countdown = 0 && amount < 7) {
+			if (isTop) {
+				Bone(LEFT, RIGHT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 70)
+				Bone(RIGHT, LEFT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 70)
+			}
+			else {
+				Bone(LEFT, RIGHT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 70)
+				Bone(RIGHT, LEFT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 70)
+			}
+			isTop *= -1
+			countdown = 25
+			amount++
+		}
+		if ((global.AttackCycle = 2) && countdown = 0) {
+			Bone(global.Right, global.Left, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 70)
+			Bone(global.Left, global.Right, global.Floor, global.Floor, 50, 50, , , , , , , 40, 70)
+			countdown = 40
+		}
+		countdown--;
 	}, 
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
-
+		
 	},
 }		
 AttackArray = [

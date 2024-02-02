@@ -362,6 +362,7 @@
     {"id":{"name":"textpath","path":"paths/textpath/textpath.yy",},},
     {"id":{"name":"__scribble_class_null_element","path":"scripts/__scribble_class_null_element/__scribble_class_null_element.yy",},},
     {"id":{"name":"noReverbIntro","path":"sounds/noReverbIntro/noReverbIntro.yy",},},
+    {"id":{"name":"boneRowObj","path":"objects/boneRowObj/boneRowObj.yy",},},
     {"id":{"name":"scribble_super_glyph_copy","path":"scripts/scribble_super_glyph_copy/scribble_super_glyph_copy.yy",},},
     {"id":{"name":"__scribble_gen_10_set_padding_flags","path":"scripts/__scribble_gen_10_set_padding_flags/__scribble_gen_10_set_padding_flags.yy",},},
     {"id":{"name":"scribble_markdown_set_styles","path":"scripts/scribble_markdown_set_styles/scribble_markdown_set_styles.yy",},},
