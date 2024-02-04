@@ -357,8 +357,8 @@ atk6Data = { // for 40 - 49 ish section
 	},
 }		
 atk7Data = { 
-	CYCLEENDINGS : [4, 1], //IN SECONDS
-	countdown : 25,
+	CYCLEENDINGS : [4, 0.6], //IN SECONDS
+	countdown : 20,
 	isTop : -1,
 	amount : 0,
 	CYCLECREATION : function() {
@@ -367,11 +367,13 @@ atk7Data = {
 				fightBoxObj.changeSize(150, , 240, "static")
 			break;
 			case 1:
-				
 				fightBoxObj.changeDestination(200, , 1/30, "ease")
 				fightBoxObj.changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectly
-				countdown = 60;
+				countdown = 20;
 				amount = 0;
+			break;
+			case 2:
+				fightBoxObj.changeDestination(320, , 1/300, "static")
 			break;
 		}
 	},
@@ -393,8 +395,8 @@ atk7Data = {
 			amount++
 		}
 		if ((global.AttackCycle = 2) && countdown = 0) {
-			Bone(global.Right, global.Left, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 70)
-			Bone(global.Left, global.Right, global.Floor, global.Floor, 50, 50, , , , , , , 40, 70)
+			Bone(global.Right + 50, global.Left - 50, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 90)
+			Bone(global.Left - 50, global.Right + 50, global.Floor, global.Floor, 50, 50, , , , , , , 40, 90)
 			countdown = 40
 		}
 		countdown--;

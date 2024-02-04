@@ -20,8 +20,6 @@ void main()
 	float lum		= dot(base_col.rgb, vec3(0.229, 0.587, 0.114));
 	bloom_col		= mix(vec3(lum), bloom_col, bloom_saturation);
 	
-	
-	
 	//add or linear dodge
 	base_col.rgb		= base_col.rgb * bloom_darken + bloom_col * bloom_intensity;
 	

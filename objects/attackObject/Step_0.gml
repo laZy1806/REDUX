@@ -13,4 +13,4 @@ if keyboard_check_pressed(ord("T")){
 	_audio *= -1
 	audio_sound_gain(MAINFIGHT, _audio, 0)
 }
-show_debug_message(instance_find(fightBoxObj, 0).WIDTHSTATIC)
+//show_debug_message(instance_find(fightBoxObj, 0).WIDTHSTATIC)

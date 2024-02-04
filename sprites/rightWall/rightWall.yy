@@ -26,7 +26,7 @@
     "resourceType": "GMNineSliceData",
     "resourceVersion": "1.0",
     "bottom": 2,
-    "enabled": true,
+    "enabled": false,
     "guideColour": [
       4294902015,
       4294902015,
@@ -35,7 +35,7 @@
     ],
     "highlightColour": 1728023040,
     "highlightStyle": 1,
-    "left": 2,
+    "left": 0,
     "right": 0,
     "tileMode": [
       0,

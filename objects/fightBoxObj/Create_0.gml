@@ -2,7 +2,7 @@ scrCurveList(10)
 
 x = 320
 y = 320
-image_angle = 0
+ANG = 0 //a replacement for image angle 
 TEST = 0
 #region box vars
 	RELATIVEX = 320
@@ -47,8 +47,8 @@ TEST = 0
 	}
 	changeAngle = function(newAngle = ANGLE, _spd = perAngle, angleCurve = angleMethod) {
 		///@func changeAngle(newAngle, 1/per, curveType)
-		image_angle = ANGLE
-		ANGLETO = abs(image_angle - newAngle) * sign(image_angle - newAngle) * -1 //INVERSES SIGN
+		ANG = ANGLE
+		ANGLETO = abs(ANG - newAngle) * sign(ANG - newAngle) * -1 //INVERSES SIGN
 		perAngle = _spd
 		angleMethod = angleCurve
 		resetCalcNumber(1)
@@ -69,7 +69,7 @@ TEST = 0
 		angleCurve = animcurve_get_channel(boxcurve, angleMethod)
 	}	
 	innerBoxDraw = function(){
-		//draw_sprite_ext(battlepixel, 0, x, y, (5 + WIDTHSTATIC)/2, (5 + HEIGHTSTATIC)/2, -image_angle, c_black, 1.0)	
+		//draw_sprite_ext(battlepixel, 0, x, y, (5 + WIDTHSTATIC)/2, (5 + HEIGHTSTATIC)/2, -ANG, c_black, 1.0)	
 	}
 #endregion
 left = instance_create_depth(0, 0, 0, fightWall, {
@@ -101,3 +101,4 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 	}
 })	
 changeSize(300, 110, 1, "static")
+//changeAngle(45, 1, "static")

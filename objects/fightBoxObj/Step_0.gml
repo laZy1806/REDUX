@@ -6,16 +6,21 @@ var SIZECALC = curveCalculation(heightCurve, perSize, 2)
 x = RELATIVEX + xTo * MOVECALC
 y = RELATIVEY + yTo * MOVECALC
 
-image_angle = ANGLE + ANGLETO * ANGLECALC
+ANG = 360 - (ANGLE + ANGLETO * ANGLECALC)	//360 - helps fix the angle being negative, rather than positive
 WIDTHSTATIC = WIDTH + WIDTHTO * SIZECALC //* forwardOrBack(WIDTHSTATIC, WIDTHTO)
 HEIGHTSTATIC = HEIGHT + HEIGHTTO * SIZECALC //* forwardOrBack(HEIGHTSTATIC, HEIGHTTO)
 
 //show_debug_message(string(HEIGHTSTATIC) + " = " + string(HEIGHT) + " + " + string(HEIGHTTO))
 
+
+image_angle = -ANG
 global.Right = right.x
 global.Left = left.x 
 global.Top = top.y
 global.Floor = bottom.y
+
+image_xscale = (WIDTHSTATIC - 20)/2
+image_yscale = (HEIGHTSTATIC- 10)/2
 //mouseDebug()
 //debug stuff
 if keyboard_check(vk_space) {

@@ -1,5 +1,7 @@
 /// @description setting vars
 // You can write your code in this editor
+
+/* 
 current_width = 0
 current_height = 0
 Dialogue = noone;
