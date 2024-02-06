@@ -19,9 +19,6 @@ if DRAW {	// a minor delay to let everything create and set variables
 	
 	boxMasking(toMask)
 	
-	//toMask()
-	
-	
 	with bulletRef drawEvent()
 
 	for(var i = 0; i < ds_list_size(global.gasterList); i++) {

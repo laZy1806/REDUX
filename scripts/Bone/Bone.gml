@@ -36,7 +36,7 @@ function clearAllBone(){
 	for (var i = 0; i < ds_list_size(global.boneList); i++)
 	with ds_list_find_value(global.boneList, i) instance_destroy()
 }
-function BoneRow(_x, start_x, _y, start_y, beginheight, finheight, _rowCount, _angle = 0, _distBetween = 15, moveMeth = "static", heightMeth = "static", moveSpd = 60, heightSpd = 60, isTimer = true)
+function BoneRow(_x, start_x, _y, start_y, _beginHeightArray, _finHeightArray, _rowCount, _angle = 0, _distBetween = 15, _moveMethArray = array_create(_rowCount, "static"), _heightMethArray = array_create(_rowCount, "static"), moveSpd = 60, _heightSpdArray = array_create(60, _rowCount), isTimer = true)
 {
 	var ARRAY = array_create(0)
 	for(var i = 0; i < _rowCount; i++) {
@@ -49,13 +49,13 @@ function BoneRow(_x, start_x, _y, start_y, beginheight, finheight, _rowCount, _a
 			starty : start_y,
 			anglestart : 0,
 			DesAngle : 0,
-			startheight : beginheight,
-			endheight : finheight,
-			movementMethod : moveMeth,
+			startheight : _beginHeightArray[i],
+			endheight :  _finHeightArray[i],
+			movementMethod : _moveMethArray[i],
 			angleMethod : "static",
-			heightMethod : heightMeth,
+			heightMethod : _heightMethArray[i],
 			perAngle : 1/1,
-			perHeight : 1/heightSpd,
+			perHeight : 1/_heightSpdArray[i],
 			perMovement : 1/moveSpd,
 			ROTATIONAL : false,
 			onTimer : isTimer,
@@ -74,5 +74,5 @@ function BoneRow(_x, start_x, _y, start_y, beginheight, finheight, _rowCount, _a
 		boneArray : ARRAY,
 		rowAngle : 0
 	})
-	return ARRAY
+	return ROW
 }

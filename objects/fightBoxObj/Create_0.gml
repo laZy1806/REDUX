@@ -100,5 +100,5 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
 	}
 })	
-changeSize(300, 110, 1, "static")
+changeSize(190, 110, 1, "static")
 //changeAngle(45, 1, "static")

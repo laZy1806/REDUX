@@ -17,6 +17,7 @@
 	SPDCALC = 0
 #endregion
 //alarm[0] = 1
+
 idleState = function() {
 	
 	var headcurveX = animcurve_get_channel(headCurve, "X")
@@ -48,6 +49,13 @@ drawEvent = function() {
 	//draw_sprite_ext(head, 0, headX, headY, image_xscale, image_yscale, image_angle, c_white, 1)	
 	draw_sprite_ext(human, 0, x, y, 0.5, 0.5, 0, c_white, 1)
 	
+}
+	
+	
+diffCalculator = function(_dist, _spd){
+	var DIST = (global.Right - global.Left)
+	var perFrame = (global.Right - global.Left)/_spd //120 is default speed to revolve around for all bones
+	return (DIST + (abs(DIST - _dist)))/perFrame
 }
 TEST = {
 	CYCLEENDINGS : [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECOND
@@ -178,8 +186,10 @@ atk4Data = {
 	boneArray : array_create(0, 0),
 	boneWave : function() {
 		for (var i = 0; i < 16; i++) {
-			array_push(boneArray, Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Top - 20, global.Top - 20, 10, 30, , 180, 180, , "slowerEase", , 30, , , false))
-			array_push(boneArray, Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Floor + 20, global.Floor + 20, 10, 30, , , , , "slowerEase", , 30, , , false))
+			var one = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Top - 20, global.Top - 20, 10, 30, , 180, 180, , "slowerEase", , 30, , , false)
+			var two = Bone((global.Left + 9) + (12 * i), (global.Left + 9) + (12 * i), global.Floor + 20, global.Floor + 20, 10, 30, , , , , "slowerEase", , 30, , , false)
+			array_push(boneArray, one)
+			array_push(boneArray, two)
 		}
 	},
 	CYCLECREATION : function() {
@@ -246,10 +256,6 @@ atk4Data = {
 		siner += 0.07
 		for(var i = 0; i < array_length(boneArray); i++) {
 			boneArray[i].disY = 5 * sin((i/2) + siner)
-		}
-		if global.AttackCycle >= 1 {
-			
-			
 		}
 	},
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
@@ -319,9 +325,9 @@ atk5Data = {
 	},
 }	
 atk6Data = { // for 40 - 49 ish section
-	CYCLEENDINGS : [0.5, 2, 1], //IN SECONDS
+	CYCLEENDINGS : [0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6], //IN SECONDS
 	countdown : 20,
-	ARRAY : array_create(0),
+	calc : diffCalculator, 
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
@@ -329,35 +335,51 @@ atk6Data = { // for 40 - 49 ish section
 				fightBoxObj.changeSize(300, , 30, "ease")
 			break;
 			case 1:
-				Bone(global.Left + 200, global.Right, global.Floor, global.Floor, 110, 110, , , , "staticToReverse", , , , 300)
+				Bone(global.Left + 200, global.Right, global.Floor, global.Floor, 110, 110, , , , "staticToReverse", , , , 180)
 			break;
 			case 2:
-				var HEIGHT = 160
-				BoneRow(global.Left - 50, global.Left - 200, global.Top + 5, global.Top + 5, HEIGHT, HEIGHT, 8, 270, , "ease", , 180, , false)
-				BoneRow(global.Right + 50, global.Right + 200, global.Floor, global.Floor, HEIGHT, HEIGHT, 8, 90, , "ease", , 180, , false)
+				Bone(global.Right, global.Left, global.Floor, global.Floor, 30, 30, , , , , , , , calc(300, 100))
+				Bone(global.Right, global.Left - 40, global.Top, global.Top, 70, 70, , 180, 180, , , , , calc(340, 100))
+			break;
+			case 3:
+				var offset = 1 * 15	//by the amount of bones - 1 and spacing //if it was at another angle, would need lengthdir
+				BoneRow(global.Right, global.Left - 30, global.Floor, global.Floor, [30, 30], [30, 30], 2, , , , , 100)
+				BoneRow(global.Right + offset, (global.Left + offset) - 30, global.Top, global.Top, [30, 30], [30, 30], 2, 180, , , , 100)
+			break;
+			case 4:
+				var offset = 1 * 15	
+				B1 = BoneRow(global.Right, global.Left - 30, global.Floor, global.Floor, [30, 30], [30, 30], 2, , , , , 100)
+				B2 = BoneRow(global.Right + offset, (global.Left + offset) - 30, global.Top, global.Top, [30, 30], [30, 30], 2, 180, , , , 100)	
+				fourAlarm = new Alarm(1, function() { 
+					for(var i = 0; i < array_length(B1.boneArray); i++) {
+						B1.boneArray[i].changeHeight(25, 1/30, "ease")
+						B2.boneArray[i].changeHeight(60, 1/30, "ease")
+					}
+				})
+				countdown = 20
+			break;
+			case 5:
+				var offset = 1 * 15	
+				BoneRow(global.Right, global.Left - 30, global.Floor, global.Floor, [15, 30], [15, 30], 2, , , , , 120)
+				BoneRow(global.Right + offset, (global.Left + offset) - 30, global.Top, global.Top, [15, 30], [15, 30], 2, 180, , , , 120)
+			break;
+			case 6:
+				var HEIGHT = array_create(8, 160)
+				BoneRow(global.Left - 50, global.Left - 200, global.Top + 5, global.Top + 5, HEIGHT, HEIGHT, 8, 270, , array_create(8, "ease"), , 180, , false)
+				BoneRow(global.Right + 50, global.Right + 200, global.Floor, global.Floor, HEIGHT, HEIGHT, 8, 90, , array_create(8, "ease"), , 180, , false)
 			break;
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
-		if global.AttackCycle = 2 {
-			if (countdown != 0) countdown--
-			else {
-				if (array_length(ARRAY) % 2 = 0) array_push(ARRAY, Bone(global.Right, global.Left, global.Floor, global.Floor, 20, 20, , , , "static", , , , 80))	
-				else {
-					var B = Bone(global.Right, global.Left, global.Top, global.Top, 100, 100, , 180, 180, "static", , , , 80)
-					B.changeColor(c_aqua)
-					array_push(ARRAY, B)
-				}
-				countdown = 20
-			}
-		}
+		if (global.AttackCycle = 5 && countdown = 0) run_alarm(fourAlarm)
+		countdown--;
 	}, 
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
 
 	},
 }		
-atk7Data = { 
-	CYCLEENDINGS : [4, 0.6], //IN SECONDS
+atk8Data = { 
+	CYCLEENDINGS : [4, 0.2, 20], //IN SECONDS
 	countdown : 20,
 	isTop : -1,
 	amount : 0,
@@ -368,11 +390,11 @@ atk7Data = {
 			break;
 			case 1:
 				fightBoxObj.changeDestination(200, , 1/30, "ease")
-				fightBoxObj.changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectly
-				countdown = 20;
+				fightBoxObj.changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectlywsw
 				amount = 0;
 			break;
 			case 2:
+				countdown = 5;
 				fightBoxObj.changeDestination(320, , 1/300, "static")
 			break;
 		}
@@ -381,6 +403,8 @@ atk7Data = {
 		var X = instance_find(fightBoxObj, 0).x
 		var LEFT = X - 150
 		var RIGHT = X + 150
+		countdown = clamp(countdown, -1, 100)
+		show_debug_message(countdown)
 		if ((global.AttackCycle = 1) && countdown = 0 && amount < 7) {
 			if (isTop) {
 				Bone(LEFT, RIGHT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 70)
@@ -394,10 +418,10 @@ atk7Data = {
 			countdown = 25
 			amount++
 		}
-		if ((global.AttackCycle = 2) && countdown = 0) {
+		if ((global.AttackCycle = 3) && countdown = 0) {
 			Bone(global.Right + 50, global.Left - 50, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 90)
 			Bone(global.Left - 50, global.Right + 50, global.Floor, global.Floor, 50, 50, , , , , , , 40, 90)
-			countdown = 40
+			countdown = 35
 		}
 		countdown--;
 	}, 
@@ -412,6 +436,5 @@ AttackArray = [
 	atk3Data,
 	atk4Data,
 	atk5Data,
-	atk6Data,
-	atk7Data
+	atk6Data
 ]

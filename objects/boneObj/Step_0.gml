@@ -1,10 +1,11 @@
+
 stepFunction()
 methodController()
 
 //show_debug_message(string(bottomBoneData.x) + "      " + string(bottomBoneData.y))
 var MOVE = curveCalculation(movementCurve, perMovement, 0)
 var ANGLE = curveCalculation(angleCurve, perAngle, 1)
-HEIGHT = curveCalculation(heightCurve, perHeight, 2)
+var HEIGHT = curveCalculation(heightCurve, perHeight, 2)
 
 heightdiff = endheight - startheight
 angledistance = DesAngle - anglestart
