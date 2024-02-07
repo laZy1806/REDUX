@@ -7,3 +7,6 @@ app_h = global.windHeight - global.windOffset //negates offset to solve stretch 
 
 texel_w	= 1/ app_w
 texel_h	= 1/ app_h
+
+bloomAdjuster = lerp(bloomAdjuster, 0, bloomSpeed)
+bloomAdjuster = clamp(bloomAdjuster, 0, 1)

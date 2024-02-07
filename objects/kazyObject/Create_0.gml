@@ -51,7 +51,7 @@ drawEvent = function() {
 	
 }
 	
-	
+//put this function into some kind of global object.	
 diffCalculator = function(_dist, _spd){
 	var DIST = (global.Right - global.Left)
 	var perFrame = (global.Right - global.Left)/_spd //120 is default speed to revolve around for all bones
@@ -60,7 +60,11 @@ diffCalculator = function(_dist, _spd){
 TEST = {
 	CYCLEENDINGS : [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECOND
 	CYCLECREATION : function() {
-		show_debug_message(audio_sound_get_track_position(attackObject.MAINFIGHT))
+		soulObj.changeColor("Blue")
+		Bone(320, 320, global.Floor, global.Floor, 40, 40, , , , , , , , , , false)
+		if (global.AttackCycle = 1) {
+		
+		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
 		//show_debug_message(audio_sound_get_track_position(attackObject.MAINFIGHT))
@@ -271,25 +275,26 @@ atk5Data = {
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
-				camObj.zoomCamera(, , "ease", 1/50, 1)
-				camObj.moveCamera(, 0, "ease", 1/50)
+				camObj.zoomCamera(, , "ease", 1/90, 1)
+				camObj.moveCamera(, 0, "ease", 1/90)
 				fightBoxObj.changeSize(230, , 1, "ease")
 				soulObj.changeColor("Blue")
+				shakeBloom(2, 30, 1, 0.03)
 			break;
 			case 1:
 				for (var i = 0; i < 72; i++) {
-					var STARTSPD = 85
+					var STARTSPD = 87
 					var DIST = 15
-					var MOVEFACTOR = abs(global.Right - (global.Left - 15))/STARTSPD //is 255/85 = 3
+					var MOVEFACTOR = abs(global.Right - (global.Left - 30))/STARTSPD //is 255/87 = 3 ish
 					var SPDFACTOR = STARTSPD + ((DIST * i)/MOVEFACTOR)
 					// its important that SPDFACTOR are just normal INT multiples, and not decimals, as it can causes weird shifting
 					if (i % 7 != 0) {
-						Bone(global.Left - 15, global.Right + (DIST * i), global.Top, global.Top, 35, 35, false, 180, 180, , , , , SPDFACTOR)
+						Bone(global.Left - 30, global.Right + (DIST * i), global.Top, global.Top, 35, 35, false, 180, 180, , , , , SPDFACTOR)
 					}
 					else {
 						array_push(oddBoneArray, 
-						Bone(global.Left - 15, global.Right + (DIST * i), global.Top, global.Top, 45, 45, false, 180, 180, , , , , SPDFACTOR), 
-						Bone(global.Left - 15, global.Right + (DIST * i), global.Floor, global.Floor, 25, 25, false, 0, 0, , , , , SPDFACTOR))
+						Bone(global.Left - 30, global.Right + (DIST * i), global.Top, global.Top, 45, 45, false, 180, 180, , , , , SPDFACTOR), 
+						Bone(global.Left - 30, global.Right + (DIST * i), global.Floor, global.Floor, 25, 25, false, 0, 0, , , , , SPDFACTOR))
 					}
 				}			
 			break;
@@ -325,7 +330,7 @@ atk5Data = {
 	},
 }	
 atk6Data = { // for 40 - 49 ish section
-	CYCLEENDINGS : [0.5, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6], //IN SECONDS
+	CYCLEENDINGS : [0.5, 0.4, 0.6, 0.6, 0.6, 0.85, 0.4, 0.6, 0.25, 0.25, 0.25, 0.25], //IN SECONDS
 	countdown : 20,
 	calc : diffCalculator, 
 	CYCLECREATION : function() {
@@ -360,25 +365,50 @@ atk6Data = { // for 40 - 49 ish section
 			break;
 			case 5:
 				var offset = 1 * 15	
-				BoneRow(global.Right, global.Left - 30, global.Floor, global.Floor, [15, 30], [15, 30], 2, , , , , 120)
-				BoneRow(global.Right + offset, (global.Left + offset) - 30, global.Top, global.Top, [15, 30], [15, 30], 2, 180, , , , 120)
+				B1 = BoneRow(global.Right, global.Left - 30, global.Floor, global.Floor, [50, 35], [50, 35], 2, , , , array_create(2, "ease"), 120, array_create(2, 100))
+				B2 = BoneRow(global.Right + offset, (global.Left + offset) - 30, global.Top, global.Top, [35, 50], [35, 50], 2, 180, , , array_create(2, "ease"), 120, array_create(2, 100))
+				fiveAlarm = new Alarm(1, function(){
+					B1.boneArray[0].changeHeight(40, 30)
+					B2.boneArray[1].changeHeight(40, 30)
+				})
+				countdown = 20
 			break;
 			case 6:
-				var HEIGHT = array_create(8, 160)
-				BoneRow(global.Left - 50, global.Left - 200, global.Top + 5, global.Top + 5, HEIGHT, HEIGHT, 8, 270, , array_create(8, "ease"), , 180, , false)
-				BoneRow(global.Right + 50, global.Right + 200, global.Floor, global.Floor, HEIGHT, HEIGHT, 8, 90, , array_create(8, "ease"), , 180, , false)
+				var AMOUNT = 15
+				var HEIGHT2 = [30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15]
+				var HEIGHT = array_reverse(HEIGHT2)
+				BoneRow(global.Left - 500, global.Right, global.Floor, global.Floor, HEIGHT2, HEIGHT2, AMOUNT, 0, 25, array_create(AMOUNT, "static"), , 170, , false)
+				BoneRow(global.Right - (AMOUNT * 25) + 500, global.Left - (AMOUNT * 25), global.Floor, global.Floor, HEIGHT, HEIGHT, AMOUNT, 0, 25, array_create(AMOUNT, "static"), , 170, , false)
+			break;
+			case 7: 
+				show_debug_message(attackObject.songPosition())
+				soulObj.changeColor("Red")
+				fightBoxObj.changeSize(200, , 30, "ease")
+			break;
+			case 8:
+				Gaster(220, 220, 190, -50, 40, 55, 270, 270, 1, 1)
+			break;
+			case 9:
+				Gaster(220 + 60, 220 + 60, 190, -50, 40, 55, 270, 270, 1.2, 1)
+			break;
+			case 10:
+				Gaster(220 + 120, 220 + 120, 190, -50, 40, 55, 270, 270, 1.2, 1)
+			break;
+			case 11:
+				Gaster(220 + 180, 220 + 180, 190, -50, 40, 55, 270, 270, 1.2, 1)
 			break;
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
 		if (global.AttackCycle = 5 && countdown = 0) run_alarm(fourAlarm)
+		if (global.AttackCycle = 6 && countdown = 0) run_alarm(fiveAlarm)
 		countdown--;
 	}, 
 	CYCLEDRAW : function() { //THINGS DRAWN SPECIFICALLY FOR ATK
 
 	},
 }		
-atk8Data = { 
+atk7Data = { 
 	CYCLEENDINGS : [4, 0.2, 20], //IN SECONDS
 	countdown : 20,
 	isTop : -1,
@@ -429,6 +459,7 @@ atk8Data = {
 		
 	},
 }		
+/*
 AttackArray = [
 	introData,
 	atk1Data,
@@ -436,5 +467,10 @@ AttackArray = [
 	atk3Data,
 	atk4Data,
 	atk5Data,
-	atk6Data
+	atk6Data,
+	atk7Data
+]
+*/
+AttackArray = [
+	TEST
 ]

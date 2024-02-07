@@ -6,11 +6,11 @@ if !surface_exists(finalSurf) finalSurf = surface_create(app_w, app_h)
 if !surface_exists(glitchSurf) glitchSurf = surface_create(app_w, app_h)
 if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 
-#region bloom code
+#region bloom code	
 	var bloom_threshold = 0
 	var bloom_range = 0 
 
-	var bloom_intensity = 0.0
+	var bloom_intensity = bloomAdjuster
 	var bloom_saturation = 1
 	var bloom_darken = 1 
 	

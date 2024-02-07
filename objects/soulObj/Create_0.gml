@@ -1,4 +1,4 @@
-move = use_tdmc(, 0, 0)
+move = use_tdmc(, 0)
 isRed = true
 jumpKey = "W"
 isJumped = false
@@ -11,7 +11,7 @@ isGrav = true
 grav = 0
 Color = "Red"
 swapCooldown = 10
-isFailsafe = true
+isFailsafe = false
 
 verticalColChecker = function(){
 	if move.againstWall.vert != 0 isJumped = false

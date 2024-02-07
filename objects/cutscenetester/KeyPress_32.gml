@@ -3,7 +3,7 @@
 var target = corridor
 if (room == corridor) target = battle;
 
-TransitionStart(battle, Sequence1, Sequence12)	
+TransitionStart(battle, wallTestSeq, Sequence12)	
 
 
 

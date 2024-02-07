@@ -1,5 +1,6 @@
-vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * 2
-hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * 2
+var _spdMulti = 2 - keyboard_check(vk_shift)
+vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * _spdMulti 
+hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * _spdMulti
 var verCol = move.againstWall.vert != 0
 var horiCol = move.againstWall.hori != 0
 var BOX = instance_find(fightBoxObj, 0)
@@ -78,3 +79,6 @@ else {
 	image_speed = 5
 	global.InvFrames--
 }
+
+//show_debug_message("X" + string(x))
+//show_debug_message("Y" + string(y))

@@ -74,6 +74,7 @@ TEST = 0
 #endregion
 left = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : leftWall,	
+	image_blend : c_red,
 	step_function : function() {
 		SETWIDTH = (-fightBoxObj.WIDTHSTATIC/2) 
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
@@ -81,6 +82,7 @@ left = instance_create_depth(0, 0, 0, fightWall, {
 })
 top = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : topWall,	
+	image_blend : c_yellow,
 	step_function : function() {
 		SETHEIGHT = -fightBoxObj.HEIGHTSTATIC/2
 		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
@@ -88,6 +90,7 @@ top = instance_create_depth(0, 0, 0, fightWall, {
 })
 bottom = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : bottomWall,	
+	image_blend : c_blue,
 	step_function : function() {
 		SETHEIGHT = fightBoxObj.HEIGHTSTATIC/2	
 		image_xscale = abs(fightBoxObj.WIDTHSTATIC)/10
@@ -95,6 +98,7 @@ bottom = instance_create_depth(0, 0, 0, fightWall, {
 })
 right = instance_create_depth(0, 0, 0, fightWall, {
 	sprite_index : rightWall,	
+	image_blend : c_purple,
 	step_function : function() {
 		SETWIDTH = (fightBoxObj.WIDTHSTATIC/2)
 		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10

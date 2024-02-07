@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.AttackCycle = 0
-global.AttackNumber = 6
+global.AttackNumber = 0
 //audio_sound_set_track_position(MAINFIGHT, 18.33)
 _audio = -1
 _time = 0
@@ -24,6 +24,8 @@ AttackArray = array_create(0)
 for(var i = 0; i < array_length(global.ENEMYARRAY[0].AttackArray); i++) {
 	array_push(AttackArray, global.ENEMYARRAY[0].AttackArray[i])
 }
+global.AttackNumber = min(array_length(AttackArray), global.AttackNumber)
+
 for(var i = 0; i < global.AttackNumber + 1; i++) {
 	var lim = i != global.AttackNumber ? array_length(AttackArray[i].CYCLEENDINGS) : global.AttackCycle
 	for(var j = 0; j < lim; j++) {
@@ -59,4 +61,7 @@ _x = 0
 _y = 0
 timeRemaining = function(){
 	return time_source_get_time_remaining(ATTACKALARM)
+}
+songPosition = function(){
+	return audio_sound_get_track_position(MAINFIGHT)
 }

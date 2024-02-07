@@ -29,11 +29,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 		with soulRef draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1)
 		
 	for(var i = 0; i < instance_number(fightWall); i++) {
-		//with instance_find(fightWall, i) draw_sprite_ext(sprite_index, image_index, x, y, image_xscale + 0.4, image_yscale + 0.4, image_angle, c_black, image_alpha) //baked in outline (NOT OPTIMAL)
-	}	
-	
-	for(var i = 0; i < instance_number(fightWall); i++) {
-		with instance_find(fightWall, i) draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha)
+		with instance_find(fightWall, i) drawEvent()
 	}			
 	
 	for (var f = 0; f < array_length(bulletRef.buttonList); f++) {		

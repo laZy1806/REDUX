@@ -10,7 +10,7 @@ function Gaster(_x, _startx, _y, _starty, _spd, _timer, _angle, _anglestart, _xs
 		angleStart : _anglestart,
 		desAngle : _angle,
 		yTo : _y,
-		Timer : _timer,
+		Timer : max(_timer, _spd),
 		endTime : _endtime,
 		image_xscale : _xscale,
 		image_yscale : _yscale

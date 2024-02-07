@@ -41,6 +41,10 @@ glitchSurf				= -1;
 
 	bloom_texture			= -1
 	bloomSurf				= -1
+	
+	bloomAdjuster = 0
+	bloomSpeed = 0.02;
+	
 #endregion
 
 fullscreenOffset = 0
