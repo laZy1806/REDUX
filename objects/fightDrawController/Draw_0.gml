@@ -40,9 +40,9 @@ if DRAW {	// a minor delay to let everything create and set variables
 		
 	surface_reset_target()
 	
-		scrOutlineShaderData(drawSurf, 20, 1)
+		//scrOutlineShaderData(drawSurf, 20, 1)
 	
 			draw_surface(drawSurf, 0, 0)
 			
-		shader_reset()
+		//shader_reset()
 }

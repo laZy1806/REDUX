@@ -117,6 +117,7 @@
     {"id":{"name":"fightDrawController","path":"objects/fightDrawController/fightDrawController.yy",},},
     {"id":{"name":"string_width_scribble_ext","path":"scripts/string_width_scribble_ext/string_width_scribble_ext.yy",},},
     {"id":{"name":"battleRoom","path":"rooms/battleRoom/battleRoom.yy",},},
+    {"id":{"name":"wallTestSeq_Events143","path":"scripts/wallTestSeq_Events143/wallTestSeq_Events143.yy",},},
     {"id":{"name":"sp_pillar","path":"sprites/sp_pillar/sp_pillar.yy",},},
     {"id":{"name":"fullAfamLogo","path":"sprites/fullAfamLogo/fullAfamLogo.yy",},},
     {"id":{"name":"__scribble_tick","path":"scripts/__scribble_tick/__scribble_tick.yy",},},

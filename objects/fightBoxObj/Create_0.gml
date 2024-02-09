@@ -77,7 +77,7 @@ left = instance_create_depth(0, 0, 0, fightWall, {
 	image_blend : c_red,
 	step_function : function() {
 		SETWIDTH = (-fightBoxObj.WIDTHSTATIC/2) 
-		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
+		image_yscale = abs(fightBoxObj.HEIGHTSTATIC + 12)/10
 	}
 })
 top = instance_create_depth(0, 0, 0, fightWall, {
@@ -101,7 +101,7 @@ right = instance_create_depth(0, 0, 0, fightWall, {
 	image_blend : c_purple,
 	step_function : function() {
 		SETWIDTH = (fightBoxObj.WIDTHSTATIC/2)
-		image_yscale = abs(fightBoxObj.HEIGHTSTATIC)/10
+		image_yscale = abs(fightBoxObj.HEIGHTSTATIC + 12)/10
 	}
 })	
 changeSize(190, 110, 1, "static")

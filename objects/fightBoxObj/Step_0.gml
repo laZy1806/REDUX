@@ -23,6 +23,9 @@ global.Floor = bottom.y
 image_xscale = (WIDTHSTATIC - 20)/2
 image_yscale = (HEIGHTSTATIC- 10)/2
 
+if variable_instance_exists(id, "_seqInst") {
+	_seqInst.activeTracks[0].instanceID.image_xscale = 1000	//allows for dynamic scaling on the custscene :D
+}
 //mouseDebug()
 //debug stuff
 if keyboard_check(vk_space) {

@@ -60,10 +60,15 @@ diffCalculator = function(_dist, _spd){
 TEST = {
 	CYCLEENDINGS : [0.7, 0.7, 0.7, 0.7, 0.7, 0.5, 0.5, 0.5, 0.5, 0.5], //IN SECOND
 	CYCLECREATION : function() {
-		soulObj.changeColor("Blue")
-		Bone(320, 320, global.Floor, global.Floor, 40, 40, , , , , , , , , , false)
+		//Bone(320, 320, global.Floor, global.Floor, 40, 40, , , , , , , , , , false)
+		if (global.AttackCycle = 0) {
+			soulObj.changeColor("Blue")
+		}
 		if (global.AttackCycle = 1) {
-		
+			soulObj.Slam(0, -5, 0.03)
+		}
+		if (global.AttackCycle = 3) {
+			soulObj.Slam(0, 5, 0.03)
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK

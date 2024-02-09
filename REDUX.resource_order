@@ -39,6 +39,7 @@
     {"name":"obj_text","order":1,"path":"objects/obj_text/obj_text.yy",},
     {"name":"intObj","order":1,"path":"objects/intObj/intObj.yy",},
     {"name":"fightDrawController","order":4,"path":"objects/fightDrawController/fightDrawController.yy",},
+    {"name":"wallTestSeq_Events143","order":2,"path":"scripts/wallTestSeq_Events143/wallTestSeq_Events143.yy",},
     {"name":"empty","order":2,"path":"sprites/empty/empty.yy",},
     {"name":"scrNameActions","order":10,"path":"scripts/scrNameActions/scrNameActions.yy",},
     {"name":"boneMiddle","order":3,"path":"sprites/boneMiddle/boneMiddle.yy",},
