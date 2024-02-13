@@ -48,7 +48,7 @@ TEST = 0
 	changeAngle = function(newAngle = ANGLE, _spd = perAngle, angleCurve = angleMethod) {
 		///@func changeAngle(newAngle, 1/per, curveType)
 		ANG = ANGLE
-		ANGLETO = abs(ANG - newAngle) * sign(ANG - newAngle) * -1 //INVERSES SIGN
+		ANGLETO = newAngle - ANG			//abs(ANG - newAngle) * sign(ANG - newAngle) * -1 //INVERSES SIGN
 		perAngle = _spd
 		angleMethod = angleCurve
 		resetCalcNumber(1)
@@ -57,8 +57,8 @@ TEST = 0
 		///@func changeDestination(x, y, 1/per, curveType)
 		RELATIVEX = x
 		RELATIVEY = y
-		xTo = abs(RELATIVEX - _x) * sign(RELATIVEX - _x) * -1
-		yTo = abs(RELATIVEY - _y) * sign(RELATIVEY - _y) * -1
+		xTo = _x - RELATIVEX //* sign(RELATIVEX - _x) * -1
+		yTo = _y - RELATIVEY//* sign(RELATIVEY - _y) * -1
 		perMovement = _spd
 		movementMethod = movementCurve
 		resetCalcNumber(0)

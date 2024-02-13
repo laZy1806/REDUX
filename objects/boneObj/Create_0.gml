@@ -33,6 +33,7 @@ changeAngle = function(_newAngle = anglestart, _per = perAngle, _angleCurve = an
 }
 changeDestination = function(_x = DesX, _y = DesY, _per = perMovement, _movementCurve = movementMethod, _startx = originX, _starty = originY) {
 	///@func changeDestination(x, y, 1/per, curveType, [_startx], [_starty])
+	//function works based on coordinates, not additive
 	startx = _startx
 	starty = _starty
 	DesX = _x

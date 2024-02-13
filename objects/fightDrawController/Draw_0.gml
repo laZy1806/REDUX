@@ -26,7 +26,10 @@ if DRAW {	// a minor delay to let everything create and set variables
 	}
 	
 	// 0 is a temporary thing, will have variable to track img indx for flashing sp
-		with soulRef draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1)
+		with soulRef {
+			draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, image_angle, c_white, 1)
+		
+		}
 		
 	for(var i = 0; i < instance_number(fightWall); i++) {
 		with instance_find(fightWall, i) drawEvent()
@@ -40,9 +43,9 @@ if DRAW {	// a minor delay to let everything create and set variables
 		
 	surface_reset_target()
 	
-		//scrOutlineShaderData(drawSurf, 20, 1)
+		scrOutlineShaderData(drawSurf, 20, 1)
 	
 			draw_surface(drawSurf, 0, 0)
 			
-		//shader_reset()
+		shader_reset()
 }

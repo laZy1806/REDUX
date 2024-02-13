@@ -18,8 +18,6 @@ global.Top = top.y
 global.Floor = bottom.y
 
 //show_debug_message(right.image_xscale)
-
-
 image_xscale = (WIDTHSTATIC - 20)/2
 image_yscale = (HEIGHTSTATIC- 10)/2
 

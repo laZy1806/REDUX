@@ -48,6 +48,7 @@ RESETFUNC = function() {
 	evaluate[1] = 1
 	evaluate[2] = 1
 	
+	stepFunction = noone
 	RESET = false
 	camera_set_view_pos(battlecam, camX, camY);
 	camera_set_view_size(battlecam, Width, Height);

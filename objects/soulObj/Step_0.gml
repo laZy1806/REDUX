@@ -2,12 +2,6 @@ var _spdMulti = 2 - keyboard_check(vk_shift)
 vsp = (keyboard_check(ord(global.downKey)) - keyboard_check(ord(global.upKey))) * _spdMulti 
 hsp = (keyboard_check(ord(global.rightKey)) - keyboard_check(ord(global.leftKey))) * _spdMulti
 
-
-var verCol = collision_line(x, y - 9, x, y + 9, fightWall, false, false) != noone
-
-var horiCol = collision_line(x - 9, y, x + 9, y, fightWall, false, false) != noone
-
-
 var BOX = instance_find(fightBoxObj, 0)
 global.playerHP = clamp(global.playerHP, -1, 99)
 global.Karma = clamp(global.Karma, -1, 99)
@@ -23,6 +17,9 @@ else {
 		case "Blue":
 			if (image_angle = 360) image_angle = 0
 			
+			var verCol = collision_line(x, y - 9, x, y + 9, fightWall, true, false) != noone
+			var horiCol = collision_line(x - 9, y, x + 9, y, fightWall, true, false) != noone
+			
 			slamIncr += slamSpd
 			xSlam = (horiCol = true && slamIncr > 0.2) ? 0 : xSlam	//slamIncr > 0.2 an arbituary value to prevent slams from not working when touching the floor
 			ySlam = (verCol = true && slamIncr > 0.2) ? 0 : ySlam
@@ -34,7 +31,7 @@ else {
 			
 			//_jumpCol()
 			
-			if isGrav && !isSlam and !_jumpCol{
+			if isGrav && !isSlam and !_jumpCol {
 				if (grav >= -6  && grav < -0.8) grav += 0.13;
 				//between -0.8 and 0.8, for when dropping	
 				else if (grav >= -0.8  && grav < 0.8 ) grav += 0.16;
@@ -47,6 +44,7 @@ else {
 			
 			show_debug_message("Gravity " + string(grav))
 			show_debug_message("Angle " + string(image_angle))
+			//show_debug_message("_xSlam " + string(_xSlam))
 			
 			swapCooldown = swapCooldown > 0 ? swapCooldown - 1 : 0
 		
@@ -57,6 +55,7 @@ else {
 				grav = 0
 			}			
 			
+	
 			move.xSpdYSpd(_x + _xSlam, _y + _ySlam)		
 			sprite_index = soulSPBlue
 			switch image_angle {

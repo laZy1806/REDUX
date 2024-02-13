@@ -10,6 +10,8 @@ var shakeCurve = animcurve_get_channel(battleCamCurve, shakeMethod)
 var shakeCalc = curveCalculation(shakeCurve, shakePercent, 2)
 
 if !RESET {
+	if stepFunction != noone stepFunction()
+	
 	Width = supposedWidth + DesWidth * zoomCalc
 	Height = supposedHeight + DesHeight * zoomCalc
 		

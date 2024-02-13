@@ -62,13 +62,14 @@ TEST = {
 	CYCLECREATION : function() {
 		//Bone(320, 320, global.Floor, global.Floor, 40, 40, , , , , , , , , , false)
 		if (global.AttackCycle = 0) {
-			soulObj.changeColor("Blue")
+			//soulObj.changeColor("Blue")
 		}
 		if (global.AttackCycle = 1) {
-			soulObj.Slam(0, -5, 0.03)
+			soulObj.changeColor("Blue")
+			//soulObj.Slam(0, -5, 0.03)
 		}
 		if (global.AttackCycle = 3) {
-			soulObj.Slam(0, 5, 0.03)
+			//soulObj.Slam(0, 5, 0.03)
 		}
 	},
 	CYCLESTEP : function() { //THINGS CALCULATED EVERY STEP SPECIFICALLY FOR ATK
@@ -414,23 +415,48 @@ atk6Data = { // for 40 - 49 ish section
 	},
 }		
 atk7Data = { 
-	CYCLEENDINGS : [4, 0.2, 20], //IN SECONDS
+	CYCLEENDINGS : [4, 0.35, 4.5, 1, 1], //IN SECONDS
 	countdown : 20,
 	isTop : -1,
 	amount : 0,
 	CYCLECREATION : function() {
 		switch global.AttackCycle {
 			case 0:
+				soulObj.isFailsafe = true	//
+				fightBoxObj.changeSize(200, , 1, "static")
 				fightBoxObj.changeSize(150, , 240, "static")
 			break;
 			case 1:
-				fightBoxObj.changeDestination(200, , 1/30, "ease")
-				fightBoxObj.changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectlywsw
-				amount = 0;
+				with fightBoxObj {
+					changeDestination(200, , 1/15, "straighterEase")
+					changeSize(150, , 1, "ease")	// just incase box isnt scaled perfectly
+				}
+				camObj.stepFunction = function() {
+					if fightBoxObj.x = 200 {
+						camObj.shakeCamera(20, 15)
+						camObj.stepFunction = noone;
+					}
+					amount = 0;
+				}
 			break;
 			case 2:
-				countdown = 5;
-				fightBoxObj.changeDestination(320, , 1/300, "static")
+				countdown = 1;
+				fightBoxObj.changeDestination(420, , 1/300, "static")
+			break;
+			case 3:
+				Gaster(391, 391, 200, -50, 40, 50, 270, 270, 1.2, 1.2)
+				Gaster(280, -50, 332, 332, 40, 50, 0, 0, 1.2, 1.2)
+				soulObj.isFailsafe = false
+			break;
+			case 4:
+				with fightBoxObj {
+					changeDestination(320, , 1/130, "slowerEase")
+					changeAngle(360, 1/130, "slowerEase")
+					changeSize(200, , 1/130,  "slowerEase")
+				}
+			break;
+			case 5:
+				
 			break;
 		}
 	},
@@ -439,23 +465,22 @@ atk7Data = {
 		var LEFT = X - 150
 		var RIGHT = X + 150
 		countdown = clamp(countdown, -1, 100)
-		show_debug_message(countdown)
 		if ((global.AttackCycle = 1) && countdown = 0 && amount < 7) {
 			if (isTop) {
-				Bone(LEFT, RIGHT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 70)
-				Bone(RIGHT, LEFT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 70)
+				Bone(LEFT, RIGHT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 65)
+				Bone(RIGHT, LEFT, global.Top, global.Top, 30, 60, , 180, 180, , , , 40, 65)
 			}
 			else {
-				Bone(LEFT, RIGHT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 70)
-				Bone(RIGHT, LEFT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 70)
+				Bone(LEFT, RIGHT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 65)
+				Bone(RIGHT, LEFT, global.Floor, global.Floor, 30, 60, , , , , , , 40, 65)
 			}
 			isTop *= -1
-			countdown = 25
+			countdown = 27
 			amount++
 		}
 		if ((global.AttackCycle = 3) && countdown = 0) {
-			Bone(global.Right + 50, global.Left - 50, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 90)
-			Bone(global.Left - 50, global.Right + 50, global.Floor, global.Floor, 50, 50, , , , , , , 40, 90)
+			Bone(global.Right + 75, global.Left - 75, global.Top, global.Top, 50, 50, , 180, 180, , , , 40, 90)
+			Bone(global.Left - 75, global.Right + 75, global.Floor, global.Floor, 50, 50, , , , , , , 40, 90)
 			countdown = 35
 		}
 		countdown--;
@@ -464,7 +489,6 @@ atk7Data = {
 		
 	},
 }		
-/*
 AttackArray = [
 	introData,
 	atk1Data,
@@ -475,7 +499,4 @@ AttackArray = [
 	atk6Data,
 	atk7Data
 ]
-*/
-AttackArray = [
-	TEST
-]
+

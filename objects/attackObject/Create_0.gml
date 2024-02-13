@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 global.AttackCycle = 0
-global.AttackNumber = 0
+global.AttackNumber = 7
 //audio_sound_set_track_position(MAINFIGHT, 18.33)
 _audio = -1
 _time = 0
