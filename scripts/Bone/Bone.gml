@@ -66,6 +66,9 @@ function BoneRow(_x, start_x, _y, start_y, _beginHeightArray, _finHeightArray, _
 		ds_list_add(global.boneList, bone)
 		array_push(ARRAY, bone)
 	}
+	//BONES ARE PLACED FROM LEFT TO RIGHT, SO IF GOING FROM
+	// IF YOU WANT TO LINE UP THE ROWS FROM THE TOP TO BOTTOM, IT NEEDS TO BE OFFSET BY THE DISTANCE OF ONE BONE (NOT NECCESSARY IF THE ANGLE IS 0 FOR BOTH)
+	// 
 	var ROW = instance_create_depth(0, 0, 0, boneRowObj, {
 		rowXOffset : lengthdir_x(_distBetween * i, _angle),
 		rowYOffset : lengthdir_y(_distBetween * i, _angle),
