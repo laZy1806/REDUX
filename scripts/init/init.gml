@@ -73,9 +73,9 @@ gml_pragma("global", "init()");
 	#macro c_darkorange make_color_hsv(30, 250, 220)
 	
 #endregion
-scribble_font_bake_outline_8dir_2px("menuFont", "outlinemenuFont", c_black, false)
+scribble_font_bake_outline_8dir("menuFont", "outlinemenuFont", c_black, false)
 scribble_font_bake_outline_8dir("healthFont", "healthFontOutline", c_black, false)
-application_surface_draw_enable(true)
+application_surface_draw_enable(false)
 
 
 

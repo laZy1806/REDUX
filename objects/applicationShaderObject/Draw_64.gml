@@ -77,6 +77,8 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 		gpu_set_tex_filter(false)
 		
 	surface_reset_target()
+	
+	
 
 	surface_set_target(glitchSurf)
 	
@@ -94,7 +96,7 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 		
 		surface_set_target(finalSurf)
 		
-			draw_surface_stretched(glitchSurf, 0, 0, app_w, app_h)
+			draw_surface_stretched(glitchSurf, 0, 0, app_w, app_h)	
 			
 		surface_reset_target()
 
@@ -106,4 +108,5 @@ if !surface_exists(bloomSurf) bloomSurf = surface_create(app_w, app_h)
 
 
 #endregion
-	draw_surface_stretched(finalSurf, 0 + fullscreenOffset, 0 + global.windOffset, app_w, app_h)
+
+draw_surface_stretched(finalSurf, 0 + fullscreenOffset, 0 + global.windOffset, app_w, app_h)

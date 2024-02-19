@@ -76,6 +76,7 @@
     {"name":"eggsplosionOBJ","order":8,"path":"objects/eggsplosionOBJ/eggsplosionOBJ.yy",},
     {"name":"fightWall","order":6,"path":"objects/fightWall/fightWall.yy",},
     {"name":"debugObject","order":1,"path":"objects/debugObject/debugObject.yy",},
+    {"name":"shaderTEST","order":6,"path":"shaders/shaderTEST/shaderTEST.yy",},
     {"name":"wallSepSprite","order":13,"path":"sprites/wallSepSprite/wallSepSprite.yy",},
     {"name":"objTextStripped","order":9,"path":"objects/objTextStripped/objTextStripped.yy",},
     {"name":"outline_init","order":2,"path":"scripts/outline_init/outline_init.yy",},
