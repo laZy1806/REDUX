@@ -4,6 +4,7 @@
 //locations should be a two dimensional array with x being [.][0] and y being [.][1]
 //pressedFunc should be a function
 //typeOf should be either a sprite, or an instance of scribbleCreator.
+
 function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  SPEED = 1/60, curveTypeOf = "mediumEase") constructor
 {
 	scrCurveList(1)
@@ -14,14 +15,16 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 	stepFunction = argument[4];//own peprsonal addition to be ran every frame besides location calc
 	spd = argument[5];
 	curveType = argument[6]
-	isActive = false
-	buttonToCheck = noone
 	x = locs[0][0]
 	y = locs[0][1]
+	
+	onMe = false
+	CURVE = animcurve_get_channel(buttonCurve, curveType)
 	image_index = 0
 	isPressed = false;
 	currentX = x;
 	currentY = y;
+	evaluate[0] = 0
 	//Mutators
 		changeCurveData = function(_curve = noone, _spd = noone, _display = noone) {
 			if typeof(_curve) = "string" curveType = _curve
@@ -37,27 +40,26 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 			currentY = y
 			resetCalcNumber(0)
 		}
-		STEP = function(_location = 0, _buttonToCheck) {
-			CURVE = animcurve_get_channel(buttonCurve, curveType)
-			buttonToCheck = _buttonToCheck
-			location = _location;
-			location = clamp(location, 0, array_length(locs) - 1)
-			x = currentX + difCalculation(locs[location][0], currentX, CURVE, spd, 0)
-			y = currentY + difCalculation(locs[location][1], currentY, CURVE, spd, 0)
-			
+		STEP = function(_location = 0) {
+			var _x = difCalculation(locs[_location][0], currentX, CURVE, spd, 0)
+			var _y = difCalculation(locs[_location][1], currentY, CURVE, spd, 0)
+		
+			if !isCurveFinished(0) {	//allows for lerp to work outside
+				x = currentX + _x
+				y = currentY + _y
+			}
 			if (typeof(stepFunction) = "method") stepFunction()
-			if (keyboard_check_pressed(buttonToCheck)) shiftButton();	//need to add cooldown here, causes bug
-			
+			location = _location
 		}
 		checkPressed = function(){
-		 if (keyboard_check_pressed(buttonToCheck)) {
+		 if ((keyboard_check_pressed(global.enterKey) || keyboard_check_pressed(global.backKey)) && onMe && isCurveFinished(0)) {
 			if (typeof(pressedCode) = "method") pressedCode()
 				shiftButton();
 			}
 		}
-		DISPLAY = function(_scale = 1, _rot = 0, _alp = 1) {
-			if is_instanceof(toDisplay, __scribble_class_element) toDisplay.draw(x, y)
-			else if (asset_get_type(toDisplay) = asset_sprite) draw_sprite_ext(toDisplay, image_index, x, y, _scale, _scale, _rot, c_white, _alp)
+		DISPLAY = function(_x = x, _y = y, _scale = 1, _rot = 0, _alp = 1) {
+			if is_instanceof(toDisplay, __scribble_class_element) toDisplay.draw(_x, _y)
+			else if (asset_get_type(toDisplay) = asset_sprite) draw_sprite_ext(toDisplay, image_index, _x, _y, _scale, _scale, _rot, c_white, _alp)
 			if (typeof(drawFunction) = "method") drawFunction() // a second draw func thats optional
 		}
 }

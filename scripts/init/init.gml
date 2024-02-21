@@ -9,6 +9,8 @@ gml_pragma("global", "init()");
 	global.downKey = "S";
 	global.leftKey = "A";
 	global.rightKey = "D";
+	global.enterKey = vk_enter
+	global.backKey = vk_backspace
 	global.borderheight = 100;
 	global.borderwidth = 100;
 	global.playerHP = 92;
