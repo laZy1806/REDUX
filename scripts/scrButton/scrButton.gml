@@ -4,7 +4,7 @@
 //locations should be a two dimensional array with x being [.][0] and y being [.][1]
 //pressedFunc should be a function
 //typeOf should be either a sprite, or an instance of scribbleCreator.
-
+global.menuState = 0;
 function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0,  SPEED = 1/60, curveTypeOf = "mediumEase") constructor
 {
 	scrCurveList(1)
@@ -21,7 +21,6 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 	onMe = false
 	CURVE = animcurve_get_channel(buttonCurve, curveType)
 	image_index = 0
-	isPressed = false;
 	currentX = x;
 	currentY = y;
 	evaluate[0] = 0
@@ -43,8 +42,8 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 		STEP = function(_location = 0) {
 			var _x = difCalculation(locs[_location][0], currentX, CURVE, spd, 0)
 			var _y = difCalculation(locs[_location][1], currentY, CURVE, spd, 0)
-		
-			if !isCurveFinished(0) {	//allows for lerp to work outside
+			
+			if !isCurveFinished(0) {
 				x = currentX + _x
 				y = currentY + _y
 			}
@@ -52,9 +51,10 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 			location = _location
 		}
 		checkPressed = function(){
-		 if ((keyboard_check_pressed(global.enterKey) || keyboard_check_pressed(global.backKey)) && onMe && isCurveFinished(0)) {
-			if (typeof(pressedCode) = "method") pressedCode()
-				shiftButton();
+			if (keyboard_check_pressed(global.enterKey) && isCurveFinished(0)) {
+				if ((typeof(pressedCode) = "method") && onMe) pressedCode()
+				shiftButton()
+				onMe = false; //to prevent it from staying past menus?
 			}
 		}
 		DISPLAY = function(_x = x, _y = y, _scale = 1, _rot = 0, _alp = 1) {

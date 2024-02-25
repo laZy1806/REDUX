@@ -1,6 +1,8 @@
 /// @description setup camera
 // You can write your code in this editor
 cam = view_camera[0];
+isActive = true;
+spd = 0.03
 
 var instID = instance_find(playerObj, 0);
 

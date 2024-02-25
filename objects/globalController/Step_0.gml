@@ -26,3 +26,9 @@ game_frame_button_set_click(gameframe_button_array[2], forcePause)
 
 
 gameframe_update();
+
+if keyboard_check_pressed(ord("Y")) {
+	room_restart();
+}
+	
+	

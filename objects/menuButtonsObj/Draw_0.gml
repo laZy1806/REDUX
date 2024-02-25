@@ -8,11 +8,12 @@ surface_set_target(menuSurf)
 	for(var i = 0; i < array_length(allButtons); i++) {
 		for(var j = 0; j < array_length(allButtons[i]); j++) {
 			var _b = allButtons[i][j]
-			//_b.x = _b.isCurveFinished(0) ? lerp(_b.x, _b.locs[_b.location][0] + 50 * _b.onMe, 0.09) : _b.x
+			//_b.x = (_b.isCurveFinished(0) && i = global.menuState) ? lerp(_b.x, _b.locs[_b.location][0] + 50 * _b.onMe, 0.09) : _b.x
 			_b.DISPLAY()
 		}
 	}
-
+	draw_sprite(mockupTitle, 0, 130, 100)
+	
 surface_reset_target()
 
 scrOutlineShaderData(menuSurf, 16, 1)

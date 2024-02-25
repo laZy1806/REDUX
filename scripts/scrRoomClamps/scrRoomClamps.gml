@@ -6,5 +6,8 @@ function scrRoomClamps(){
 		case oWorldParent:
 			return [0, 200, 0, 200]
 		break;
+		case menuRoom:
+			return [0, 200, 0, 200]
+		break;
 	}
 }

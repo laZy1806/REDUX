@@ -35,7 +35,7 @@ else {
 				ALPHA += 0.005
 			}
 			if ALPHA >= 1.5 {
-				room_goto(menu)	
+				room_goto(menuRoom)	
 			}
 		}
 		if Dialogue.CurrentDelay = 0 and Dialogue.TextLength = 0 /*only true at beginning of line*/{

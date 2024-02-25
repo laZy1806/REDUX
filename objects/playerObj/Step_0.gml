@@ -15,6 +15,7 @@ else {
 
 	hsp = (key_right - key_left) * speed_multipler;
 	vsp = (key_down - key_up) * speed_multipler;
+	
 	collisionPixelTDMC.xSpdYSpd(hsp, vsp)
 	if (keyboard_check(vk_nokey)) {
 		image_speed = 0	
