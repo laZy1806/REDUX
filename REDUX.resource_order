@@ -1,5 +1,5 @@
 {
-  "FolderOrderSettings": [
+  "FolderOrderSettings":[
     {"name":"Animation Curves","order":1,"path":"folders/Animation Curves.yy",},
     {"name":"battleCurves","order":6,"path":"folders/Animation Curves/battleCurves.yy",},
     {"name":"KazyANIMCurves","order":2,"path":"folders/Animation Curves/KazyANIMCurves.yy",},
@@ -38,7 +38,7 @@
     {"name":"Tile Sets","order":13,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":14,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings": [
+  "ResourceOrderSettings":[
     {"name":"obj_text","order":1,"path":"objects/obj_text/obj_text.yy",},
     {"name":"BeginEaseA","order":4,"path":"animcurves/BeginEaseA/BeginEaseA.yy",},
     {"name":"intObj","order":1,"path":"objects/intObj/intObj.yy",},

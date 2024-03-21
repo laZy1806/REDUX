@@ -62,6 +62,6 @@ array_push(allButtons, menuOneButtons, controlsButtons)
 
 //Where all the menu changing functions are, and will be incorporated into the button pressedFuncs
 function exitMenu() {
-	//instance_destroy(id)	this is where the menu exit cutscene code will be 
+	instance_destroy(id)	//this is where the menu exit cutscene code will be 
 }
 

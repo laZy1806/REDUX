@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "animationScript",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "anims",
-    "path": "folders/Sequences/anims.yy",
+  "$GMScript":"",
+  "%Name":"animationScript",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"animationScript",
+  "parent":{
+    "name":"anims",
+    "path":"folders/Sequences/anims.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

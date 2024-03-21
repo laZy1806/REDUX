@@ -11,7 +11,7 @@ vsp = 0;
 
 #endregion
 friskIndex = 0
-sprite_index = empty
+sprite_index = coloredfriskDown
 image_xscale = 2
 image_yscale = 2
 speed_multipler = 2;

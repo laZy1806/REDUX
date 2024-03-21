@@ -1,9 +1,8 @@
 {
-  "resourceType": "GMAnimCurve",
-  "resourceVersion": "1.2",
-  "name": "bodyCurve",
-  "channels": [
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"X","colour":4278190271,"points":[
+  "$GMAnimCurve":"",
+  "%Name":"bodyCurve",
+  "channels":[
+    {"$GMAnimCurveChannel":"","%Name":"X","colour":4278190271,"name":"X","points":[
         {"th0":-0.1,"th1":0.25,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
         {"th0":0.0,"th1":0.0,"tv0":-0.11303124,"tv1":0.0,"x":0.25,"y":1.0,},
         {"th0":0.0,"th1":0.14312977,"tv0":0.0,"tv1":-0.0022144318,"x":0.25,"y":0.99967486,},
@@ -12,8 +11,8 @@
         {"th0":0.0,"th1":0.0,"tv0":0.30026412,"tv1":0.0,"x":0.75,"y":-1.0,},
         {"th0":0.0,"th1":0.25,"tv0":0.0,"tv1":0.0005944371,"x":0.75,"y":-1.0,},
         {"th0":-0.0022372007,"th1":0.1,"tv0":-0.0018649846,"tv1":0.0,"x":1.0,"y":0.0,},
-      ],"visible":true,},
-    {"resourceType":"GMAnimCurveChannel","resourceVersion":"1.0","name":"Y","colour":4294967228,"points":[
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
+    {"$GMAnimCurveChannel":"","%Name":"Y","colour":4294967228,"name":"Y","points":[
         {"th0":-0.1,"th1":0.09732826,"tv0":0.0,"tv1":0.0,"x":0.0,"y":0.0,},
         {"th0":-0.05534351,"th1":0.0,"tv0":0.00030207634,"tv1":0.0,"x":0.2,"y":1.0,},
         {"th0":0.0,"th1":0.14885494,"tv0":0.0,"tv1":0.0014391541,"x":0.2,"y":0.9998521,},
@@ -22,11 +21,14 @@
         {"th0":-0.1431297,"th1":0.0,"tv0":-0.01839763,"tv1":0.0,"x":0.7,"y":1.0,},
         {"th0":0.0,"th1":0.13931298,"tv0":-0.0066666603,"tv1":0.0005943775,"x":0.7,"y":1.0,},
         {"th0":-0.11292422,"th1":0.1,"tv0":0.004801685,"tv1":0.0,"x":1.0,"y":0.0,},
-      ],"visible":true,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
   ],
-  "function": 2,
-  "parent": {
-    "name": "IDLE",
-    "path": "folders/Animation Curves/KazyANIMCurves/IDLE.yy",
+  "function":2,
+  "name":"bodyCurve",
+  "parent":{
+    "name":"IDLE",
+    "path":"folders/Animation Curves/KazyANIMCurves/IDLE.yy",
   },
+  "resourceType":"GMAnimCurve",
+  "resourceVersion":"2.0",
 }

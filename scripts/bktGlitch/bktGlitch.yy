@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "bktGlitch",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "bktGlitch",
-    "path": "folders/Scripts/bktGlitch.yy",
+  "$GMScript":"",
+  "%Name":"bktGlitch",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bktGlitch",
+  "parent":{
+    "name":"bktGlitch",
+    "path":"folders/Scripts/bktGlitch.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
