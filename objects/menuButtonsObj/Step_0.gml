@@ -1,8 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if global.menuState != -1 {
-	global.menuState = clamp(global.menuState, 0, 1)	// might not be necessary.
-	
+	global.menuState = clamp(global.menuState, 0, 1); // might not be necessary.
 	if (keyboard_check_pressed(ord("W")) && buttonHover > 0) {
 		buttonHover--
 	}
@@ -15,6 +14,9 @@ if global.menuState != -1 {
 			allButtons[i][j].STEP(global.menuState)
 			allButtons[i][j].checkPressed()
 			if (i = global.menuState) allButtons[i][j].onMe = (j = buttonHover) ? true : false 
+			if (allButtons[i][j].onMe) allButtons[i][j].toDisplay.blend(c_yellow, 1);
+			else allButtons[i][j].toDisplay.blend(c_white, 1);
 		}
 	}
 }
+//mouseDebug();

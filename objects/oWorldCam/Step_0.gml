@@ -10,13 +10,13 @@ if instance_exists(playerObj) && isActive {
 	_x = lerp(_x, instID.x, spd);
 	_y = lerp(_y, instID.y, spd);
 	
-	x = _x - view_w_half
-	y = _y - view_h_half
+	x = (_x - view_w_half);
+	y = (_y - view_h_half);
 	
 	x = clamp(x, rmClamps[0], rmClamps[1])
 	y = clamp(y, rmClamps[2], rmClamps[3])
 
-	global.camCenterX = instID.x;
-	global.camCenterY = instID.y;
-	camera_set_view_pos(view_camera[0], x, y);
+	global.camCenterX = instID.x + xShift;
+	global.camCenterY = instID.y + yShift;
+	camera_set_view_pos(view_camera[0], x + xShift, y + yShift);
 }

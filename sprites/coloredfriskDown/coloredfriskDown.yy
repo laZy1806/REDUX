@@ -26,7 +26,7 @@
   ],
   "name":"coloredfriskDown",
   "nineSlice":null,
-  "origin":4,
+  "origin":7,
   "parent":{
     "name":"Frisk",
     "path":"folders/Sprites/Frisk.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":10,
-    "yorigin":14,
+    "yorigin":29,
   },
   "swatchColours":null,
   "swfPrecision":2.525,
