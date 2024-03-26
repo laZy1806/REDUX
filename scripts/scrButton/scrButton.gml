@@ -40,15 +40,17 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 			resetCalcNumber(0)
 		}
 		STEP = function(_location = 0) {
-			var _x = difCalculation(locs[_location][0], currentX, CURVE, spd, 0)
-			var _y = difCalculation(locs[_location][1], currentY, CURVE, spd, 0)
-			
-			if !isCurveFinished(0) {
-				x = currentX + _x
-				y = currentY + _y
+			if (_location >= 0) {
+				location = _location
 			}
-			if (typeof(stepFunction) = "method") stepFunction()
-			location = _location
+				var _x = difCalculation(locs[location][0], currentX, CURVE, spd, 0)
+				var _y = difCalculation(locs[location][1], currentY, CURVE, spd, 0)
+			
+				if !isCurveFinished(0) {
+					x = currentX + _x
+					y = currentY + _y
+				}
+				if (typeof(stepFunction) = "method") stepFunction()
 		}
 		checkPressed = function(){
 			if (keyboard_check_pressed(global.enterKey) && isCurveFinished(0)) {
@@ -58,7 +60,9 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 			}
 		}
 		DISPLAY = function(_x = x, _y = y, _scale = 1, _rot = 0, _alp = 1) {
-			if is_instanceof(toDisplay, __scribble_class_element) toDisplay.draw(_x, _y)
+			if is_instanceof(toDisplay, __scribble_class_element) {
+				toDisplay.draw(_x, _y)
+			}
 			else if (asset_get_type(toDisplay) = asset_sprite) draw_sprite_ext(toDisplay, image_index, _x, _y, _scale, _scale, _rot, c_white, _alp)
 			if (typeof(drawFunction) = "method") drawFunction() // a second draw func thats optional
 		}

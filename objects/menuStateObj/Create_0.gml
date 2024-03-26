@@ -11,7 +11,6 @@ Timer = 60
 //for debugging purposes
 menuOneButtons = array_create(0)
 controlsButtons = array_create(0)
-
 #region start menu one buttons
 	startLocs = 
 	[
@@ -20,7 +19,7 @@ controlsButtons = array_create(0)
 	]
 	startTxt = scribble("[fa_middle][fa_center][menuFont][scale, 1]Start");
 	Start = new scrButton(startLocs, function() {
-		global.menuState = 1
+		global.menuState = -1;
 	},  startTxt)
 	optionsLocs = 
 	[
@@ -59,8 +58,3 @@ controlsButtons = array_create(0)
 array_push(allButtons, menuOneButtons, controlsButtons)
 
 //Where all the menu changing functions are, and will be incorporated into the button pressedFuncs
-function exitMenu() {
-	
-	instance_destroy(id)	//this is where the menu exit cutscene code will be 
-}
-

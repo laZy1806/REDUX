@@ -175,7 +175,7 @@
     {"id":{"name":"globalController","path":"objects/globalController/globalController.yy",},},
     {"id":{"name":"intObj","path":"objects/intObj/intObj.yy",},},
     {"id":{"name":"kazyObject","path":"objects/kazyObject/kazyObject.yy",},},
-    {"id":{"name":"menuButtonsObj","path":"objects/menuButtonsObj/menuButtonsObj.yy",},},
+    {"id":{"name":"menuStateObj","path":"objects/menuStateObj/menuStateObj.yy",},},
     {"id":{"name":"mistakeObj","path":"objects/mistakeObj/mistakeObj.yy",},},
     {"id":{"name":"obj_attacks","path":"objects/obj_attacks/obj_attacks.yy",},},
     {"id":{"name":"obj_battlewall","path":"objects/obj_battlewall/obj_battlewall.yy",},},

@@ -4,6 +4,6 @@ instance_find(playerObj, 0).Frozen  = true;
 var cam = instance_find(oWorldCam, 0) 
 with cam {
 	xShift = 0;
-	yShift = -90;
+	yShift = -80;
 	spd = 0.1;
 }

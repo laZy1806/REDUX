@@ -1,7 +1,5 @@
 /// @description Movement and Collision
 // You can write your code in this editor
-show_debug_message(x)
-show_debug_message(y)
 if Frozen {
 	image_speed = 0
 	image_index = 0

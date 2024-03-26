@@ -70,7 +70,7 @@
     {"name":"globalController","order":2,"path":"objects/globalController/globalController.yy",},
     {"name":"intObj","order":1,"path":"objects/intObj/intObj.yy",},
     {"name":"kazyObject","order":7,"path":"objects/kazyObject/kazyObject.yy",},
-    {"name":"menuButtonsObj","order":2,"path":"objects/menuButtonsObj/menuButtonsObj.yy",},
+    {"name":"menuStateObj","order":2,"path":"objects/menuStateObj/menuStateObj.yy",},
     {"name":"obj_introSeq","order":12,"path":"objects/obj_introSeq/obj_introSeq.yy",},
     {"name":"obj_MonsterHP","order":6,"path":"objects/obj_MonsterHP/obj_MonsterHP.yy",},
     {"name":"obj_particle","order":10,"path":"objects/obj_particle/obj_particle.yy",},
