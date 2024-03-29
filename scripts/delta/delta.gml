@@ -1,8 +1,8 @@
 /// @desc Initializes the delta timing. Change the enum config to your needs. Run this before any DeltaObject is instantiated.
 function delta_init() {
-	global.__delta_expectedDeltaTime = game_get_speed(gamespeed_fps) / 1000000;
+	global.__delta_expectedDeltaTime = 60 / 1000000;
 	global.__delta_stepFactor = 1;
-	global.__delta_fps = game_get_speed(gamespeed_fps);
+	global.__delta_fps = 60;
 	global.__delta_maxLagCompensation = 3;
 }
 
@@ -27,6 +27,7 @@ function delta_override(argument0) {
 function delta_step() {
 	global.__delta_stepFactor = min((global.__delta_expectedDeltaTime * delta_time), global.__delta_maxLagCompensation);
 	//show_debug_message(global.__delta_stepFactor)
+	//show_debug_message(fps_real)
 }
 
 

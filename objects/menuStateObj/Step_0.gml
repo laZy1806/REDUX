@@ -8,7 +8,6 @@ if (global.menuState != -1) {
 	if (keyboard_check_pressed(ord("S")) && buttonHover < array_length(allButtons[global.menuState]) - 1) {
 		buttonHover++
 	}
-	
 	for(var i = 0; i < array_length(allButtons); i++) {
 		for(var j = 0; j < array_length(allButtons[i]); j++) {
 			allButtons[i][j].STEP(global.menuState)
@@ -20,16 +19,22 @@ if (global.menuState != -1) {
 	}
 }
 else {
+	var _lay = layer_get_id("Stationary")
+	var ARR = layer_get_all_elements(_lay)
 	var cam = instance_find(oWorldCam, 0);
-	cam.yShift = lerp(cam.yShift, 0, 0.04)
+	cam.yShift = (lerp(cam.yShift, 0, d(0.04)))
+	cam.setZoom("ease", 1/80, 1)
 	image_alpha = abs(cam.yShift/80);
-	
+		
+	for(var i = 0; i < array_length(ARR); i++) {
+		if i != 1 layer_sprite_alpha(ARR[i], 1 - image_alpha);
+	}
 	for(var i = 0; i < array_length(allButtons); i++) {
 		for(var j = 0; j < array_length(allButtons[i]); j++) {
 			allButtons[i][j].toDisplay.blend(c_white, image_alpha);
 		}
 	}
-	//if (abs(cam.yShift) < 0.2) 
+	if (abs(cam.yShift) < 0.2) 
 	instance_destroy(id);
 }
 //mouseDebug();

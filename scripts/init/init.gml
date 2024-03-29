@@ -31,7 +31,7 @@ gml_pragma("global", "init()");
 	global.debugMode = false
 	global.noteCollected = false
 	
-	global.fpsDipCount = 0
+	global.FPSTARGET = 30
 	global.item[0] = "food"
 	global.item[1] = "Stick"
 	global.item[2] = "Pie" 

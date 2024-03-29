@@ -17,6 +17,7 @@ forcePause = function(){
 	}
 		return;
 }
+
 delta_init()
 
 

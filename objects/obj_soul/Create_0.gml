@@ -23,7 +23,7 @@ spdmulti = 2
 slam = false;
 percent = 0
 perchanger = 1/10
-gravshift = animcurve_get_channel(soulcurve,"slam");
+gravshift = animcurve_get_channel(soulCurve,"slam");
 afterData = {
 	Boolean : false,
 	Alpha : 0.7,

@@ -20,7 +20,7 @@ else {
 			var verCol = collision_line(x, y - 9, x, y + 9, fightWall, true, false) != noone
 			var horiCol = collision_line(x - 9, y, x + 9, y, fightWall, true, false) != noone
 			
-			slamIncr += slamSpd
+			slamIncr += d(slamSpd)
 			xSlam = (horiCol = true && slamIncr > 0.2) ? 0 : xSlam	//slamIncr > 0.2 an arbituary value to prevent slams from not working when touching the floor
 			ySlam = (verCol = true && slamIncr > 0.2) ? 0 : ySlam
 			var _xSlam = (xSlam) * arctan(4 * slamIncr), _ySlam = (ySlam) * arctan(4 * slamIncr)
@@ -32,18 +32,19 @@ else {
 			//_jumpCol()
 			
 			if isGrav && !isSlam and !_jumpCol {
-				if (grav >= -6  && grav < -0.8) grav += 0.13;
+				if (grav >= -6  && grav < -0.8) grav += d(0.13);
 				//between -0.8 and 0.8, for when dropping	
-				else if (grav >= -0.8  && grav < 0.8 ) grav += 0.16;
+				else if (grav >= -0.8  && grav < 0.8 ) grav += d(0.16);
 				//also for when dropping longer	
-				else if (grav >= 0.8  && grav < 2.5 ) grav += 0.19;
-				else if (grav >= 2.5  && grav < 4 ) grav += 0.21;
+				else if (grav >= 0.8  && grav < 2.5 ) grav += d(0.19);
+				else if (grav >= 2.5  && grav < 4 ) grav += d(0.21);
 				//isJumped = true
 			}
-			else grav = 0
-			
-			show_debug_message("Gravity " + string(grav))
-			show_debug_message("Angle " + string(image_angle))
+			else {
+				grav = 0
+			}
+			//show_debug_message("Gravity " + string(grav))
+			//show_debug_message("Angle " + string(image_angle))
 			//show_debug_message("_xSlam " + string(_xSlam))
 			
 			swapCooldown = swapCooldown > 0 ? swapCooldown - 1 : 0
@@ -56,7 +57,7 @@ else {
 			}			
 			
 	
-			move.xSpdYSpd(_x + _xSlam, _y + _ySlam)		
+			move.xSpdYSpd(d(_x + _xSlam), d(_y + _ySlam))		
 			sprite_index = soulSPBlue
 			switch image_angle {
 				case 0:
@@ -75,7 +76,7 @@ else {
 		break;
 		case "Red":
 			grav = 0
-			move.xSpdYSpd(hsp, vsp)
+			move.xSpdYSpd(d(hsp), d(vsp))
 			sprite_index = soulSPRed
 			image_angle = 0
 		break;
@@ -83,7 +84,7 @@ else {
 }
 if mouse_check_button(mb_right) {
 	x = mouse_x	
-	y = mouse_y	- RELY
+	y = mouse_y	- RELY/2
 }
 if global.InvFrames <= 0 image_speed = 0
 else {

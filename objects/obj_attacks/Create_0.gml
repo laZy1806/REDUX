@@ -7,7 +7,7 @@ alarm[2] = 2 // delayed in order for object to be created first
 attack = 0;
 cycle = 0;
 
-gravshift = animcurve_get_channel(soulcurve,"slam");
+gravshift = animcurve_get_channel(soulCurve,"slam");
 lightswitch = layer_create(-10)
 layer_sprite_create(lightswitch, 320, 240, blackscreen)
 

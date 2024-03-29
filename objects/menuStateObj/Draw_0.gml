@@ -22,6 +22,6 @@ surface_reset_target()
 
 scrOutlineShaderData(menuSurf, 16, 1)
 	
-	draw_surface(menuSurf, xShift, yShift)
+	draw_surface_ext(menuSurf, xShift, yShift, 1, 1, 0, c_white, 1)
 	
 shader_reset()

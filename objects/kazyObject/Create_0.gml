@@ -67,7 +67,7 @@ TEST = {
 			//soulObj.changeColor("Blue")
 		}
 		if (global.AttackCycle = 1) {
-			soulObj.changeColor("Blue")
+			//soulObj.changeColor("Blue")
 			//soulObj.Slam(0, -5, 0.03)
 		}
 		if (global.AttackCycle = 3) {
@@ -537,4 +537,5 @@ AttackArray = [
 	atk6Data,
 	atk7Data
 ]
+//AttackArray = [atk1Data];
 

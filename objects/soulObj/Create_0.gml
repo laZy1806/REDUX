@@ -13,6 +13,7 @@ grav = 0
 Color = "Red"
 swapCooldown = 10
 isFailsafe = false
+alarm[0] = 100
 Slam = function(_xSpd = 0, _ySpd = 0, _spd = slamSpd){
 	///@func Slam(_xSpd, _ySpd, _spd)	
 	xSlam = _xSpd

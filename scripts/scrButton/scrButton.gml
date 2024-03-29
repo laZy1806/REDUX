@@ -23,13 +23,13 @@ function scrButton(locations, pressedFunc, typeOf, displayFunc = 0, stepFunc = 0
 	image_index = 0
 	currentX = x;
 	currentY = y;
-	evaluate[0] = 0
+	evaluate[0] = 1
 	//Mutators
-		changeCurveData = function(_curve = noone, _spd = noone, _display = noone) {
+		changeCurveData = function(_curve = noone, _spd = noone) {
 			if typeof(_curve) = "string" curveType = _curve
 			if typeof(_spd) = "number" spd = _spd
-			if (is_instanceof(_display, __scribble_class_element) = false) or (asset_get_type(_display) != asset_sprite) show_error("Please use either a sprite or an instance of scribble", true) 
-			else toDisplay = _display	
+			//if (is_instanceof(_display, __scribble_class_element) = false) or (asset_get_type(_display) != asset_sprite) show_error("Please use either a sprite or an instance of scribble", true) 
+			//else toDisplay = _display	
 		}		
 		addLocation = function(_x, _y) {
 			array_push(locs, [_x, _y])

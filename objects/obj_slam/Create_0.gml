@@ -20,7 +20,7 @@ storedy = 0;
 slam_disX = 0;
 slam_disY = 0;
 
-gravshift = animcurve_get_channel(soulcurve,"slam");
+gravshift = animcurve_get_channel(soulCurve,"slam");
 
 
 

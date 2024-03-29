@@ -16,13 +16,28 @@ Height = array_create(2, 480);
 xShift = 0;
 yShift = 0;
 
-zoomMethod = "static";
+zoomMethod = "ease";
 zoomPercent = 1/60;
-zoomMultiplier = 1;
 evaluate[0] = 1
 
-setZoom = function(_zoomMultiplier, _zoomMethod) {
-	resetCalcNumber(0);
-	Width[1] = 640 / _zoomMultiplier
-	Height[1] = 480 / _zoomMultiplier
+DesWidth = 0
+DesHeight = 0
+	
+Width = 640
+Height = 480
+	
+supposedWidth = 640
+supposedHeight = 480
+
+setZoom = function(meth = zoomMethod, _spd = zoomPercent, _zoom) {
+///@func setZoom(method, spd, zoomMulti)
+resetCalcNumber(0)
+	supposedWidth = Width
+	supposedHeight = Height
+	
+	DesWidth = (640 * _zoom) - Width
+	DesHeight = (480 * _zoom) - Height
+	
+	zoomMethod = meth
+	zoomPercent = _spd
 }

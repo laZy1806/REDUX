@@ -15,7 +15,7 @@ controlsButtons = array_create(0)
 	startLocs = 
 	[
 		[320, 180],
-		[320, 180],
+		[-320, 180],
 	]
 	startTxt = scribble("[fa_middle][fa_center][menuFont][scale, 1]Start");
 	Start = new scrButton(startLocs, function() {
@@ -28,33 +28,47 @@ controlsButtons = array_create(0)
 	]
 	optionsTxt = scribble("[fa_middle][fa_center][menuFont][scale, 1]Options");
 	Options = new scrButton(optionsLocs, function() {
-		
+		global.menuState = 1;
 		}, optionsTxt
 	)
 	
 	array_push(menuOneButtons, Start, Options)
 #endregion
 #region controls buttons/menu state 2 buttons
+
+	var _y = 160;
+	
 	controlsLocs = 
-	[ [700, 140], [280, 90], ]
+	[ [700, _y], [320, _y], ]
 	controlsTxt = scribble("[fa_middle][fa_center][menuFont][scale, 1]Controls");
 	Controls = new scrButton(controlsLocs, function() { }, controlsTxt) 
 	
-	upLocs = [ [700, 140], [320, 140],]
+	upLocs = [ [700, _y + 40], [320, _y + 40],]
 	Up = new scrButton(upLocs, function() { }, scribble("[fa_middle][fa_center][menuFont][scale, 1]Up")) 
 	
-	downLocs = [ [700, 140], [320, 190], ]
+	downLocs = [ [700, _y + 80], [320, _y + 80], ]
 	Down = new scrButton(downLocs, function() { }, scribble("[fa_middle][fa_center][menuFont][scale, 1]Down")) 
 	
-	leftLocs = [ [700, 140], [320, 240], ]
+	leftLocs = [ [700, _y + 120], [320, _y + 120], ]
 	Left = new scrButton(leftLocs, function() { }, scribble("[fa_middle][fa_center][menuFont][scale, 1]Left")) 
 	
-	rightLocs = [ [700, 140], [320, 290], ]
+	rightLocs = [ [700, _y + 160], [320, _y + 160], ]
 	Right = new scrButton(rightLocs, function() { }, scribble("[fa_middle][fa_center][menuFont][scale, 1]Right")) 
 	
 	array_push(controlsButtons, Controls, Up, Down, Left, Right);
+	
+	
+	
+	
+	
 #endregion
 
-array_push(allButtons, menuOneButtons, controlsButtons)
+array_push(allButtons, menuOneButtons, controlsButtons) //runs based on global.menuState, 0 being menu 0 and so on.
 
-//Where all the menu changing functions are, and will be incorporated into the button pressedFuncs
+for(var i = 0; i < array_length(allButtons); i++) {
+	for(var j = 0; j < array_length(allButtons[i]); j++) {
+		if (i == 0) allButtons[i][j].changeCurveData("mediumEase", 1/(100 + j * 20))
+		if (i == 1) allButtons[i][j].changeCurveData("mediumEase", 1/(100 + j * 20))
+	}
+}
+
