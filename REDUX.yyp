@@ -205,6 +205,7 @@
     {"id":{"name":"obj_SpeechBubble","path":"objects/obj_SpeechBubble/obj_SpeechBubble.yy",},},
     {"id":{"name":"obj_TargetField","path":"objects/obj_TargetField/obj_TargetField.yy",},},
     {"id":{"name":"obj_text","path":"objects/obj_text/obj_text.yy",},},
+    {"id":{"name":"menuOverworldStateObj","path":"objects/menuOverworldStateObj/menuOverworldStateObj.yy",},},
     {"id":{"name":"objectTemplate","path":"objects/objectTemplate/objectTemplate.yy",},},
     {"id":{"name":"objSimpleExample","path":"objects/objSimpleExample/objSimpleExample.yy",},},
     {"id":{"name":"objTextStripped","path":"objects/objTextStripped/objTextStripped.yy",},},

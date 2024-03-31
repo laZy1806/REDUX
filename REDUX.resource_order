@@ -79,6 +79,7 @@
     {"name":"obj_ParticleEffect","order":16,"path":"objects/obj_ParticleEffect/obj_ParticleEffect.yy",},
     {"name":"obj_SpeechBubble","order":13,"path":"objects/obj_SpeechBubble/obj_SpeechBubble.yy",},
     {"name":"obj_text","order":1,"path":"objects/obj_text/obj_text.yy",},
+    {"name":"menuOverworldStateObj","order":3,"path":"objects/menuOverworldStateObj/menuOverworldStateObj.yy",},
     {"name":"objectTemplate","order":2,"path":"objects/objectTemplate/objectTemplate.yy",},
     {"name":"objTextStripped","order":9,"path":"objects/objTextStripped/objTextStripped.yy",},
     {"name":"oWorldDrawControllerObj","order":3,"path":"objects/oWorldDrawControllerObj/oWorldDrawControllerObj.yy",},

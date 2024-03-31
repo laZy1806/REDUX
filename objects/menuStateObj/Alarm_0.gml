@@ -9,7 +9,7 @@ for(var i = 0; i < array_length(ARR); i++) {
 }
 with cam {
 	xShift = 0;
-	yShift = -110;
+	yShift = -120;
 	spd = 0.1;
 	setZoom("ease", 1, 1);
 }
