@@ -4,9 +4,8 @@
 var CAM = instance_find(oWorldCam, 0);
 
 _lay = layer_get_id("Stationary")
-doorOne = layer_sprite_get_id(_lay, "doorOneSP");
-
-show_debug_message(layer_sprite_get_x(doorOne))
+var doorOne = layer_sprite_get_id(_lay, "doorOneSP");
+var PLAYER = instance_find(playerObj, 0);
 
 if (!instance_exists(menuStateObj)) {
 	
@@ -15,15 +14,13 @@ if (!instance_exists(menuStateObj)) {
 		with CAM {
 			xShift = lerp(xShift, 0, 0.02)
 			yShift = lerp(yShift, 0, 0.02)	
+			instance_find(oWorldCam,0).setZoom("ease", 1/120, 1);
 		}
+		if checkNearDoor() isNearDoor = true;
 	}
 	else if (isNearDoor){
-		//this is where it would zoom into the door frame.
-		
-		
-		
-		
-		
+		instance_find(oWorldCam,0).setZoom("ease", 1/120, 0.4);
+		if !checkNearDoor() isNearDoor = false;
 	}
 	else if (isCutscene){
 		
