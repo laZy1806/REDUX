@@ -6,27 +6,35 @@ var CAM = instance_find(oWorldCam, 0);
 _lay = layer_get_id("Stationary")
 var doorOne = layer_sprite_get_id(_lay, "doorOneSP");
 var PLAYER = instance_find(playerObj, 0);
+//show_debug_message(PLAYER.bbox_bottom)
 
 if (!instance_exists(menuStateObj)) {
-	
 	if (!isCutscene && !isNearDoor) {
-		//Will always return the camera to neutral from whatever position it was in.
 		with CAM {
 			xShift = lerp(xShift, 0, 0.02)
-			yShift = lerp(yShift, 0, 0.02)	
-			instance_find(oWorldCam,0).setZoom("ease", 1/120, 1);
+			yShift = lerp(yShift, 0, 0.02)	//Will always return the camera to neutral from whatever position it was in.
+			//spd = 0.03;
+			//CAM.setZoom("slowerEase", 1, 1);	
+			supposedHeight = lerp(supposedHeight, 480, 0.03)
+			supposedWidth = lerp(supposedWidth, 640, 0.03)
 		}
-		if checkNearDoor() isNearDoor = true;
+		if (checkNearDoor() != noone) isNearDoor = true;
 	}
-	else if (isNearDoor){
-		instance_find(oWorldCam,0).setZoom("ease", 1/120, 0.4);
-		if !checkNearDoor() isNearDoor = false;
+	else if (isNearDoor) {
+		if (checkNearDoor() == noone) isNearDoor = false;
+		var _playerDist = (checkNearDoor() != noone) ? point_distance(checkNearDoor().x, checkNearDoor().y, checkNearDoor().x, PLAYER.bbox_bottom) : 1;  
+		var _scale = (checkNearDoor() != noone) ? checkNearDoor().image_yscale: 1;
+		var MULTIPLIER = min(1, abs(_playerDist/_scale));
+		
+		//show_debug_message(MULTIPLIER)
+		
+		with CAM {
+			supposedHeight = lerp(supposedHeight, 480 * MULTIPLIER, 0.03 + 0.07 * (1 - MULTIPLIER))
+			supposedWidth = lerp(supposedWidth, 640 * MULTIPLIER, 0.03 + 0.07 * (1 - MULTIPLIER))
+		}
+		
 	}
-	else if (isCutscene){
-		
-		
-		
-		
+	else if (isCutscene) {
 		
 		
 	}

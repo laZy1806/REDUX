@@ -85,3 +85,4 @@ for(var i = 0; i < array_length(allButtons); i++) {
 	}
 }
 
+global.menuState = -1;

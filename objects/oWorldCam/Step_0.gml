@@ -3,7 +3,8 @@
 //if typeof(stepFunction) = "method" stepFunction()
 
 var zoomCurve = animcurve_get_channel(battleCamCurve, zoomMethod)
-var zoomCalc = curveCalculation(zoomCurve, zoomPercent, 0)
+var _xzoomCalc = curveCalculation(zoomCurve, zoomPercent + (zoomPercent * 0), 0)
+var _yzoomCalc = curveCalculation(zoomCurve, (zoomPercent + 0), 1)
 
 if instance_exists(playerObj) && isActive {
 	
@@ -23,8 +24,11 @@ if instance_exists(playerObj) && isActive {
 	global.camCenterX = instID.x + xShift;
 	global.camCenterY = instID.y + yShift;	
 	
-	Width = supposedWidth + DesWidth * zoomCalc
-	Height = supposedHeight + DesHeight * zoomCalc
+	//show_debug_message(string(Width) + "      " + string(Height))
+	Width = supposedWidth + DesWidth * _xzoomCalc
+	Height = supposedHeight + DesHeight * _yzoomCalc
+	
+	//show_debug_message(Width)
 	
 	camera_set_view_pos(view_camera[0], x + xShift, y + yShift);
 	camera_set_view_size(view_camera[0], Width, Height);

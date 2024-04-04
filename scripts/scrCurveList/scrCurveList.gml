@@ -8,7 +8,7 @@ function scrCurveList(maxSize = 100) {
 	curveCalculation = function(curve, percent, calcNumber) {
 		///@func curveCalculation(curve, percent, calcNumber)
 		
-		if (percent >= 1 && evaluate[calcNumber] <= 1) evaluate[calcNumber] += d(1/percent)
+		if (abs(percent) >= 1 && evaluate[calcNumber] <= 1) evaluate[calcNumber] += d(1/percent)
 		else if (evaluate[calcNumber] <= 1) evaluate[calcNumber] += d(percent)	//allows for input to either be 1/x or x alone.
 		return animcurve_channel_evaluate(curve, evaluate[calcNumber])
 		/* 

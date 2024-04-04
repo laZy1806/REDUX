@@ -3,7 +3,7 @@
   "%Name":"battleCamCurve",
   "channels":[
     {"$GMAnimCurveChannel":"","%Name":"ease","colour":4290799884,"name":"ease","points":[
-        {"th0":-0.1,"th1":0.04198473,"tv0":0.0,"tv1":0.0066666827,"x":0.0,"y":0.0,},
+        {"th0":-0.1,"th1":0.08396947,"tv0":0.0,"tv1":-0.0002883689,"x":0.0,"y":0.0,},
         {"th0":-0.98664117,"th1":0.1,"tv0":-0.002503872,"tv1":0.0,"x":1.0,"y":1.0,},
       ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":false,},
     {"$GMAnimCurveChannel":"","%Name":"easeBoth","colour":4290799884,"name":"easeBoth","points":[
@@ -28,6 +28,10 @@
         {"th0":-0.25,"th1":0.0,"tv0":0.0,"tv1":0.0,"x":0.0,"y":1.0,},
         {"th0":0.0,"th1":0.25,"tv0":0.0,"tv1":0.0,"x":1.0,"y":0.0,},
       ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":false,},
+    {"$GMAnimCurveChannel":"","%Name":"slowerEase","colour":4293475502,"name":"slowerEase","points":[
+        {"th0":-0.1,"th1":0.30229002,"tv0":0.0,"tv1":1.3422221E-05,"x":0.0,"y":0.0,},
+        {"th0":-0.66679394,"th1":0.1,"tv0":0.0,"tv1":0.0,"x":1.0,"y":1.0,},
+      ],"resourceType":"GMAnimCurveChannel","resourceVersion":"2.0","visible":true,},
   ],
   "function":2,
   "name":"battleCamCurve",

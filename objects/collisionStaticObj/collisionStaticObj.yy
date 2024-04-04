@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"battlepixel",
-    "path":"sprites/battlepixel/battlepixel.yy",
+    "name":"collisionStaticSP",
+    "path":"sprites/collisionStaticSP/collisionStaticSP.yy",
   },
   "spriteMaskId":null,
   "visible":true,

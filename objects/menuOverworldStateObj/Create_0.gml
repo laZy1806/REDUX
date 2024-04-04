@@ -6,8 +6,6 @@ isNearDoor = false;
 checkNearDoor = function() {
 	var PLAYER = instance_find(playerObj, 0);
 	with PLAYER {
-		if (instance_place(x, y, collisionStaticObj)) 
-		return true;
+		return instance_place(x, PLAYER.bbox_bottom, collisionStaticObj);
 	}
-	return false;
 }

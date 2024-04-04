@@ -26,10 +26,13 @@ else {
 	var _lay = layer_get_id("Stationary")
 	var ARR = layer_get_all_elements(_lay)
 	var cam = instance_find(oWorldCam, 0);
+	
 	cam.yShift = (lerp(cam.yShift, 0, d(0.04)))
+	
 	cam.setZoom("ease", 1/80, 1)
+	
 	image_alpha = abs(cam.yShift/80);
-		
+	
 	for(var i = 0; i < array_length(ARR); i++) {
 		if i != 1 layer_sprite_alpha(ARR[i], 1 - image_alpha);
 	}
