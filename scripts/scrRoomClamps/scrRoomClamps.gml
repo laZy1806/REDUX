@@ -9,5 +9,8 @@ function scrRoomClamps(){
 		case menuRoom:
 			return [0, 1280, 0, 1000]
 		break;
+		case tempRoom:
+			return [0, 1280, 0, 1000]
+		break;
 	}
 }
