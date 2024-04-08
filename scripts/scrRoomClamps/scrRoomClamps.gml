@@ -4,13 +4,16 @@
 function scrRoomClamps(){
 	switch room {
 		case oWorldParent:
-			return [0, 200, 0, 200]
+			return [0, 200, 0, 200];
 		break;
 		case menuRoom:
-			return [0, 1280, 0, 1000]
+			return [0, 1280, 0, 1000];
 		break;
 		case tempRoom:
-			return [0, 1280, 0, 1000]
+			return [0, 1280, 0, 1000];
+		break;
+		default:
+			return [0, 10000, 0, 10000];
 		break;
 	}
 }

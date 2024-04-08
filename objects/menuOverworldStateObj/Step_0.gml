@@ -10,8 +10,12 @@ var PLAYER = instance_find(playerObj, 0);
 //show_debug_message(string(nextRoomObj.bbox_left) + " " + string(nextRoomObj.bbox_right) + " " + string(nextRoomObj.bbox_top) + " " + string(nextRoomObj.bbox_bottom))
 
 with PLAYER {
-	if (instance_place(x, y, nextRoomCollision)) room_goto(tempRoom)
+	var currentRoomCol = instance_place(x, y, roomCollisionObj)
+	if (currentRoomCol != noone) {
+		room_goto(currentRoomCol.roomTo)
+	}
 }
+
 if (!instance_exists(menuStateObj)) {
 	if (!isCutscene && !isNearDoor) {
 		with CAM {

@@ -6,17 +6,11 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_19394A59_1","path":"rooms/tempRoom/tempRoom.yy",},
-    {"name":"inst_6BD0C6CC_1","path":"rooms/tempRoom/tempRoom.yy",},
-    {"name":"inst_288664B0_1","path":"rooms/tempRoom/tempRoom.yy",},
     {"name":"inst_38B74316_1","path":"rooms/tempRoom/tempRoom.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_19394A59_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_19394A59_1","objectId":{"name":"playerObj","path":"objects/playerObj/playerObj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":448.0,},
-        {"$GMRInstance":"","%Name":"inst_6BD0C6CC_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6BD0C6CC_1","objectId":{"name":"oWorldDrawControllerObj","path":"objects/oWorldDrawControllerObj/oWorldDrawControllerObj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":632.0,"y":472.0,},
-        {"$GMRInstance":"","%Name":"inst_288664B0_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_288664B0_1","objectId":{"name":"menuOverworldStateObj","path":"objects/menuOverworldStateObj/menuOverworldStateObj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":640.0,"y":352.0,},
         {"$GMRInstance":"","%Name":"inst_38B74316_1","colour":16777215,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_38B74316_1","objectId":{"name":"collisionStaticObj","path":"objects/collisionStaticObj/collisionStaticObj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":180.0,"scaleX":96.0,"scaleY":180.0,"x":640.0,"y":448.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Stationary","assets":[

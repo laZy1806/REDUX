@@ -1,28 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-depthGrid = 0
-depth = -100;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+image_alpha = 0;
+stepFunc = noone;

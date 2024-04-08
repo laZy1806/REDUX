@@ -9,7 +9,7 @@ with oWorldDrawControllerObj {
 	else {
 		var height = ds_grid_height(depthGrid);
 		ds_grid_resize(depthGrid, 2, height + 1);
-		depthGrid[# 0, height] = other;
+		depthGrid[# 0, height] = other.id;
 		depthGrid[# 1, height] = other.y;
 	}
 }
