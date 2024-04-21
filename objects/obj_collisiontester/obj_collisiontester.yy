@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Corridor",
-    "path":"folders/Objects/oldoverworldstuff/Corridor.yy",
+    "path":"folders/Objects/OLDSTUFF/oldoverworldstuff/Corridor.yy",
   },
   "parentObjectId":null,
   "persistent":false,

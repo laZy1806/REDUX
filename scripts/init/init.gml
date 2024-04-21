@@ -71,6 +71,8 @@ gml_pragma("global", "init()");
 	
 	global.AttackCycle = 0
 	global.AttackNumber = 0
+	
+	global.PlayerID = noone;
 	#macro RELY 17		//the relative y due to the change from gameframe
 	#macro c_darkorange make_color_hsv(30, 250, 220)
 	

@@ -41,7 +41,9 @@ else {
 			allButtons[i][j].toDisplay.blend(c_white, image_alpha);
 		}
 	}
-	if (abs(cam.yShift) < 0.2) 
-	instance_destroy(id);
+	if (abs(cam.yShift) < 0.2) {
+		instance_find(OverworldStateObj, 0).isMenu = false;
+		instance_destroy(id);
+	}
 }
 //mouseDebug();

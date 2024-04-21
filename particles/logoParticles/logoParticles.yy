@@ -15,7 +15,7 @@
   "name":"logoParticles",
   "parent":{
     "name":"OLDmenustuff",
-    "path":"folders/Objects/OLDmenustuff.yy",
+    "path":"folders/Objects/OLDSTUFF/OLDmenustuff.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

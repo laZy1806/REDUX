@@ -2,6 +2,9 @@
 // You can write your code in this editor
 hsp = 0;
 vsp = 0;
+global.PlayerID = id;
+roomX = 0;
+roomY = 0;
 // was 4
 #region frisk indexes
 	friskType[0][0] = coloredfriskDown
@@ -22,6 +25,7 @@ collisionPixelTDMC = use_tdmc()
 
 drawEvent = function() {
 	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, 0, c_white, 1)
+	//show_debug_message("dog")
 	//draw_set_color(c_blue)
 	//draw_rectangle(x + 60, y + 20, x - 60, y - 20, false)
 }

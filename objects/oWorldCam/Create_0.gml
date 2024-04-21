@@ -3,7 +3,7 @@
 scrCurveList(2);
 cam = view_camera[0];
 isActive = true;
-spd = 0.03
+spd = 0.1
 
 var instID = instance_find(playerObj, 0);
 _x = instID.x //- camera_get_view_width(cam) * 0.5

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"DebugRoom",
-    "path":"folders/Objects/oldoverworldstuff/DebugRoom.yy",
+    "path":"folders/Objects/OLDSTUFF/oldoverworldstuff/DebugRoom.yy",
   },
   "parentObjectId":{
     "name":"collisionPixelObj",

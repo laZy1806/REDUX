@@ -15,7 +15,7 @@
   "name":"fightParticlesDraft",
   "parent":{
     "name":"OLDfightassets",
-    "path":"folders/Objects/OLDfightassets.yy",
+    "path":"folders/Objects/OLDSTUFF/OLDfightassets.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

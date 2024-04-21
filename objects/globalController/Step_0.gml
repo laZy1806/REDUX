@@ -28,7 +28,8 @@ game_frame_button_set_click(gameframe_button_array[2], forcePause)
 gameframe_update();
 
 if keyboard_check_pressed(ord("Y")) {
+	room_goto(menuRoom)
 	room_restart();
 }
-	
+//show_debug_message(room)	
 	

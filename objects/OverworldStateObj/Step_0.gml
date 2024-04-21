@@ -8,15 +8,7 @@ var doorOne = layer_sprite_get_id(_lay, "doorOneSP");
 var PLAYER = instance_find(playerObj, 0);
 
 //show_debug_message(string(nextRoomObj.bbox_left) + " " + string(nextRoomObj.bbox_right) + " " + string(nextRoomObj.bbox_top) + " " + string(nextRoomObj.bbox_bottom))
-
-with PLAYER {
-	var currentRoomCol = instance_place(x, y, roomCollisionObj)
-	if (currentRoomCol != noone) {
-		room_goto(currentRoomCol.roomTo)
-	}
-}
-
-if (!instance_exists(menuStateObj)) {
+if (!isMenu) {
 	if (!isCutscene && !isNearDoor) {
 		with CAM {
 			xShift = lerp(xShift, 0, 0.02)
@@ -35,10 +27,9 @@ if (!instance_exists(menuStateObj)) {
 		var MULTIPLIER = min(1, abs(_playerDist/_scale));
 		
 		with CAM {
-			supposedHeight = lerp(supposedHeight, 480 * MULTIPLIER, 0.03 + 0.2 * (1 - MULTIPLIER))
-			supposedWidth = lerp(supposedWidth, 640 * MULTIPLIER, 0.03 + 0.2 * (1 - MULTIPLIER))
+			supposedHeight = max(lerp(supposedHeight, 480 * MULTIPLIER, d(0.01 + 0.1 * (1 - MULTIPLIER))), 48)
+			supposedWidth = max(lerp(supposedWidth, 640 * MULTIPLIER, d(0.01 + 0.1 * (1 - MULTIPLIER))), 64)
 		}
-		
 	}
 	else if (isCutscene) {
 		

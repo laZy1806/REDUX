@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"OLDfightassets",
-    "path":"folders/Objects/OLDfightassets.yy",
+    "path":"folders/Objects/OLDSTUFF/OLDfightassets.yy",
   },
   "parentObjectId":null,
   "persistent":false,

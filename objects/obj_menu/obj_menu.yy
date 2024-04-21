@@ -18,7 +18,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"OLDmenustuff",
-    "path":"folders/Objects/OLDmenustuff.yy",
+    "path":"folders/Objects/OLDSTUFF/OLDmenustuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,
