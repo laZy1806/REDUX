@@ -2,7 +2,7 @@
 // You can write your code in this editor
 isCutscene = false;
 isNearDoor = false;
-isMenu = false;
+isMenu = true;
 
 checkNearDoor = function() {
 	var PLAYER = instance_find(playerObj, 0);

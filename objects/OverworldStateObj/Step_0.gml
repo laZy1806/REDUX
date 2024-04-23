@@ -27,8 +27,8 @@ if (!isMenu) {
 		var MULTIPLIER = min(1, abs(_playerDist/_scale));
 		
 		with CAM {
-			supposedHeight = max(lerp(supposedHeight, 480 * MULTIPLIER, d(0.01 + 0.1 * (1 - MULTIPLIER))), 48)
-			supposedWidth = max(lerp(supposedWidth, 640 * MULTIPLIER, d(0.01 + 0.1 * (1 - MULTIPLIER))), 64)
+			supposedHeight = max(lerp(supposedHeight, 480 * MULTIPLIER, d(0.01 + 0.05 * (1 - MULTIPLIER))), 48)
+			supposedWidth = max(lerp(supposedWidth, 640 * MULTIPLIER, d(0.01 + 0.05 * (1 - MULTIPLIER))), 64)
 		}
 	}
 	else if (isCutscene) {

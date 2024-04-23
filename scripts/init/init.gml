@@ -58,6 +58,9 @@ gml_pragma("global", "init()");
 	global.windHeight = 480
 	global.windOffset = 0
 	
+	global.camCenterX = 0;
+	global.camCenterY = 0;
+	
 	global.midTransition = false
 	global.roomTarget = -1
 	
@@ -73,7 +76,7 @@ gml_pragma("global", "init()");
 	global.AttackNumber = 0
 	
 	global.PlayerID = noone;
-	#macro RELY 17		//the relative y due to the change from gameframe
+	#macro RELY 25		//the relative y due to the change from gameframe
 	#macro c_darkorange make_color_hsv(30, 250, 220)
 	
 #endregion

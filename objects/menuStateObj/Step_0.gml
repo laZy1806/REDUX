@@ -46,4 +46,4 @@ else {
 		instance_destroy(id);
 	}
 }
-//mouseDebug();
+mouseDebug(floor(-global.camCenterX/2), floor(-(global.camCenterY - instance_find(oWorldCam, 0).yShift)/2));

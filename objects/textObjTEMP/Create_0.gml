@@ -6,4 +6,4 @@ introList = {
 		scribble("[outlinemenuFont]* and i really like cute cats too")
 	],
 }
-introDiag = new scrDialogueSystem(introList, 0.12)
+//introDiag = new scrDialogueSystem(introList, 0.12)

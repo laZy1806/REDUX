@@ -8,8 +8,8 @@ for(var i = 0; i < array_length(ARR); i++) {
 	if i != 1 layer_sprite_alpha(ARR[i], 0);
 }
 with cam {
-	xShift = 0;
-	yShift = -120;
+	xShift = -150;
+	yShift = -10;
 	spd = 0.1;
 	setZoom("ease", 1, 1);
 }
