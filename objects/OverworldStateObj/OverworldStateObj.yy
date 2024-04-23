@@ -12,8 +12,8 @@
   "name":"OverworldStateObj",
   "overriddenProperties":[],
   "parent":{
-    "name":"menuAssets",
-    "path":"folders/Objects/menuAssets.yy",
+    "name":"overworldStuff",
+    "path":"folders/Objects/overworldStuff.yy",
   },
   "parentObjectId":null,
   "persistent":true,

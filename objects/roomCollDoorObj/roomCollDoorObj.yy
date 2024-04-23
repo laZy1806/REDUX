@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"collisionStaticObj",
+  "%Name":"roomCollDoorObj",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"collisionStaticObj",
+  "name":"roomCollDoorObj",
   "overriddenProperties":[],
   "parent":{
-    "name":"generalAssets",
-    "path":"folders/Objects/generalAssets.yy",
+    "name":"overworldStuff",
+    "path":"folders/Objects/overworldStuff.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -26,7 +26,9 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"","%Name":"associatedDoor","filters":[],"listItems":[],"multiselect":false,"name":"associatedDoor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"tempRoomDoor","varType":5,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

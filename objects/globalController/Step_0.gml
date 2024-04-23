@@ -29,8 +29,6 @@ if (global.isFullscreen and keyboard_check_pressed(ord("F"))) {
 else if (keyboard_check_pressed(ord("F"))) {
 	gameframe_set_fullscreen(1)
 }
-game_frame_button_set_click(gameframe_button_array[2], forcePause)
-
 if keyboard_check_pressed(ord("Y")) {
 	room_goto(menuRoom)
 	room_restart();

@@ -7,6 +7,6 @@ isMenu = true;
 checkNearDoor = function() {
 	var PLAYER = instance_find(playerObj, 0);
 	with PLAYER {
-		return instance_place(x, PLAYER.bbox_bottom, collisionStaticObj);
+		return instance_place(x, PLAYER.bbox_bottom, camZoomCollisionObj);
 	}
 }

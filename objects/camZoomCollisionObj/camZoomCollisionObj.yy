@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"roomCollisionObj",
+  "%Name":"camZoomCollisionObj",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"roomCollisionObj",
+  "name":"camZoomCollisionObj",
   "overriddenProperties":[],
   "parent":{
-    "name":"overworldStuff",
-    "path":"folders/Objects/overworldStuff.yy",
+    "name":"generalAssets",
+    "path":"folders/Objects/generalAssets.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -26,11 +26,7 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"","%Name":"roomX","filters":[],"listItems":[],"multiselect":false,"name":"roomX","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"400","varType":1,},
-    {"$GMObjectProperty":"","%Name":"roomY","filters":[],"listItems":[],"multiselect":false,"name":"roomY","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"400","varType":1,},
-    {"$GMObjectProperty":"","%Name":"roomTo","filters":[],"listItems":[],"multiselect":false,"name":"roomTo","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"tempRoom","varType":5,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
