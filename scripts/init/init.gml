@@ -69,14 +69,14 @@ gml_pragma("global", "init()");
 	global.Right = 0
 	global.Left = 0
 	
-	global.ENEMYNAMES = array_create(1, "Kazy")
+	global.ENEMYNAMES = array_create(0);
 	global.ENEMYARRAY = array_create(0)
 	
 	global.AttackCycle = 0
 	global.AttackNumber = 0
 	
 	global.PlayerID = noone;
-	#macro RELY 25		//the relative y due to the change from gameframe
+	#macro RELY 15		//the relative y due to the change from gameframe
 	#macro c_darkorange make_color_hsv(30, 250, 220)
 	
 #endregion

@@ -27,9 +27,7 @@ if debugPressed {
 		_x = mouseDebug()[0]
 		_y = mouseDebug()[1]
 	}
-	
 	if mouse_check_button_pressed(mb_left) mouseClick *= -1
-	
 	draw_sprite_ext(sp, 0, _x, _y, image_xscale, image_yscale, image_angle, c_white, 1)
 	show_debug_message("X " + string(_x) + " Y " + string(_y))
 	show_debug_message("Angle " + string(image_angle))
@@ -37,4 +35,3 @@ if debugPressed {
 	show_debug_message("YScale " + string(image_yscale))
 	if image_angle > 360 image_angle -= 360
 }
-//draw_sprite_ext(boneBottom, 0, 100 + TEST, 200, 1, 3, 0, c_white, 1)

@@ -2,7 +2,12 @@
 // You can write your code in this editor
 if SPDCALC <= 1 SPDCALC += SPEED
 else SPDCALC -= 1
-currentAnim()
+
+//layer_sequence_y(animationSequence, mouseDebug()[1])
+//layer_sequence_x(animationSequence, mouseDebug()[0])
+
+layer_sequence_speedscale(animationSequence, 1)
+
 
 BOX = instance_find(fightBoxObj, 0)
 

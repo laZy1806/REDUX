@@ -19,7 +19,7 @@ if DRAW {	// a minor delay to let everything create and set variables
 	
 	boxMasking(toMask)
 	
-	with bulletRef drawEvent()
+	if (instance_exists(bulletboardObj)) with (bulletRef) drawEvent();
 
 	for(var i = 0; i < ds_list_size(global.gasterList); i++) {
 		ds_list_find_value(global.gasterList, i).drawEvent()	
@@ -35,12 +35,16 @@ if DRAW {	// a minor delay to let everything create and set variables
 		with instance_find(fightWall, i) drawEvent()
 	}			
 	
-	for (var f = 0; f < array_length(bulletRef.buttonList); f++) {		
-		if (bulletRef.buttonList[f] != noone) bulletRef.buttonList[f].DISPLAY()
-	}
-		
-	kazyObject.drawEvent()	
-		
+	if instance_exists(obj_bulletboard){
+		for (var f = 0; f < array_length(bulletRef.buttonList); f++) {		
+			if (bulletRef.buttonList[f] != noone) bulletRef.buttonList[f].DISPLAY()
+		}
+	}	
+
+	for(var a = 0; a < array_length(global.ENEMYARRAY); a++) {
+		global.ENEMYARRAY[a].drawEvent()
+	}			
+
 	surface_reset_target()
 	
 		scrOutlineShaderData(drawSurf, 20, 1)

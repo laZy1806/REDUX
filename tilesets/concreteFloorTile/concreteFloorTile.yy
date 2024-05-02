@@ -1,0 +1,46 @@
+{
+  "$GMTileSet":"",
+  "%Name":"concreteFloorTile",
+  "autoTileSets":[],
+  "macroPageTiles":{
+    "SerialiseHeight":238,
+    "SerialiseWidth":170,
+    "TileCompressedData":[
+      -2,0,9,1,2,3,4,0,1,17,18,19,-331,0,4,11,12,13,14,-172,0,7,1,3,2,0,1,3,3,-333,0,-2,3,4,2,0,3,2,-39596,
+      0,
+    ],
+    "TileDataFormat":1,
+  },
+  "name":"concreteFloorTile",
+  "out_columns":5,
+  "out_tilehborder":0,
+  "out_tilevborder":0,
+  "parent":{
+    "name":"Tile Sets",
+    "path":"folders/Tile Sets.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"concreteSprite",
+    "path":"sprites/concreteSprite/concreteSprite.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimation":{
+    "FrameData":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,],
+    "SerialiseFrameCount":1,
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":24,
+  "tilehsep":0,
+  "tilevsep":0,
+  "tileWidth":16,
+  "tilexoff":16,
+  "tileyoff":0,
+  "tile_count":20,
+}
