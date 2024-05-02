@@ -6,9 +6,6 @@ else SPDCALC -= 1
 //layer_sequence_y(animationSequence, mouseDebug()[1])
 //layer_sequence_x(animationSequence, mouseDebug()[0])
 
-layer_sequence_speedscale(animationSequence, 1)
-
-
 BOX = instance_find(fightBoxObj, 0)
 
 /* DEBUG SECTION
