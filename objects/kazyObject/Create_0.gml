@@ -21,12 +21,12 @@ alarm[0] = 100
 animationLayer = layer_create(depth)
 animationArray = array_create(0)
 
-idleSeq = layer_sequence_create(animationLayer, 325, 250, kazyIdleSequence)
-testSeq = layer_sequence_create(animationLayer, 325, 250, kazyTestSequence)
+idle = layer_sequence_create(animationLayer, 325, 250, kazyIdleSequence)
+idle2 = layer_sequence_create(animationLayer, 325, 250, kazyTestSequence)
 
-array_push(animationArray, idleSeq, testSeq);
+array_push(animationArray, idle, idle2);
 
-currentAnim = idleSeq;
+currentAnim = idle;
 
 for(var i = 0; i < array_length(animationArray); i++) {
 	layer_sequence_xscale(animationArray[i], 2);
@@ -36,10 +36,11 @@ for(var i = 0; i < array_length(animationArray); i++) {
 
 layer_sequence_x(currentAnim, 325);	//sets the first anim to be at correct x
 
-switchAnim = function(){
+switchAnim = function(anim){
 	layer_sequence_x(currentAnim, -200);
-	currentAnim = testSeq;	//change later
+	currentAnim = (variable_instance_exists(id, anim)) ? variable_instance_get(id, anim) : idle	//name of variable;
 	layer_sequence_x(currentAnim, 325);
+	layer_sequence_headpos(currentAnim, 0);
 }
 
 
